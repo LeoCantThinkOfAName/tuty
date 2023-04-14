@@ -1,4 +1,4 @@
-import { InputGroup, InputGroupItem } from "../InputGroup";
+import { InputGroup, InputGroupItem } from "./components/InputGroup";
 
 import { ChakraProvider } from "@chakra-ui/react";
 

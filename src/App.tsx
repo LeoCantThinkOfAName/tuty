@@ -1,17 +1,7 @@
-import { InputGroup, InputGroupItem } from "./components/InputGroup";
-
 import { ChakraProvider } from "@chakra-ui/react";
 
 const App = () => {
-  return (
-    <ChakraProvider resetCSS>
-      <InputGroup>
-        <InputGroupItem />
-        <InputGroupItem />
-        <InputGroupItem />
-      </InputGroup>
-    </ChakraProvider>
-  );
+  return <ChakraProvider resetCSS>test</ChakraProvider>;
 };
 
 export default App;

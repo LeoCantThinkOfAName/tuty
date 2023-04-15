@@ -1,5 +1,11 @@
-import { FC, useCallback, useContext, useEffect, useRef } from "react";
 import { Input, InputProps } from "@chakra-ui/react";
+import {
+  MutableRefObject,
+  forwardRef,
+  useContext,
+  useEffect,
+  useRef,
+} from "react";
 
 import { InputGroupContextImp } from "./InputGroupContext";
 
@@ -7,28 +13,34 @@ export interface InputGroupItemProps extends InputProps {
   index?: number;
 }
 
-const InputGroupItem: FC<InputGroupItemProps> = ({ index, ...props }) => {
-  const ref = useRef<HTMLInputElement>();
-  const { value, setValue } = useContext(InputGroupContextImp);
+const InputGroupItem = forwardRef<HTMLInputElement, InputGroupItemProps>(
+  ({ index, ...props }, ref) => {
+    const _ref = useRef<HTMLInputElement>();
+    const inputRef = (ref as MutableRefObject<HTMLInputElement>) || _ref;
+    const { setValue } = useContext(InputGroupContextImp);
 
-  useEffect(() => {
-    const setGroupValue = (e: Event) => {
-      setValue((prev) => {
-        const newValue = [...prev];
-        newValue[index as number] = (e.target as HTMLInputElement).value;
-        return newValue;
-      });
-    };
+    useEffect(() => {
+      const setGroupValue = (e: Event | { target: HTMLInputElement }) => {
+        setValue((prev) => {
+          const newValue = [...prev];
+          newValue[index as number] = (e.target as HTMLInputElement).value;
+          return newValue;
+        });
+      };
 
-    ref.current?.addEventListener("input", setGroupValue);
+      // initialize default value
+      setGroupValue({ target: inputRef.current });
 
-    return () => {
-      ref.current?.removeEventListener("input", setGroupValue);
-    };
-  }, []);
+      inputRef.current?.addEventListener("input", setGroupValue);
 
-  return <Input {...props} ref={ref} />;
-};
+      return () => {
+        inputRef.current?.removeEventListener("input", setGroupValue);
+      };
+    }, []);
+
+    return <Input {...props} ref={inputRef} />;
+  },
+);
 
 InputGroupItem.displayName = "InputGroupItem";
 export default InputGroupItem;

@@ -13,10 +13,12 @@ import { InputGroupContextImp } from "./InputGroupContext";
 
 interface InputGroupProps extends FlexProps {
   delimiter?: string;
+  name?: string;
+  hidden?: boolean;
 }
 
 const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
-  ({ children, delimiter, ...props }, ref) => {
+  ({ children, delimiter, name, hidden, ...props }, ref) => {
     const [value, setValue] = useState<string[]>([]);
     const validChildren = Children.map(children, (child, index) => {
       const isValid = isValidElement(child);
@@ -45,10 +47,11 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
       <InputGroupContextImp.Provider value={{ value, setValue }}>
         <input
           type="text"
-          style={{ border: "1px solid red" }}
           value={value.join(delimiter)}
           readOnly
           ref={ref}
+          name={name}
+          hidden={hidden}
         />
         <Flex justifyContent="space-between" {...props}>
           {validChildren}
@@ -61,5 +64,6 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
 InputGroup.displayName = "InputGroup";
 InputGroup.defaultProps = {
   delimiter: "",
+  hidden: true,
 };
 export default InputGroup;

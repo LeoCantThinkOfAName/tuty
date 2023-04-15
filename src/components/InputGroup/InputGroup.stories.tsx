@@ -14,13 +14,29 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Primary: Story = {
+export const WithoutDelimiter: Story = {
   args: {
+    hidden: false,
     children: [
-      <InputGroupItem />,
-      <InputGroupItem />,
-      <InputGroupItem />,
-      <InputGroupItem />,
+      <InputGroupItem defaultValue={"1234"} />,
+      <InputGroupItem defaultValue={"0000"} />,
+      <InputGroupItem defaultValue={"5678"} />,
+      <InputGroupItem defaultValue={"0000"} />,
     ],
   },
+  name: "Without delimiter",
+};
+
+export const WithDelimiter: Story = {
+  args: {
+    delimiter: "-",
+    hidden: false,
+    children: [
+      <InputGroupItem defaultValue={"1234"} />,
+      <InputGroupItem defaultValue={"0000"} />,
+      <InputGroupItem defaultValue={"5678"} />,
+      <InputGroupItem defaultValue={"0000"} />,
+    ],
+  },
+  name: "With delimiter",
 };

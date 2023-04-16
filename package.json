@@ -22,9 +22,13 @@
     "@xstate/inspect": "^0.8.0",
     "@xstate/react": "^3.2.1",
     "framer-motion": "^6",
+    "i18next": "^22.4.14",
+    "i18next-browser-languagedetector": "^7.0.1",
+    "i18next-http-backend": "^2.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
+    "react-i18next": "^12.2.0",
     "react-query": "^3.39.3",
     "react-router-dom": "^6.10.0",
     "xstate": "^4.37.1"
@@ -47,6 +51,7 @@
     "jsdom": "^21.1.1",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.4",
+    "storybook-react-i18next": "^2.0.1",
     "typescript": "^4.9.3",
     "vite": "^4.2.0",
     "vitest": "^0.30.1"

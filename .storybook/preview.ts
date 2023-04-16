@@ -1,10 +1,19 @@
 import { ChakraProviderDecorator } from "@chakra-ui/storybook-addon/dist/feature/decorator/ChakraProviderDecorator";
 import type { Preview } from "@storybook/react";
+import i18n from "../src/stories/i18n";
 import { theme } from "@chakra-ui/react";
 
 const decorators = [ChakraProviderDecorator];
 const preview: Preview = {
+  globals: {
+    locale: "zh",
+    locales: {
+      en: { title: "English", left: "🇺🇸" },
+      zh: { title: "中文", left: "🇹🇼" },
+    },
+  },
   parameters: {
+    i18n,
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {

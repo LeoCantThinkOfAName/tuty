@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-import path from "path";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
@@ -8,6 +7,7 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@chakra-ui/storybook-addon",
+    "storybook-react-i18next",
   ],
   framework: {
     name: "@storybook/react-vite",

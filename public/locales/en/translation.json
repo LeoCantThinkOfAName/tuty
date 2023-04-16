@@ -1,0 +1,9 @@
+{
+    "otp": {
+        "title": "Please use the OTP to activate account",
+        "resentButton": "Resent OTP"
+    },
+    "common": {
+        "submit": "submit"
+    }
+}

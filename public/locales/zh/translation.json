@@ -1,0 +1,9 @@
+{
+    "otp": {
+        "title": "請輸入一次性密碼以啟用帳號",
+        "resentButton": "重新發送密碼"
+    },
+    "common": {
+        "submit": "送出"
+    }
+}

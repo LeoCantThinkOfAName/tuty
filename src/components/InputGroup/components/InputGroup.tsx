@@ -9,7 +9,7 @@ import {
 import { Flex, FlexProps } from "@chakra-ui/react";
 import InputGroupItem, { InputGroupItemProps } from "./InputGroupItem";
 
-import { InputGroupContextImp } from "./InputGroupContext";
+import { InputGroupContextImp } from "../contexts/InputGroupContext";
 
 interface InputGroupProps extends FlexProps {
   delimiter?: string;
@@ -26,21 +26,15 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
         console.warn("Please provide valid child element");
         return null;
       }
-      if (typeof child.type === "string") {
-        console.warn("InputGroup only accept InputGroupItem as children");
-        return null;
-      }
       if (child.type !== InputGroupItem) {
         console.warn("InputGroup only accept InputGroupItem as children");
         return null;
       }
 
-      const tempChild = cloneElement(
+      return cloneElement(
         child as ReactElement<InputGroupItemProps>,
         index !== 0 ? { ml: "3", index } : { index },
       );
-
-      return tempChild;
     });
 
     return (

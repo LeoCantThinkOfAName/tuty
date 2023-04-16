@@ -7,7 +7,7 @@ import {
   useRef,
 } from "react";
 
-import { InputGroupContextImp } from "./InputGroupContext";
+import { InputGroupContextImp } from "../contexts/InputGroupContext";
 
 export interface InputGroupItemProps extends InputProps {
   index?: number;
@@ -38,7 +38,7 @@ const InputGroupItem = forwardRef<HTMLInputElement, InputGroupItemProps>(
       };
     }, []);
 
-    return <Input {...props} ref={inputRef} />;
+    return <Input {...props} ref={inputRef} aria-label="grouped-input" />;
   },
 );
 

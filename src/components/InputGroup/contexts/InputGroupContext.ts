@@ -1,4 +1,4 @@
-import { InputGroupContext } from "./type";
+import { InputGroupContext } from "../types/type";
 import { createContext } from "react";
 
 export const InputGroupContextImp = createContext<InputGroupContext>({

@@ -15,15 +15,16 @@ describe("useCountDown", () => {
     expect(result.current).toHaveProperty("countDown");
   });
 
-  test("Should able to set countdown seconds", async () => {
-    const { result } = renderHook(() => useCountDown());
+  test("Should able to set count down seconds", async () => {
+    const { result } = renderHook(() => useCountDown(100));
     result.current.countDown(1);
     await waitFor(() => expect(result.current.count).toBe(1));
   });
 
-  test("Should able countdown", async () => {
-    const { result } = renderHook(() => useCountDown());
-    result.current.countDown(1);
+  test("Should able to count down to 0", async () => {
+    const { result } = renderHook(() => useCountDown(100));
+    result.current.countDown(2);
+    await waitFor(() => expect(result.current.count).toBe(2));
     await waitFor(() => expect(result.current.count).toBe(1));
     await waitFor(() => expect(result.current.count).toBe(0));
   });

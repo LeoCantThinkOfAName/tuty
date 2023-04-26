@@ -1,26 +1,28 @@
 import { useCallback, useEffect, useState } from "react";
 
-let interval: NodeJS.Timer;
-export const useCountDown = () => {
+let inter: NodeJS.Timer;
+export const useCountDown = (interval: number = 1000) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
     return () => {
-      clearInterval(interval);
+      clearInterval(inter);
     };
   }, []);
 
   const countDown = useCallback((seconds: number) => {
     setCount(seconds);
 
-    interval = setInterval(() => {
+    inter = setInterval(() => {
       setCount((prevCount) => {
         if (prevCount === 1) {
-          clearInterval(interval);
+          clearInterval(inter);
+          return 0;
+        } else {
+          return prevCount - 1;
         }
-        return prevCount - 1;
       });
-    }, 1000);
+    }, interval);
   }, []);
 
   return { count, countDown };

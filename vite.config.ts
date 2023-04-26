@@ -10,7 +10,7 @@ export default defineConfig({
     },
   },
   test: {
-    environment: "jsdom",
+    environment: "happy-dom",
     coverage: {
       provider: "istanbul",
       reporter: ["json", "html-spa", "json-summary"],

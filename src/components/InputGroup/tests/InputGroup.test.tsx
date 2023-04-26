@@ -3,7 +3,6 @@ import { cleanup, render, screen } from "@testing-library/react";
 
 import InputGroup from "../components/InputGroup";
 import InputGroupItem from "../components/InputGroupItem";
-import userEvent from "@testing-library/user-event";
 
 describe("InputGroup", () => {
   afterEach(() => {

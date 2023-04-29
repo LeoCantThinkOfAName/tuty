@@ -52,4 +52,3 @@ describe("InputGroup", () => {
     expect(classNames).toBeFalsy();
   });
 });
-``;

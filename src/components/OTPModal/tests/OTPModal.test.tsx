@@ -5,7 +5,6 @@ import { OTPModal } from "../index";
 import { TestProvider } from "../../../utils/TestProvider";
 import userEvent from "@testing-library/user-event";
 
-const values = [0, 1, 2, 3, 4, 5];
 describe("OTPModal", () => {
   afterEach(() => {
     cleanup();
@@ -31,6 +30,7 @@ describe("OTPModal", () => {
   });
 
   test("Should able input type if 012345", async () => {
+    const values = [0, 1, 2, 3, 4, 5];
     render(<OTPModal isOpen={true} onClose={() => {}} />, {
       wrapper: TestProvider,
     });
@@ -46,6 +46,7 @@ describe("OTPModal", () => {
   });
 
   test("Should able to handle backspace", async () => {
+    const values = [0, 1, 2, 3, 4, 5];
     render(<OTPModal isOpen={true} onClose={() => {}} />, {
       wrapper: TestProvider,
     });

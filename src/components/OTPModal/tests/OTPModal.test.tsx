@@ -38,10 +38,10 @@ describe("OTPModal", () => {
       screen.getAllByLabelText("grouped-input");
     await userEvent.click(inputs[0]);
     for (let v of values) {
-      await userEvent.keyboard(`${values[v]}`);
+      await userEvent.keyboard(`${v}`);
     }
     for (let v of values) {
-      expect(inputs[v].value).toBe(`${values[v]}`);
+      expect(inputs[v].value).toBe(`${v}`);
     }
   });
 
@@ -54,7 +54,7 @@ describe("OTPModal", () => {
       screen.getAllByLabelText("grouped-input");
     await userEvent.click(inputs[0]);
     for (let v of values) {
-      await userEvent.keyboard(`${values[v]}`);
+      await userEvent.keyboard(`${v}`);
     }
     await userEvent.keyboard("[Backspace]");
     expect(inputs[5].value).toBe("");

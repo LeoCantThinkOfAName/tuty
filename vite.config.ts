@@ -13,7 +13,7 @@ export default defineConfig({
     environment: "happy-dom",
     coverage: {
       provider: "istanbul",
-      reporter: ["json", "html-spa", "json-summary"],
+      reporter: ["json", "html-spa", "json-summary", "lcov"],
     },
   },
 });

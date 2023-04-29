@@ -4,6 +4,39 @@
         "resentButton": "重新發送密碼"
     },
     "common": {
-        "submit": "送出"
+        "submit": "送出",
+        "signup": "註冊",
+        "login": "登入"
+    },
+    "auth": {
+        "google": "使用 Google 帳號",
+        "facebook": "使用 Facebook 帳號",
+        "github": "使用 GitHub 帳號",
+        "modalTitle": "請註冊/登入後繼續使用",
+        "tncLink": "請參閱我們的服務條款",
+        "signup": {
+            "email": {
+                "label": "電子信箱",
+                "placeholder": "請提供可用的電子信箱帳號"
+            },
+            "password": {
+                "label": "密碼",
+                "placeholder": "設定您的密碼"
+            },
+            "validatePassword": {
+                "label": "確認您的密碼",
+                "placeholder": "請重新輸入您設定的密碼"
+            }
+        },
+        "login": {
+            "email": {
+                "label": "電子信箱",
+                "placeholder": "請輸入您註冊的電子信箱"
+            },
+            "password": {
+                "label": "密碼",
+                "placeholder": "請輸入您的密碼"
+            }
+        }
     }
 }

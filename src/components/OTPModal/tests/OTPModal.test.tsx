@@ -1,5 +1,11 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import {
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  waitFor,
+} from "@testing-library/react";
 
 import { OTPModal } from "../index";
 import { TestProvider } from "../../../utils/TestProvider";
@@ -38,10 +44,10 @@ describe("OTPModal", () => {
       screen.getAllByLabelText("grouped-input");
     await userEvent.click(inputs[0]);
     for (let v of values) {
-      await userEvent.keyboard(`${v}`);
+      await userEvent.keyboard(v.toString());
     }
     for (let v of values) {
-      expect(inputs[v].value).toBe(`${v}`);
+      waitFor(() => expect(inputs[v].value).toBe(v.toString()));
     }
   });
 
@@ -54,7 +60,7 @@ describe("OTPModal", () => {
       screen.getAllByLabelText("grouped-input");
     await userEvent.click(inputs[0]);
     for (let v of values) {
-      await userEvent.keyboard(`${v}`);
+      await userEvent.keyboard(v.toString());
     }
     await userEvent.keyboard("[Backspace]");
     expect(inputs[5].value).toBe("");

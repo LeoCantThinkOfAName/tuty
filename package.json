@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "http://leocantthinkofaname.github.io/tuty",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -14,7 +15,9 @@
     "test": "lint-staged",
     "test:watch": "vitest --",
     "coverage": "vitest run --coverage",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build-storybook",
+    "deploy:storybook": "gh-pages -d storybook-static"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",

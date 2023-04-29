@@ -1,0 +1,28 @@
+on:
+  push:
+    branches:
+      - main
+jobs:
+  test:
+    name: Execute unit test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.2
+        with:
+          version: 18.12.1
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1
+  gh_page:
+    name: Deploy storybbok on GH page
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.5.2
+        with:
+          version: 18.12.1
+      - name: build storybook
+        run: |
+          npm install
+          npm run deploy:storybook
+          

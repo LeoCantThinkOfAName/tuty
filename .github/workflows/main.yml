@@ -10,7 +10,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.2
         with:
-          version: 18.12.1
+          node-version: 18.12.1
       - name: Execute unit test
         run: |
           npm install
@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.2
         with:
-          version: 18.12.1
+          node-version: 18.12.1
       - name: build storybook
         run: |
           npm install

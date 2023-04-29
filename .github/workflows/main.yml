@@ -4,17 +4,21 @@ on:
       - main
 jobs:
   test:
-    name: Execute unit test
+    name: Unit test
     runs-on: ubuntu-latest
     steps:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.5.2
         with:
           version: 18.12.1
+      - name: Execute unit test
+        run: |
+          npm install
+          npm run coverage
       - name: Coveralls GitHub Action
         uses: coverallsapp/github-action@v1
   gh_page:
-    name: Deploy storybbok on GH page
+    name: Deploy storybook on GH page
     runs-on: ubuntu-latest
     steps:
       - name: Setup Node.js environment

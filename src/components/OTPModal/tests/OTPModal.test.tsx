@@ -5,7 +5,7 @@ import { OTPModal } from "../index";
 import { TestProvider } from "../../../utils/TestProvider";
 import userEvent from "@testing-library/user-event";
 
-const values = [1, 2, 3, 4, 5, 6];
+const values = [0, 1, 2, 3, 4, 5];
 describe("OTPModal", () => {
   afterEach(() => {
     cleanup();
@@ -30,18 +30,18 @@ describe("OTPModal", () => {
     expect(inputs[0].value).toBe("");
   });
 
-  test("Should able input type if 123456", async () => {
+  test("Should able input type if 012345", async () => {
     render(<OTPModal isOpen={true} onClose={() => {}} />, {
       wrapper: TestProvider,
     });
     const inputs: HTMLInputElement[] =
       screen.getAllByLabelText("grouped-input");
     await userEvent.click(inputs[0]);
-    for (let i = 0; i < values.length; i++) {
-      await userEvent.keyboard(`${values[i]}`);
+    for (let v of values) {
+      await userEvent.keyboard(`${values[v]}`);
     }
-    for (let i = 0; i < values.length; i++) {
-      expect(inputs[i].value).toBe(`${values[i]}`);
+    for (let v of values) {
+      expect(inputs[v].value).toBe(`${values[v]}`);
     }
   });
 
@@ -52,8 +52,8 @@ describe("OTPModal", () => {
     const inputs: HTMLInputElement[] =
       screen.getAllByLabelText("grouped-input");
     await userEvent.click(inputs[0]);
-    for (let i = 0; i < values.length; i++) {
-      await userEvent.keyboard(`${values[i]}`);
+    for (let v of values) {
+      await userEvent.keyboard(`${values[v]}`);
     }
     await userEvent.keyboard("[Backspace]");
     expect(inputs[5].value).toBe("");

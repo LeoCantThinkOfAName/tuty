@@ -11,8 +11,10 @@
     "migrate": "yarn supabase db reset",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test": "vitest --",
-    "coverage": "vitest run --coverage"
+    "test": "lint-staged",
+    "test:watch": "vitest --",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",
@@ -36,6 +38,9 @@
   },
   "devDependencies": {
     "@chakra-ui/storybook-addon": "^4.0.16",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "@commitlint/types": "^17.4.4",
     "@storybook/addon-essentials": "^7.0.4",
     "@storybook/addon-interactions": "^7.0.4",
     "@storybook/addon-links": "^7.0.4",
@@ -50,7 +55,9 @@
     "@vitejs/plugin-react-swc": "^3.0.0",
     "@vitest/coverage-istanbul": "^0.30.1",
     "happy-dom": "^9.9.2",
+    "husky": "^8.0.3",
     "jsdom": "^21.1.1",
+    "lint-staged": "^13.2.2",
     "prop-types": "^15.8.1",
     "storybook": "^7.0.4",
     "storybook-react-i18next": "^2.0.1",

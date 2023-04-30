@@ -1,5 +1,4 @@
 import type { StorybookConfig } from "@storybook/react-vite";
-
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -8,6 +7,7 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     // "@chakra-ui/storybook-addon",
     "storybook-react-i18next",
+    "@storybook/addon-mdx-gfm",
   ],
   framework: {
     name: "@storybook/react-vite",

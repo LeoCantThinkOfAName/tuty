@@ -35,7 +35,10 @@ jobs:
         run: |
           npm install
           npm run build-storybook
-      - name: deploy storybook
-        run: |
-          npm run deploy:storybook
+      - name: GitHub Pages action
+        uses: peaceiris/actions-gh-pages@v3.9.3
+        with:
+          github_token: ${{ secret.DEPLOY_TOKEN }}
+          publish_dir: ./storybook-static
+
           

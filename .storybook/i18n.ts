@@ -4,7 +4,7 @@ import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
 const supportedLngs = ["en", "zh"];
-const mode = process.env.STORYBOOK_MODE;
+const mode = import.meta.env.STORYBOOK_MODE;
 const backendOption =
   mode === "PRODUCTION"
     ? {

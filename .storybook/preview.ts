@@ -1,6 +1,6 @@
 import { ChakraProviderDecorator } from "@chakra-ui/storybook-addon/dist/feature/decorator/ChakraProviderDecorator";
 import type { Preview } from "@storybook/react";
-import i18n from "../src/stories/i18n";
+import i18n from "./i18n";
 import { theme } from "../src/styles/theme";
 
 const decorators = [ChakraProviderDecorator];

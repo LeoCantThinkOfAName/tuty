@@ -34,7 +34,7 @@ jobs:
       - name: build storybook
         run: |
           npm install
-          npm run build-storybook
+          STORYBOOK_MODE=PRODUCTION npm run build-storybook
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:

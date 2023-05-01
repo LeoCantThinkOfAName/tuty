@@ -16,6 +16,6 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src", "src/components/InputGroup", "public/locales"],
+  "include": ["src", "src/components/InputGroup", "public/locales", ".storybook/i18n.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

@@ -9,5 +9,6 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=coverage)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
+[![gitlocalized ](https://gitlocalize.com/repo/8628/whole_project/badge.svg)](https://gitlocalize.com/repo/8628/whole_project?utm_source=badge)
 # TUTY
 - Visit component library on [Storybook](https://leocantthinkofaname.github.io/tuty/)

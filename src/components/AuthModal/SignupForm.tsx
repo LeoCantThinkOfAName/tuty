@@ -18,7 +18,7 @@ const defaultValues = {
   password: "",
   passwordValidation: "",
 };
-export const SignupForm: FC<SignupFormProps> = ({}) => {
+export const SignupForm: FC<SignupFormProps> = () => {
   const { t } = useTranslation();
   const { register, handleSubmit } = useForm({
     defaultValues,

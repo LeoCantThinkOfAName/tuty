@@ -17,7 +17,7 @@ const defaultValues = {
   email: "",
   password: "",
 };
-export const LoginForm: FC<LoginFormProps> = ({}) => {
+export const LoginForm: FC<LoginFormProps> = () => {
   const { t } = useTranslation();
   const { register, handleSubmit } = useForm({
     defaultValues,

@@ -8,6 +8,6 @@
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
-[![Coverage Status](https://coveralls.io/repos/github/LeoCantThinkOfAName/tuty/badge.svg)](https://coveralls.io/github/LeoCantThinkOfAName/tuty)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=LeoCantThinkOfAName_tuty&metric=coverage)](https://sonarcloud.io/summary/new_code?id=LeoCantThinkOfAName_tuty)
 # TUTY
 - Visit component library in [Storybook](https://leocantthinkofaname.github.io/tuty/)

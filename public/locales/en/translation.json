@@ -1,9 +1,42 @@
 {
-    "otp": {
-        "title": "Please use the OTP to activate account",
-        "resentButton": "Resent OTP"
+  "otp": {
+    "title": "Please use the OTP to activate account",
+    "resentButton": "Resent OTP"
+  },
+  "common": {
+    "submit": "submit",
+    "signup": "Sign up",
+    "login": "Login"
+  },
+  "auth": {
+    "google": "Using Google Account",
+    "facebook": "Using Facebook Account",
+    "github": "Using GitHub Account",
+    "modalTitle": "Please Sign up/Login to Continue",
+    "tncLink": "Our Terms and Condition of Service",
+    "signup": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Please Provide Valid Email Address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Please Setup Your Password"
+      },
+      "validatePassword": {
+        "label": "Re-enter Password",
+        "placeholder": "Please Confirm Your Password"
+      }
     },
-    "common": {
-        "submit": "submit"
+    "login": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Please Enter Your Email Address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Please Enter Your Password"
+      }
     }
+  }
 }

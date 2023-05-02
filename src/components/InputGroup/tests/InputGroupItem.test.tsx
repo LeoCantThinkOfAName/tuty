@@ -17,14 +17,12 @@ describe("InputGroupItem", () => {
 
   test("Should accept defaultValue", () => {
     render(<InputGroupItem defaultValue="hello" />);
-    expect(
-      screen.getByLabelText("grouped-input") as HTMLInputElement,
-    ).toBeDefined();
+    expect(screen.getByLabelText("grouped-input")).toBeDefined();
   });
 
   test("Should able to edit", async () => {
     render(<InputGroupItem defaultValue="hello" />);
-    const input = screen.getByLabelText("grouped-input") as HTMLInputElement;
+    const input = screen.getByLabelText<HTMLInputElement>("grouped-input");
     await userEvent.type(input, " world");
     expect(input.value).toBe("hello world");
   });

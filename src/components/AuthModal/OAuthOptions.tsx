@@ -29,8 +29,8 @@ export const OAuthOptions: FC<OAuthOptionsProps> = ({ mode }) => {
 
   return (
     <Flex justifyContent="space-between">
-      {options.map((option, index) => (
-        <Button flex="1" title={option.title} key={index}>
+      {options.map((option) => (
+        <Button flex="1" title={option.title} key={option.title}>
           <option.icon />
         </Button>
       ))}

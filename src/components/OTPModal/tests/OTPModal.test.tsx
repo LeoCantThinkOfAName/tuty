@@ -1,11 +1,5 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
-import {
-  cleanup,
-  fireEvent,
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 
 import { OTPModal } from "../index";
 import { TestProvider } from "../../../utils/TestProvider";

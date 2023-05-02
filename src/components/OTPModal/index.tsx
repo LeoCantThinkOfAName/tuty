@@ -36,7 +36,7 @@ export const OTPModal: FC<OTPModalProps> = ({ title, ...props }) => {
       }
       if (key === "Backspace") return key;
       if (!regex.test(key)) {
-        e.preventDefault();
+        return e.preventDefault();
       }
       return key;
     };
@@ -51,7 +51,7 @@ export const OTPModal: FC<OTPModalProps> = ({ title, ...props }) => {
           [index + 1]?.focus();
       }
 
-      if (!hasValue && value === "") {
+      if (e.key === "Backspace" && !hasValue) {
         currentTarget.parentElement
           ?.querySelectorAll("input")
           [index - 1]?.focus();
@@ -77,7 +77,7 @@ export const OTPModal: FC<OTPModalProps> = ({ title, ...props }) => {
     <Modal isCentered {...props}>
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>{t(title as any)}</ModalHeader>
+        <ModalHeader>{t(title as unknown as TemplateStringsArray)}</ModalHeader>
         <ModalBody>
           <Flex justifyContent="center">
             <InputGroup maxW="sm" hidden={true}>

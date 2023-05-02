@@ -4,6 +4,7 @@ import {
   cloneElement,
   forwardRef,
   isValidElement,
+  useMemo,
   useState,
 } from "react";
 import { Flex, FlexProps } from "@chakra-ui/react";
@@ -36,9 +37,10 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
         index !== 0 ? { ml: "3", index } : { index },
       );
     });
+    const contextValue = useMemo(() => ({ value, setValue }), [value]);
 
     return (
-      <InputGroupContextImp.Provider value={{ value, setValue }}>
+      <InputGroupContextImp.Provider value={contextValue}>
         <input
           type="text"
           value={value.join(delimiter)}

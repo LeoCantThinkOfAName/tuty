@@ -1,7 +1,6 @@
 import { Input, InputProps } from "@chakra-ui/react";
 import {
   MutableRefObject,
-  Ref,
   forwardRef,
   useContext,
   useEffect,

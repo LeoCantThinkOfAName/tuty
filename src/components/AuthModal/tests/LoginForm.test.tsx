@@ -2,8 +2,8 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { LoginForm } from "../LoginForm";
-import { Tabs } from "@chakra-ui/react";
 import { TestProvider } from "../../../utils/TestProvider";
+import userEvent from "@testing-library/user-event";
 
 describe("LoginForm", () => {
   afterEach(() => {
@@ -12,14 +12,30 @@ describe("LoginForm", () => {
   });
 
   test("Should render", () => {
-    render(
-      <Tabs>
-        <LoginForm />
-      </Tabs>,
-      {
-        wrapper: TestProvider,
-      },
-    );
+    render(<LoginForm />, {
+      wrapper: TestProvider,
+    });
+    expect(screen.getByRole("form")).toBeTruthy();
+  });
+
+  test("Should able to submit", async () => {
+    const { container } = render(<LoginForm />, {
+      wrapper: TestProvider,
+    });
+    const emailField = container.querySelector(
+      'input[name="email"]',
+    ) as HTMLInputElement;
+    const passwordField = container.querySelector(
+      'input[name="password"]',
+    ) as HTMLInputElement;
+    const submitBtn = container.querySelector(
+      'button[type="submit"]',
+    ) as HTMLButtonElement;
+    await userEvent.click(emailField);
+    await userEvent.keyboard("test@email.com");
+    await userEvent.click(passwordField);
+    await userEvent.keyboard("myFakePassword");
+    await userEvent.click(submitBtn);
     expect(screen.getByRole("form")).toBeTruthy();
   });
 });

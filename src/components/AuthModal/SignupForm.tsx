@@ -1,10 +1,4 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  TabPanel,
-} from "@chakra-ui/react";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 
 import { FC } from "react";
 import { OAuthOptions } from "./OAuthOptions";
@@ -29,9 +23,9 @@ export const SignupForm: FC<SignupFormProps> = () => {
   };
 
   return (
-    <TabPanel>
+    <>
       <OAuthOptions mode="signup" />
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} role="form">
         <FormControl>
           <FormLabel>{t("auth.signup.email.label")}</FormLabel>
           <Input
@@ -64,6 +58,6 @@ export const SignupForm: FC<SignupFormProps> = () => {
           {t("common.signup")}
         </Button>
       </form>
-    </TabPanel>
+    </>
   );
 };

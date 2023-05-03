@@ -30,10 +30,19 @@ export const OAuthOptions: FC<OAuthOptionsProps> = ({ mode }) => {
   return (
     <Flex justifyContent="space-between">
       {options.map((option) => (
-        <Button flex="1" title={option.title} key={option.title}>
+        <Button
+          flex="1"
+          maxWidth={`${Math.floor(10 / options.length) * 10}%`}
+          title={option.title}
+          key={option.title}
+        >
           <option.icon />
         </Button>
       ))}
     </Flex>
   );
+};
+
+OAuthOptions.defaultProps = {
+  mode: "login",
 };

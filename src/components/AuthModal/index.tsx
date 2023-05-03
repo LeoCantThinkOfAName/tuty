@@ -9,6 +9,7 @@ import {
   ModalProps,
   Tab,
   TabList,
+  TabPanel,
   TabPanels,
   Tabs,
 } from "@chakra-ui/react";
@@ -19,6 +20,17 @@ import { SignupForm } from "./SignupForm";
 import { useTranslation } from "react-i18next";
 
 interface AuthModalProps extends Omit<ModalProps, "children"> {}
+
+const tabData = [
+  {
+    label: "common.signup",
+    component: SignupForm,
+  },
+  {
+    label: "common.login",
+    component: LoginForm,
+  },
+] as const;
 
 export const AuthModal: FC<AuthModalProps> = (props) => {
   const { t } = useTranslation();
@@ -31,12 +43,16 @@ export const AuthModal: FC<AuthModalProps> = (props) => {
         <ModalBody>
           <Tabs isFitted>
             <TabList>
-              <Tab>{t("common.signup")}</Tab>
-              <Tab>{t("common.login")}</Tab>
+              {tabData.map((tab) => (
+                <Tab key={tab.label}>{t(tab.label)}</Tab>
+              ))}
             </TabList>
             <TabPanels>
-              <SignupForm />
-              <LoginForm />
+              {tabData.map((tab) => (
+                <TabPanel key={tab.label}>
+                  <tab.component />
+                </TabPanel>
+              ))}
             </TabPanels>
           </Tabs>
         </ModalBody>

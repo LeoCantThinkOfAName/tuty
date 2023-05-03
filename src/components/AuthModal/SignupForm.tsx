@@ -18,8 +18,8 @@ export const SignupForm: FC<SignupFormProps> = () => {
     defaultValues,
   });
 
-  const onSubmit = (data: typeof defaultValues) => {
-    console.log(data);
+  const onSubmit = async (data: typeof defaultValues) => {
+    await Promise.resolve(console.log(data));
   };
 
   return (

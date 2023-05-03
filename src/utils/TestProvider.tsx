@@ -2,22 +2,18 @@ import { FC, PropsWithChildren } from "react";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 
 import { ChakraProvider } from "@chakra-ui/react";
-import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
-import backend from "i18next-http-backend";
+import en from "../locales/en/translation.json";
 import i18next from "i18next";
 import { theme } from "../styles/theme";
+import zh from "../locales/zh/translation.json";
 
-i18next
-  .use(initReactI18next)
-  .use(I18nextBrowserLanguageDetector)
-  .use(backend)
-  .init({
-    lng: "zh",
-    fallbackLng: "zh",
-    supportedLngs: ["en", "zh"],
-    interpolation: { escapeValue: false },
-    react: { useSuspense: false },
-  });
+i18next.use(initReactI18next).init({
+  lng: "en",
+  fallbackLng: "en",
+  supportedLngs: ["en", "zh"],
+  react: { useSuspense: false },
+  resources: { en: { translation: en }, zh: { translation: zh } },
+});
 
 export const TestProvider: FC<PropsWithChildren> = ({ children }) => {
   return (

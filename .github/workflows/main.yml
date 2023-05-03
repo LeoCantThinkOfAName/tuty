@@ -35,6 +35,9 @@ jobs:
         uses: actions/setup-node@v3.6.0
         with:
           node-version: 18.12.1
+      - name: copy locale files
+        run: |
+          cp -r src/locales public
       - name: build storybook
         run: |
           npm install

@@ -10,7 +10,9 @@ const backendOption =
     ? {
         loadPath: "./locales/{{lng}}/translation.json",
       }
-    : {};
+    : {
+        loadPath: "../src/locales/{{lng}}/translation.json",
+      };
 
 i18n
   .use(initReactI18next)

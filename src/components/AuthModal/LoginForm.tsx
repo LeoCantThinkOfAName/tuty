@@ -17,14 +17,17 @@ export const LoginForm: FC<LoginFormProps> = () => {
     defaultValues,
   });
 
-  const onSubmit = async (data: typeof defaultValues) => {
-    await Promise.resolve(console.log(data));
+  const onSubmit = (data: typeof defaultValues) => {
+    console.log(data);
   };
 
   return (
     <>
       <OAuthOptions mode="login" />
-      <form onSubmit={handleSubmit(onSubmit)} role="form">
+      <form
+        onSubmit={(event) => void handleSubmit(onSubmit)(event)}
+        role="form"
+      >
         <FormControl>
           <FormLabel>{t("auth.signup.email.label")}</FormLabel>
           <Input

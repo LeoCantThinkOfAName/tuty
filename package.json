@@ -71,6 +71,6 @@
     "vitest": "^0.30.1"
   },
   "resolutions": {
-    "nwsapi": "2.2.2"
+    "nwsapi": "2.2.4"
   }
 }

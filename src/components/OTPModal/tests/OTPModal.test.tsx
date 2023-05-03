@@ -58,5 +58,7 @@ describe("OTPModal", () => {
     }
     await userEvent.keyboard("[Backspace]");
     expect(inputs[5].value).toBe("");
+    await userEvent.keyboard("[Backspace]");
+    expect(inputs[4] === document.activeElement).toBe(true);
   });
 });

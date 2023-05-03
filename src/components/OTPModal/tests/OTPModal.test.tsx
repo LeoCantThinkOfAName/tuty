@@ -18,14 +18,14 @@ describe("OTPModal", () => {
     expect(screen.getAllByLabelText("grouped-input")).toHaveLength(6);
   });
 
-  test("Should ignore user's input if abcdef", () => {
+  test("Should ignore user's input if abcdef", async () => {
     render(<OTPModal isOpen={true} onClose={() => {}} />, {
       wrapper: TestProvider,
     });
     const inputs: HTMLInputElement[] =
       screen.getAllByLabelText("grouped-input");
-    userEvent.click(inputs[0]);
-    userEvent.keyboard("abcdef");
+    await userEvent.click(inputs[0]);
+    await userEvent.keyboard("abcdef");
     expect(inputs[0].value).toBe("");
   });
 
@@ -41,7 +41,7 @@ describe("OTPModal", () => {
       await userEvent.keyboard(v.toString());
     }
     for (let v of values) {
-      waitFor(() => expect(inputs[v].value).toBe(v.toString()));
+      await waitFor(() => expect(inputs[v].value).toBe(v.toString()));
     }
   });
 

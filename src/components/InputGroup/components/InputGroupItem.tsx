@@ -18,7 +18,7 @@ const InputGroupItem = forwardRef<
   InputGroupItemProps
 >(({ index, ...props }, ref) => {
   const _ref = useRef<HTMLInputElement>();
-  const inputRef = (ref || _ref) as MutableRefObject<HTMLInputElement>;
+  const inputRef = (ref ?? _ref) as MutableRefObject<HTMLInputElement>;
   const { setValue } = useContext(InputGroupContextImp);
 
   useEffect(() => {

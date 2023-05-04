@@ -57,7 +57,7 @@
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
-    "@vitest/coverage-istanbul": "^0.30.1",
+    "@vitest/coverage-istanbul": "^0.31.0",
     "gh-pages": "^5.0.0",
     "happy-dom": "^9.10.7",
     "husky": "^8.0.3",
@@ -68,7 +68,7 @@
     "storybook-react-i18next": "^2.0.1",
     "typescript": "^5.0.0",
     "vite": "^4.2.0",
-    "vitest": "^0.30.1"
+    "vitest": "^0.31.0"
   },
   "resolutions": {
     "nwsapi": "2.2.2"

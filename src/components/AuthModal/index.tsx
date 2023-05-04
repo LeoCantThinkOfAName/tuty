@@ -2,6 +2,7 @@ import {
   Link,
   Modal,
   ModalBody,
+  ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
@@ -32,13 +33,14 @@ const tabData = [
   },
 ] as const;
 
-export const AuthModal: FC<AuthModalProps> = (props) => {
+export const AuthModal: FC<AuthModalProps> = ({ onClose, ...props }) => {
   const { t } = useTranslation();
 
   return (
-    <Modal isCentered {...props}>
+    <Modal isCentered {...props} onClose={onClose}>
       <ModalOverlay />
       <ModalContent>
+        <ModalCloseButton />
         <ModalHeader>{t("auth.modalTitle")}</ModalHeader>
         <ModalBody>
           <Tabs isFitted>

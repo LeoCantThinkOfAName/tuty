@@ -1,0 +1,2 @@
+import{a as r,b as o}from"./createClass-d459cbf5.js";import{r as p}from"./index-8db94870.js";var u=p.createContext(),i=function(){function e(){o(this,e),this.usedNamespaces={}}return r(e,[{key:"addUsedNamespaces",value:function(c){var s=this;c.forEach(function(a){s.usedNamespaces[a]||(s.usedNamespaces[a]=!0)})}},{key:"getUsedNamespaces",value:function(){return Object.keys(this.usedNamespaces)}}]),e}();export{u as I,i as R};
+//# sourceMappingURL=context-27f4b450.js.map

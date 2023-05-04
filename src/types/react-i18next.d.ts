@@ -6,5 +6,12 @@ declare module "react-i18next" {
     resources: typeof zh;
     keySeparator: ".";
     nsSeparator: ".";
+    returnNull: false;
+  }
+}
+
+declare module "i18next" {
+  interface CustomTypeOptions {
+    returnNull: false;
   }
 }

@@ -9,6 +9,7 @@ const initObj = {
   fallbackLng: "zh",
   supportedLngs,
   keySeparator: ".",
+  returnNull: false,
   backend: {
     loadPath:
       import.meta.env.MODE === "development"

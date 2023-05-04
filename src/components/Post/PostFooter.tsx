@@ -41,20 +41,14 @@ export const PostFooter: FC<PostFooterProps> = ({ tags }) => {
         ))}
       </Flex>
       <Flex mt="3" flexWrap="wrap">
+        <ActionButton title={t("post.actions.like")} icon={BsFillHeartFill} />
         <ActionButton
-          title={t("post.actions.like") as string}
-          icon={BsFillHeartFill}
-        />
-        <ActionButton
-          title={t("post.actions.bookmark") as string}
+          title={t("post.actions.bookmark")}
           icon={BsFillBookmarkPlusFill}
         />
+        <ActionButton title={t("post.actions.share")} icon={BsFillSendFill} />
         <ActionButton
-          title={t("post.actions.share") as string}
-          icon={BsFillSendFill}
-        />
-        <ActionButton
-          title={t("post.actions.comment") as string}
+          title={t("post.actions.comment")}
           icon={BsFillChatSquareDotsFill}
           onClick={toggleCommentSection}
         />

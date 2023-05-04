@@ -26,7 +26,7 @@ describe("PostHeader", () => {
   });
 
   test("Should able to show datee in zh", async () => {
-    i18next.use(initReactI18next).init({
+    await i18next.use(initReactI18next).init({
       lng: "zh",
     });
 
@@ -45,7 +45,7 @@ describe("PostHeader", () => {
   });
 
   test("Should able to show datee in en", async () => {
-    i18next.use(initReactI18next).init({
+    await i18next.use(initReactI18next).init({
       lng: "en",
     });
 

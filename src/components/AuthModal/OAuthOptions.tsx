@@ -15,15 +15,15 @@ export const OAuthOptions: FC<OAuthOptionsProps> = ({ mode }) => {
   const options: { icon: IconType; title: string }[] = [
     {
       icon: BsGoogle,
-      title: (t("auth.google") as string) + (t(`common.${mode}`) as string),
+      title: t("auth.google") + t(`common.${mode}`),
     },
     {
       icon: BsFacebook,
-      title: (t("auth.facebook") as string) + (t(`common.${mode}`) as string),
+      title: t("auth.facebook") + t(`common.${mode}`),
     },
     {
       icon: BsGithub,
-      title: (t("auth.github") as string) + (t(`common.${mode}`) as string),
+      title: t("auth.github") + t(`common.${mode}`),
     },
   ];
 

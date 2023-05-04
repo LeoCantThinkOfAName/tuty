@@ -32,7 +32,7 @@ export const CommentSection: FC<CommentSectionProps> = ({
       <Textarea
         w="100%"
         minH="36"
-        placeholder={t("post.commentSection.placeholder") as string}
+        placeholder={t("post.commentSection.placeholder")}
         {...register("comment", {
           required: true,
         })}

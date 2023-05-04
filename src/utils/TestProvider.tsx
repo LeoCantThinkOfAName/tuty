@@ -7,7 +7,7 @@ import i18next from "i18next";
 import { theme } from "../styles/theme";
 import zh from "../locales/zh/translation.json";
 
-i18next.use(initReactI18next).init({
+await i18next.use(initReactI18next).init({
   lng: "en",
   fallbackLng: "en",
   supportedLngs: ["en", "zh"],

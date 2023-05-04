@@ -38,5 +38,26 @@
                 "placeholder": "請輸入您的密碼"
             }
         }
+    },
+    "post": {
+        "fold": "收起貼文",
+        "unfold": "展開貼文",
+        "placeholders": {
+            "userName": "使用者",
+            "userTitle": "使用者職稱"
+        },
+        "actions": {
+            "like": "給讚",
+            "liked": "讚",
+            "bookmark": "收藏",
+            "bookmarked": "已收藏",
+            "share": "分享",
+            "comment": "留言"
+        },
+        "commentSection": {
+            "cancel": "取消",
+            "submit": "送出",
+            "placeholder": "在此留言..."
+        }
     }
 }

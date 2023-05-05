@@ -8,6 +8,7 @@ const config: StorybookConfig = {
     // "@chakra-ui/storybook-addon",
     "storybook-react-i18next",
     "@storybook/addon-mdx-gfm",
+    "storybook-addon-react-router-v6",
   ],
   framework: {
     name: "@storybook/react-vite",

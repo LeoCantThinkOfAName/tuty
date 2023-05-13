@@ -1,4 +1,4 @@
-import{s as a}from"./index-d475d2ea.js";import{d as $}from"./index-356e4a49.js";var m="outline";const{useMemo:x,useEffect:r}=__STORYBOOK_MODULE_PREVIEW_API__;var u=i=>{(Array.isArray(i)?i:[i]).forEach(f)},f=i=>{let t=typeof i=="string"?i:i.join(""),o=a.document.getElementById(t);o&&o.parentElement&&o.parentElement.removeChild(o)},b=(i,t)=>{let o=a.document.getElementById(i);if(o)o.innerHTML!==t&&(o.innerHTML=t);else{let n=a.document.createElement("style");n.setAttribute("id",i),n.innerHTML=t,a.document.head.appendChild(n)}};function s(i){return $`
+import{s as p}from"./index-d475d2ea.js";import{d as $}from"./index-356e4a49.js";var m="outline";const{useMemo:x,useEffect:r}=__STORYBOOK_MODULE_PREVIEW_API__;var u=i=>{(Array.isArray(i)?i:[i]).forEach(f)},f=i=>{let t=typeof i=="string"?i:i.join(""),o=p.document.getElementById(t);o&&o.parentElement&&o.parentElement.removeChild(o)},b=(i,t)=>{let o=p.document.getElementById(i);if(o)o.innerHTML!==t&&(o.innerHTML=t);else{let n=p.document.createElement("style");n.setAttribute("id",i),n.innerHTML=t,p.document.head.appendChild(n)}};function s(i){return $`
     ${i} body {
       outline: 1px solid #2980b9 !important;
     }
@@ -393,5 +393,5 @@ import{s as a}from"./index-d475d2ea.js";import{d as $}from"./index-356e4a49.js";
 
     ${i} wbr {
       outline: 1px solid #db175b !important;
-    }`}var e=(i,t)=>{let{globals:o}=t,n=[!0,"true"].includes(o[m]),d=t.viewMode==="docs",l=x(()=>{let p=d?`#anchor--${t.id} .docs-story`:".sb-show-main";return s(p)},[t]);return r(()=>{let p=d?`addon-outline-docs-${t.id}`:"addon-outline";return n?b(p,l):u(p),()=>{u(p)}},[n,l,t]),i()},g=[e],v={[m]:!1};export{g as decorators,v as globals};
-//# sourceMappingURL=preview-62235626.js.map
+    }`}var e=(i,t)=>{let{globals:o}=t,n=[!0,"true"].includes(o[m]),d=t.viewMode==="docs",l=x(()=>s(d?'[data-story-block="true"]':".sb-show-main"),[t]);return r(()=>{let a=d?`addon-outline-docs-${t.id}`:"addon-outline";return n?b(a,l):u(a),()=>{u(a)}},[n,l,t]),i()},h=[e],v={[m]:!1};export{h as decorators,v as globals};
+//# sourceMappingURL=preview-d8c963a4.js.map

@@ -1,19 +1,8 @@
-import { Box, Flex } from "@chakra-ui/react";
 import { FC, PropsWithChildren } from "react";
 
-interface StoryLayoutProps extends PropsWithChildren {}
+import { Flex } from "@chakra-ui/react";
 
-// "html, body": {
-//   display: "flex",
-//   flexDirection: "column",
-//   height: "100%",
-// },
-// "#root": {
-//   display: "flex",
-//   minHeight: "100%",
-//   alignItems: "stretch",
-//   flexDirection: "column",
-// },
+interface StoryLayoutProps extends PropsWithChildren {}
 
 export const StoryLayout: FC<StoryLayoutProps> = ({ children }) => {
   return (

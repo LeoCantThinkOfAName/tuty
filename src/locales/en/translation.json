@@ -4,7 +4,7 @@
     "resentButton": "Resent OTP"
   },
   "common": {
-    "submit": "submit",
+    "submit": "Submit",
     "signup": "Sign up",
     "login": "Login"
   },
@@ -38,5 +38,45 @@
         "placeholder": "Please Enter Your Password"
       }
     }
+  },
+  "post": {
+    "fold": "收起貼文",
+    "unfold": "展開貼文",
+    "placeholders": {
+      "userName": "使用者",
+      "userTitle": "使用者職稱"
+    },
+    "actions": {
+      "like": "Like",
+      "liked": "Liked",
+      "bookmark": "Bookmark",
+      "bookmarked": "Bookmarked",
+      "share": "Share",
+      "comment": "Comment"
+    },
+    "commentSection": {
+      "cancel": "Cancel",
+      "submit": "Submit",
+      "placeholder": "Leave your comment..."
+    }
+  },
+  "headerMenu": {
+    "createPost": "New Post",
+    "message": "Messages",
+    "signupOrLogin": "Sign Up/Login"
+  },
+  "userMenu": {
+    "logout": "Logout",
+    "myAccount": "My Account",
+    "myPosts": "My Posts",
+    "bookmarked": "Bookmarked"
+  },
+  "sideBar": {
+    "searchInput": {
+      "placeholder": "Search Posts"
+    }
+  },
+  "routes": {
+    "privacyPolicy": "Privacy Policy"
   }
 }

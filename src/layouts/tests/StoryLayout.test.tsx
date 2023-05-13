@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
+import { cleanup, render } from "@testing-library/react";
 
 import { StoryLayout } from "../StoryLayout";
 import { TestProvider } from "../../utils/TestProvider";

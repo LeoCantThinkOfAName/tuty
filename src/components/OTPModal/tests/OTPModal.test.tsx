@@ -29,7 +29,7 @@ describe("OTPModal", () => {
     expect(inputs[0].value).toBe("");
   });
 
-  test("Should able input type if 012345", async () => {
+  test("Should able to type if 012345", async () => {
     const values = [0, 1, 2, 3, 4, 5];
     render(<OTPModal isOpen={true} onClose={() => {}} />, {
       wrapper: TestProvider,

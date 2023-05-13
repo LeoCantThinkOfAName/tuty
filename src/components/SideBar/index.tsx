@@ -1,0 +1,95 @@
+import {
+  Accordion,
+  AccordionButton,
+  AccordionIcon,
+  AccordionItem,
+  AccordionPanel,
+  AccordionProps,
+  Flex,
+  Input,
+  Link,
+  Text,
+} from "@chakra-ui/react";
+import { NavLink, Link as RouterLink } from "react-router-dom";
+
+import { FC } from "react";
+import { useTranslation } from "react-i18next";
+
+interface SideBarProps extends Pick<AccordionProps, "defaultIndex"> {
+  menu?: {
+    category: string;
+    items: { path: string; title: string }[];
+  }[];
+}
+
+export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
+  const { t } = useTranslation();
+
+  return (
+    <Flex
+      flexDir="column"
+      p="5"
+      position="sticky"
+      w="20rem"
+      h="100%"
+      boxShadow="md"
+    >
+      <Input type="text" placeholder={t("search")} mb="5" />
+
+      <Flex flex="1" flexDir="column">
+        <Accordion defaultIndex={defaultIndex}>
+          {menu?.map((item) => (
+            <AccordionItem
+              key={item.category}
+              borderTop="none"
+              borderBottom="none"
+            >
+              <AccordionButton _hover={{ bg: "initial" }}>
+                <Text fontWeight="bold" w="100%" textAlign="left" fontSize="lg">
+                  {item.category}
+                </Text>
+                <AccordionIcon />
+              </AccordionButton>
+
+              <AccordionPanel p="0">
+                {item.items.map((link) => (
+                  <Link
+                    key={link.title}
+                    _activeLink={{
+                      bg: "blackAlpha.100",
+                    }}
+                    _hover={{ textDecor: "none", bg: "blackAlpha.100" }}
+                    _dark={{
+                      _hover: {
+                        bg: "whiteAlpha.100",
+                      },
+                      _activeLink: {
+                        bg: "whiteAlpha.100",
+                      },
+                    }}
+                    display="block"
+                    as={NavLink}
+                    p="3"
+                    pl="8"
+                    to={link.path}
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </AccordionPanel>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </Flex>
+
+      <Link as={RouterLink} to="" color="gray.500">
+        Privacy Policy
+      </Link>
+    </Flex>
+  );
+};
+
+SideBar.defaultProps = {
+  menu: [],
+  defaultIndex: [0],
+};

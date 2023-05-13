@@ -32,15 +32,19 @@ export const UserMenu: FC<UserMenuProps> = () => {
           <Avatar size="lg" />
         </Flex>
         <MenuDivider />
-        <Link to="/">
-          <MenuItem>{t("userMenu.myAccount")}</MenuItem>
-        </Link>
-        <Link to="/">
-          <MenuItem>{t("userMenu.myPosts")}</MenuItem>
-        </Link>
-        <Link to="/">
-          <MenuItem>{t("userMenu.bookmarked")}</MenuItem>
-        </Link>
+
+        <MenuItem as={Link} to="/">
+          {t("userMenu.myAccount")}
+        </MenuItem>
+
+        <MenuItem as={Link} to="/">
+          {t("userMenu.myPosts")}
+        </MenuItem>
+
+        <MenuItem as={Link} to="/">
+          {t("userMenu.bookmarked")}
+        </MenuItem>
+
         <MenuItem>{t("userMenu.logout")}</MenuItem>
       </MenuList>
     </Menu>

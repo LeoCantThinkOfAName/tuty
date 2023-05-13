@@ -13,10 +13,11 @@ export const Header: FC<HeaderProps> = () => {
 
   return (
     <Flex
-      boxShadow="md"
-      h="20"
       justifyContent="space-between"
       alignItems="center"
+      position="sticky"
+      boxShadow="md"
+      minH="20"
       px="5"
     >
       <Text as="h1" fontSize="2xl" fontWeight="bold">

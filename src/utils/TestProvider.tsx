@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FC, PropsWithChildren } from "react";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 
@@ -17,8 +18,14 @@ await i18next.use(initReactI18next).init({
 
 export const TestProvider: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <ChakraProvider theme={theme}>
-      <I18nextProvider i18n={i18next}>{children}</I18nextProvider>
-    </ChakraProvider>
+    <BrowserRouter>
+      <ChakraProvider theme={theme}>
+        <I18nextProvider i18n={i18next}>
+          <Routes>
+            <Route path="/" element={<>{children}</>} />
+          </Routes>
+        </I18nextProvider>
+      </ChakraProvider>
+    </BrowserRouter>
   );
 };

@@ -70,5 +70,13 @@
         "myAccount": "我的帳號",
         "myPosts": "我的貼文",
         "bookmarked": "收藏的貼文"
+    },
+    "sideBar": {
+        "searchInput": {
+            "placeholder": "搜尋貼文"
+        }
+    },
+    "routes": {
+        "privacyPolicy": "隱私權政策"
     }
 }

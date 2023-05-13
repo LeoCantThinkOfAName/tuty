@@ -34,7 +34,11 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
       h="100%"
       boxShadow="md"
     >
-      <Input type="text" placeholder={t("search")} mb="5" />
+      <Input
+        type="text"
+        placeholder={t("sideBar.searchInput.placeholder")}
+        mb="5"
+      />
 
       <Flex flex="1" flexDir="column">
         <Accordion defaultIndex={defaultIndex}>
@@ -83,7 +87,7 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
       </Flex>
 
       <Link as={RouterLink} to="" color="gray.500">
-        Privacy Policy
+        {t("routes.privacyPolicy")}
       </Link>
     </Flex>
   );

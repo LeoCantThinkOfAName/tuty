@@ -15,5 +15,6 @@ export default defineConfig({
       provider: "istanbul",
       reporter: ["json", "html-spa", "json-summary", "lcov"],
     },
+    setupFiles: ["./globalSetup/matchMedia.ts"],
   },
 });

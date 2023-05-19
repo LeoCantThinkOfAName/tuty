@@ -4,7 +4,7 @@ import { FC, PropsWithChildren } from "react";
 import { Header } from "../components/Header";
 import { Outlet } from "react-router-dom";
 import { SideBar } from "../components/SideBar";
-import { mainMenu } from "../routes/mainMenu";
+import mainMenu from "../routes/mainMenu.json";
 
 export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
   return (

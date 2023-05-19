@@ -73,7 +73,7 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
                     }}
                     display="block"
                     as={NavLink}
-                    p="3"
+                    p="2"
                     pl="8"
                     to={generatePath("/search/:term", { term: t(link.path) })}
                   >

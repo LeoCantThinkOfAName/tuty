@@ -12,21 +12,24 @@ export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex
-      justifyContent="space-between"
-      alignItems="center"
-      position="sticky"
-      boxShadow="md"
-      minH="20"
-      px="5"
-    >
-      <Text as="h1" fontSize="2xl" fontWeight="bold">
-        <RouterLink to="/">TUTY</RouterLink>
-      </Text>
-      <Flex alignItems="center">
-        <HeaderLink to="/">{t("headerMenu.createPost")}</HeaderLink>
-        <HeaderLink to="/">{t("headerMenu.message")}</HeaderLink>
-        <UserMenu />
+    <Flex position="sticky" boxShadow="md">
+      <Flex
+        justifyContent="space-between"
+        alignItems="center"
+        minH={["16", "20"]}
+        px="5"
+        maxW="container.lg"
+        width="full"
+        mx="auto"
+      >
+        <Text as="h1" fontSize="2xl" fontWeight="bold">
+          <RouterLink to="/">TUTY</RouterLink>
+        </Text>
+        <Flex alignItems="center">
+          <HeaderLink to="/">{t("headerMenu.createPost")}</HeaderLink>
+          <HeaderLink to="/">{t("headerMenu.message")}</HeaderLink>
+          <UserMenu />
+        </Flex>
       </Flex>
     </Flex>
   );

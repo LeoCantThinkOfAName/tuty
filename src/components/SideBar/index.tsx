@@ -10,7 +10,7 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
-import { NavLink, Link as RouterLink } from "react-router-dom";
+import { NavLink, Link as RouterLink, generatePath } from "react-router-dom";
 
 import { FC } from "react";
 import { useTranslation } from "react-i18next";
@@ -50,7 +50,7 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
             >
               <AccordionButton _hover={{ bg: "initial" }}>
                 <Text fontWeight="bold" w="100%" textAlign="left" fontSize="lg">
-                  {item.category}
+                  {t(item.category)}
                 </Text>
                 <AccordionIcon />
               </AccordionButton>
@@ -75,9 +75,9 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
                     as={NavLink}
                     p="3"
                     pl="8"
-                    to={link.path}
+                    to={generatePath("/search/:term", { term: t(link.path) })}
                   >
-                    {link.title}
+                    {t(link.title)}
                   </Link>
                 ))}
               </AccordionPanel>

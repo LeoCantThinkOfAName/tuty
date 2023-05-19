@@ -13,6 +13,7 @@ import {
 import { NavLink, Link as RouterLink, generatePath } from "react-router-dom";
 
 import { FC } from "react";
+import { PATHS } from "../../constants";
 import { useTranslation } from "react-i18next";
 
 interface SideBarProps extends Pick<AccordionProps, "defaultIndex"> {
@@ -75,7 +76,7 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
                     as={NavLink}
                     p="2"
                     pl="8"
-                    to={generatePath("/search/:term", { term: t(link.path) })}
+                    to={generatePath(PATHS.SEARCH, { term: t(link.path) })}
                   >
                     {t(link.title)}
                   </Link>

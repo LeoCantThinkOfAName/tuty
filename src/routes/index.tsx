@@ -1,18 +1,19 @@
 import { MainLayout } from "../layouts/MainLayout";
+import { PATHS } from "../constants";
 import { SearchPage } from "../pages/Search";
 import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
   {
-    path: "/",
+    path: PATHS.ROOT,
     element: <MainLayout />,
     children: [
       {
-        path: "/",
+        path: PATHS.ROOT,
         element: <SearchPage />,
       },
       {
-        path: "/search/:term",
+        path: PATHS.SEARCH,
         element: <SearchPage />,
       },
     ],

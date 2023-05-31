@@ -1,6 +1,8 @@
+import { CreatePostPage } from "../pages/CreatePost";
 import { MainLayout } from "../layouts/MainLayout";
 import { PATHS } from "../constants";
 import { SearchPage } from "../pages/Search";
+import { SimpleLayout } from "../layouts/SimpleLayout";
 import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
@@ -17,5 +19,10 @@ export const routes = createBrowserRouter([
         element: <SearchPage />,
       },
     ],
+  },
+  {
+    path: PATHS.CREATE_POST,
+    element: <SimpleLayout />,
+    children: [{ path: PATHS.CREATE_POST, element: <CreatePostPage /> }],
   },
 ]);

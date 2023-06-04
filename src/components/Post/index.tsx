@@ -3,15 +3,23 @@ import { FC } from "react";
 import { PostBody } from "./PostBody";
 import { PostFooter } from "./PostFooter";
 import { PostHeader } from "./PostHeader";
+import { usePosts } from "../../services/usePosts";
 
-interface PostProps {}
+interface PostProps {
+  data: NonNullable<ReturnType<typeof usePosts>["data"]>[number];
+}
 
-export const Post: FC<PostProps> = () => {
+export const Post: FC<PostProps> = ({ data }) => {
   return (
     <Card role="article">
-      <PostHeader userName="" jobTitle="" category="" date={new Date()} />
-      <PostBody content="" />
-      <PostFooter />
+      <PostHeader
+        userName={data.author!.name}
+        jobTitle={data.author!.title}
+        category={data.category!.name}
+        date={new Date(data.createdAt)}
+      />
+      <PostBody content={data.content} />
+      <PostFooter tags={data.tags ?? []} />
     </Card>
   );
 };

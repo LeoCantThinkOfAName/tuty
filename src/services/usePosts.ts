@@ -1,7 +1,5 @@
 import { QueryFunctionContext, useInfiniteQuery } from "@tanstack/react-query";
 
-import { Database } from "../types/database.types";
-import { PostgrestFilterBuilder } from "@supabase/postgrest-js";
 import { getNextPageParam } from "../utils/getNextPage";
 import { supabase } from "./clients";
 

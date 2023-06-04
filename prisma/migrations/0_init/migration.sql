@@ -4,6 +4,9 @@ CREATE SCHEMA IF NOT EXISTS "auth";
 -- CreateSchema
 CREATE SCHEMA IF NOT EXISTS "public";
 
+-- CreateSchema
+CREATE SCHEMA IF NOT EXISTS "storage";
+
 -- CreateEnum
 CREATE TYPE "auth"."aal_level" AS ENUM ('aal1', 'aal2', 'aal3');
 

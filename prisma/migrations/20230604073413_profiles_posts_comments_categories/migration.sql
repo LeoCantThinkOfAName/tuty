@@ -55,6 +55,9 @@ CREATE TABLE "public"."categories" (
     CONSTRAINT "categories_pkey" PRIMARY KEY ("id")
 );
 
+-- CreateIndex
+CREATE UNIQUE INDEX "categories_name_key" ON "public"."categories"("name");
+
 -- AddForeignKey
 ALTER TABLE "public"."profiles" ADD CONSTRAINT "profiles_userId_fkey" FOREIGN KEY ("userId") REFERENCES "auth"."users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 

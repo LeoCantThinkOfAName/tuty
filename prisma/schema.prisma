@@ -326,7 +326,7 @@ model profiles {
 model posts {
   id         String     @id @default(uuid()) @db.Uuid
   content    String     @db.VarChar()
-  authorId   String     @db.Uuid()
+  authorId   String     @db.Uuid
   author     profiles   @relation(fields: [authorId], references: [id])
   categoryId Int        @db.Integer
   category   categories @relation(fields: [categoryId], references: [id])
@@ -338,8 +338,8 @@ model posts {
   label      Json?      @db.Json()
 
   createdAt DateTime   @default(now()) @db.Timestamptz(6)
-  updatedAt DateTime   @default(now()) @db.Timestamptz(6)
-  deletedAt DateTime   @default(now()) @db.Timestamptz(6)
+  updatedAt DateTime?  @db.Timestamptz(6)
+  deletedAt DateTime?  @db.Timestamptz(6)
   comments  comments[]
 
   @@schema("public")
@@ -348,7 +348,7 @@ model posts {
 model comments {
   id       Int      @id @default(autoincrement())
   content  String   @db.VarChar()
-  authorId String   @db.Uuid()
+  authorId String   @db.Uuid
   author   profiles @relation(fields: [authorId], references: [id])
   postId   String   @db.Uuid()
   posts    posts?   @relation(fields: [postId], references: [id])
@@ -360,7 +360,7 @@ model comments {
 
 model categories {
   id    Int     @id @default(autoincrement())
-  name  String  @db.VarChar()
+  name  String  @unique @db.VarChar()
   posts posts[]
 
   @@schema("public")

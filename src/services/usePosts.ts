@@ -2,7 +2,12 @@ import { QueryFunctionContext, useInfiniteQuery } from "@tanstack/react-query";
 
 import { supabase } from "./clients";
 
-const queryFn = async (pageParam: number = 1, term: string) => {
+const queryFn = async ({
+  pageParam,
+  queryKey,
+}: QueryFunctionContext<[string, { term: string }], number>) => {
+  console.log(pageParam);
+  const term = queryKey[1].term;
   try {
     const query = supabase
       .from("posts")
@@ -13,10 +18,9 @@ const queryFn = async (pageParam: number = 1, term: string) => {
 
     if (!!term) query.textSearch("posts_fulltext", term);
 
-    const from = pageParam * 10;
-    const to = (pageParam + 1) * 10;
-    const { data, error } = await query.range(from, to);
-    if (data) return { data: data, nextPage: pageParam + 1 };
+    const from = (pageParam ? pageParam * 10 : 0) + 1;
+    const { data, error } = await query.range(from, from + 9);
+    if (data) return { data: data, nextPage: (pageParam || 0) + 1 };
     if (error) throw error;
   } catch (error) {
     console.error(error);
@@ -31,30 +35,7 @@ const getNextPageParam = (lastPage: Awaited<ReturnType<typeof queryFn>>) => {
 export const usePosts = (term: string) => {
   return useInfiniteQuery({
     queryKey: ["posts", { term }],
-    queryFn: async ({
-      pageParam,
-      queryKey,
-    }: QueryFunctionContext<[string, { term: string }], number>) => {
-      console.log(pageParam);
-      const term = queryKey[1].term;
-      try {
-        const query = supabase
-          .from("posts")
-          .select(
-            "*, author:profiles (id, name, img, title), category:categories (*)",
-          )
-          .order("createdAt", { ascending: false });
-
-        if (!!term) query.textSearch("posts_fulltext", term);
-
-        const from = (pageParam ? pageParam * 10 : 0) + 1;
-        const { data, error } = await query.range(from, from + 9);
-        if (data) return { data: data, nextPage: (pageParam || 0) + 1 };
-        if (error) throw error;
-      } catch (error) {
-        console.error(error);
-      }
-    },
+    queryFn,
     getNextPageParam,
   });
 };

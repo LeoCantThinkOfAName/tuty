@@ -1,8 +1,7 @@
 import { FC, KeyboardEventHandler, useState } from "react";
-import { FormControl, FormLabel } from "@chakra-ui/react";
+import { FormControl, FormLabel, InputProps } from "@chakra-ui/react";
 
 import CreatableSelect from "react-select/creatable";
-import { InputProps } from "@chakra-ui/react";
 import { MultiValue } from "react-select";
 
 interface LabelFieldProps extends InputProps {}
@@ -41,7 +40,7 @@ export const LabelField: FC<LabelFieldProps> = ({
 
   const checkValidity = (newValue: string) => {
     const isDuplicated = value.find((obj) => obj.value === newValue);
-    if (isDuplicated) false;
+    if (isDuplicated) return false;
     return true;
   };
 

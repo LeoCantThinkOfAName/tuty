@@ -24,10 +24,7 @@ export const LoginForm: FC<LoginFormProps> = () => {
   return (
     <>
       <OAuthOptions mode="login" />
-      <form
-        onSubmit={(event) => void handleSubmit(onSubmit)(event)}
-        role="form"
-      >
+      <form onSubmit={void handleSubmit(onSubmit)} role="form">
         <FormControl>
           <FormLabel>{t("auth.signup.email.label")}</FormLabel>
           <Input

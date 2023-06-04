@@ -7,7 +7,6 @@ import { FormErrorMessage } from "@chakra-ui/react";
 import { FormWrapper } from "../FormWrapper";
 import { InputField } from "../fields/InputField";
 import { RateField } from "../fields/RateField";
-import { TextareaField } from "../fields/TextareaField";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 export const TutorForm: FC = () => {
@@ -29,7 +28,7 @@ export const TutorForm: FC = () => {
   if (formType !== "find_student" && formType !== "find_tutor") return null;
   return (
     <FormProvider {...methods}>
-      <FormWrapper onSubmit={methods.handleSubmit(onSubmit)}>
+      <FormWrapper onSubmit={void methods.handleSubmit(onSubmit)}>
         <InputField name="subject" />
         <RateField isInvalid={!!methods.formState.errors.rate}>
           <FormErrorMessage>hello</FormErrorMessage>

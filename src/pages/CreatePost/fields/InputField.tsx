@@ -14,10 +14,7 @@ export const InputField: FC<InputFieldProps> = ({
   isRequired,
   isInvalid,
 }) => {
-  const {
-    register,
-    formState: { errors },
-  } = useFormContext();
+  const { register } = useFormContext();
 
   return (
     <FormControl isRequired={isRequired} isInvalid={isInvalid}>

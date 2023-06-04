@@ -16,7 +16,7 @@ export const SearchPage: FC = () => {
           <Post key={pageData.id} data={pageData} />
         )),
       )}
-      <Button onClick={() => fetchNextPage()}>click</Button>
+      <Button onClick={() => void fetchNextPage()}>click</Button>
     </>
   );
 };

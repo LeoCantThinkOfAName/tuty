@@ -139,10 +139,13 @@ const posts: Prisma.postsUncheckedCreateInput[] = new Array(100)
       profiles.map((profile) => profile.id),
     ) as string,
     categoryId: faker.helpers.arrayElement([1, 2, 3, 4]),
-    content: faker.lorem.paragraphs({
-      min: 2,
-      max: 10,
-    }),
+    content: faker.lorem.paragraphs(
+      {
+        min: 2,
+        max: 10,
+      },
+      "<br/>\n",
+    ),
     location: faker.location.city(),
     subject: faker.lorem.words({ min: 1, max: 3 }),
     createdAt: faker.date.between({

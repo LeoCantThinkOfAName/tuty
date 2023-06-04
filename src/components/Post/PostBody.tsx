@@ -14,9 +14,11 @@ export const PostBody: FC<PostBodyProps> = ({ content }) => {
 
   return (
     <CardBody>
-      <Box maxH={fold ? "48" : "100%"} overflow="hidden">
-        {content}
-      </Box>
+      <Box
+        maxH={fold ? "48" : "100%"}
+        overflow="hidden"
+        dangerouslySetInnerHTML={{ __html: content }}
+      />
       <Button size="xs" borderRadius="full" mt="3" px="3" onClick={foldPost}>
         {fold ? t("post.unfold") : t("post.fold")}
       </Button>

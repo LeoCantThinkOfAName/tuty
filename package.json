@@ -17,7 +17,8 @@
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
     "predeploy": "npm run build-storybook",
-    "deploy:storybook": "gh-pages -d storybook-static"
+    "deploy:storybook": "gh-pages -d storybook-static",
+    "seed": "yarn prisma db seed"
   },
   "dependencies": {
     "@chakra-ui/react": "^2.5.5",

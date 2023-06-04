@@ -1,6 +1,6 @@
 import { Button, Flex, Textarea } from "@chakra-ui/react";
+import { FC, FormEvent, useCallback } from "react";
 
-import { FC } from "react";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
@@ -22,13 +22,13 @@ export const CommentSection: FC<CommentSectionProps> = ({
     defaultValues,
   });
 
+  const submitHandler = useCallback(
+    (event: FormEvent<HTMLDivElement>) => void handleSubmit(onSubmit)(event),
+    [onSubmit],
+  );
+
   return (
-    <Flex
-      w="100%"
-      flexDir="column"
-      as="form"
-      onSubmit={(event) => void handleSubmit(onSubmit)(event)}
-    >
+    <Flex w="100%" flexDir="column" as="form" onSubmit={submitHandler}>
       <Textarea
         w="100%"
         minH="36"

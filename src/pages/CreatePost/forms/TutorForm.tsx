@@ -1,4 +1,4 @@
-import { FC, useContext } from "react";
+import { FC, FormEvent, useContext } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import { basicDefaultValues, tutorSchema } from "./schema";
 
@@ -21,14 +21,13 @@ export const TutorForm: FC = () => {
   });
   const formType = useContext(CreatePostContext);
 
-  const onSubmit = (data: unknown) => {
-    console.log(data);
-  };
+  const submitHandler = (event: FormEvent<HTMLFormElement>) =>
+    void methods.handleSubmit((data) => console.log(data))(event);
 
   if (formType !== "find_student" && formType !== "find_tutor") return null;
   return (
     <FormProvider {...methods}>
-      <FormWrapper onSubmit={void methods.handleSubmit(onSubmit)}>
+      <FormWrapper onSubmit={submitHandler}>
         <InputField name="subject" />
         <RateField isInvalid={!!methods.formState.errors.rate}>
           <FormErrorMessage>hello</FormErrorMessage>

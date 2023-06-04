@@ -1,12 +1,14 @@
 import { QueryFunctionContext, useInfiniteQuery } from "@tanstack/react-query";
 
+import { Database } from "../types/database.types";
+import { PostgrestFilterBuilder } from "@supabase/postgrest-js";
+import { getNextPageParam } from "../utils/getNextPage";
 import { supabase } from "./clients";
 
 const queryFn = async ({
   pageParam,
   queryKey,
 }: QueryFunctionContext<[string, { term: string }], number>) => {
-  console.log(pageParam);
   const term = queryKey[1].term;
   try {
     const query = supabase
@@ -25,11 +27,6 @@ const queryFn = async ({
   } catch (error) {
     console.error(error);
   }
-};
-
-const getNextPageParam = (lastPage: Awaited<ReturnType<typeof queryFn>>) => {
-  if (lastPage?.data.length !== 10) return undefined;
-  else return lastPage.nextPage;
 };
 
 export const usePosts = (term: string) => {

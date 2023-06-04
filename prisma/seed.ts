@@ -145,8 +145,11 @@ const posts: Prisma.postsUncheckedCreateInput[] = new Array(100)
     }),
     location: faker.location.city(),
     subject: faker.lorem.words({ min: 1, max: 3 }),
-    createdAt: new Date(),
-    label: faker.helpers.arrayElements(subjects, { min: 0, max: 5 }),
+    createdAt: faker.date.between({
+      from: new Date("2023/01/01"),
+      to: new Date(),
+    }),
+    tags: faker.helpers.arrayElements(subjects, { min: 0, max: 5 }),
     objective: faker.helpers.arrayElement(subjects),
     rateType: faker.helpers.arrayElement([
       "day",

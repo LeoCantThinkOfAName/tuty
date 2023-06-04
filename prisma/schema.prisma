@@ -335,7 +335,7 @@ model posts {
   objective  String?    @db.VarChar()
   rateType   rate_type?
   rate       Int?
-  label      Json?      @db.Json()
+  tags       String[]   @db.VarChar()
 
   createdAt DateTime   @default(now()) @db.Timestamptz(6)
   updatedAt DateTime?  @db.Timestamptz(6)

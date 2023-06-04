@@ -12,7 +12,7 @@ export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex position="sticky" boxShadow="md">
+    <Flex position="sticky" boxShadow="md" zIndex="999">
       <Flex
         justifyContent="space-between"
         alignItems="center"

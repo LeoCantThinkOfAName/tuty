@@ -11,10 +11,10 @@ interface PostProps {
 
 export const Post: FC<PostProps> = ({ data }) => {
   return (
-    <Card role="article">
+    <Card role="article" mb="5" boxShadow="md">
       <PostHeader
         userName={data.author!.name}
-        jobTitle={data.author!.title}
+        jobTitle={data.author!.title ?? ""}
         category={data.category!.name}
         date={new Date(data.createdAt)}
       />

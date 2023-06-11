@@ -4,6 +4,7 @@ on:
       - main
 jobs:
   sonarcloud:
+    environment: development
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
@@ -16,9 +17,13 @@ jobs:
       with:
         node-version: 18.12.1
     - name: Execute unit test
+      env:
+        VITE_SUPABASE_URL: ${{ vars.VITE_SUPABASE_URL }}
+        VITE_SUPABASE_API_BASE: ${{ vars.VITE_SUPABASE_API_BASE }}
+        VITE_SUPABASE_KEY: ${{ vars.VITE_SUPABASE_KEY }}
       run: |
-        npm install
-        npm run coverage
+        yarn
+        yarn coverage
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:
@@ -40,8 +45,8 @@ jobs:
           cp -r src/locales public
       - name: build storybook
         run: |
-          npm install
-          STORYBOOK_MODE=PRODUCTION npm run build-storybook
+          yarn install
+          STORYBOOK_MODE=PRODUCTION yarn build-storybook
       - name: GitHub Pages action
         uses: peaceiris/actions-gh-pages@v3.9.3
         with:

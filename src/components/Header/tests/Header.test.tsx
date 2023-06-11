@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { Header } from "../index";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 
 describe("Header", () => {
   afterEach(() => {
@@ -12,7 +12,7 @@ describe("Header", () => {
 
   test("Should render", () => {
     render(<Header />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(screen.getByText("TUTY")).toBeTruthy();
   });

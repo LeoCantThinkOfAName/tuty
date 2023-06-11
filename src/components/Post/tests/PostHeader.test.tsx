@@ -4,7 +4,7 @@ import { cleanup, render, screen } from "@testing-library/react";
 
 import { Card } from "@chakra-ui/react";
 import { PostHeader } from "../PostHeader";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 import i18next from "i18next";
 
 describe("PostHeader", () => {
@@ -19,7 +19,7 @@ describe("PostHeader", () => {
         <PostHeader category="" date={new Date()} userName="" jobTitle="" />
       </Card>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     expect(screen.getByRole("img")).toBeTruthy();
@@ -37,7 +37,7 @@ describe("PostHeader", () => {
         </Card>
       </I18nextProvider>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     // 少於 1 分鐘
@@ -56,7 +56,7 @@ describe("PostHeader", () => {
         </Card>
       </I18nextProvider>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     // less than a minute

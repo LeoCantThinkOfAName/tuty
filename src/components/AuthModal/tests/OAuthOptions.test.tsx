@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { OAuthOptions } from "../OAuthOptions";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 
 describe("OAuthOptions", () => {
   afterEach(() => {
@@ -12,7 +12,7 @@ describe("OAuthOptions", () => {
 
   test("Should render", () => {
     render(<OAuthOptions mode="login" />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(screen.getAllByRole("button")).toHaveLength(3);
   });

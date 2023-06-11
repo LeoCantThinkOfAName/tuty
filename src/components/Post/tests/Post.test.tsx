@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { Post } from "../index";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 
 const mockData = {
   id: "823fc79e-accb-4f8b-84a1-acbc2e880c84",
@@ -39,7 +39,7 @@ describe("Post", () => {
 
   test("Should render", () => {
     render(<Post data={mockData} />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(screen.getByRole("article")).toBeTruthy();
   });

@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render } from "@testing-library/react";
 
 import { StoryLayout } from "../StoryLayout";
-import { TestProvider } from "../../utils/TestProvider";
+import { createWrapper } from "../../utils/createWrapper";
 
 describe("StoryLayout", () => {
   afterEach(() => {
@@ -12,7 +12,7 @@ describe("StoryLayout", () => {
 
   test("Should render", () => {
     const { container } = render(<StoryLayout />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(container).toBeTruthy();
   });

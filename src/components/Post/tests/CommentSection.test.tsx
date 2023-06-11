@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { CommentSection } from "../CommentSection";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 import userEvent from "@testing-library/user-event";
 
 const mockSubmit = vi.fn();
@@ -15,7 +15,7 @@ describe("CommentSection", () => {
 
   test("Should render", () => {
     render(<CommentSection onCancel={() => {}} onSubmit={mockSubmit} />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(screen.getByRole("textbox")).toBeTruthy();
   });
@@ -24,7 +24,7 @@ describe("CommentSection", () => {
     const { container } = render(
       <CommentSection onCancel={() => {}} onSubmit={mockSubmit} />,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     await userEvent.click(screen.getByRole("textbox"));

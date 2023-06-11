@@ -1,9 +1,9 @@
+import { act, cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
 
 import { Card } from "@chakra-ui/react";
 import { PostBody } from "../PostBody";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 import userEvent from "@testing-library/user-event";
 
 describe("PostBody", () => {
@@ -18,7 +18,7 @@ describe("PostBody", () => {
         <PostBody content="" />
       </Card>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     expect(screen.getByRole("button")).toBeTruthy();
@@ -30,12 +30,12 @@ describe("PostBody", () => {
         <PostBody content="" />
       </Card>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     const btn = screen.getByRole("button");
     const origText = btn.textContent;
-    await userEvent.click(btn);
+    await act(async () => userEvent.click(btn));
     expect(btn.textContent).not.toBe(origText);
   });
 });

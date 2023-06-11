@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { SideBar } from "../index";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 
 describe("SideBar", () => {
   afterEach(() => {
@@ -12,7 +12,7 @@ describe("SideBar", () => {
 
   test("Should render", () => {
     render(<SideBar />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(screen.getByRole("textbox")).toBeTruthy();
   });

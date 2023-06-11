@@ -2,7 +2,7 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { AuthModal } from "..";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 
 describe("AuthModal", () => {
   afterEach(() => {
@@ -12,7 +12,7 @@ describe("AuthModal", () => {
 
   test("Should render", () => {
     render(<AuthModal isOpen={true} onClose={() => {}} />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
 
     expect(screen.getByRole("dialog")).toBeTruthy();

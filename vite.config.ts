@@ -10,11 +10,12 @@ export default defineConfig({
     },
   },
   test: {
+    globals: true,
     environment: "jsdom",
     coverage: {
       provider: "istanbul",
       reporter: ["json", "html-spa", "json-summary", "lcov"],
     },
-    setupFiles: ["./globalSetup/matchMedia.ts"],
+    setupFiles: ["./src/globalSetup/matchMedia.ts"],
   },
 });

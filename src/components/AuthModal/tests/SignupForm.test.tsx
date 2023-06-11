@@ -1,8 +1,8 @@
+import { act, cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
 
 import { SignupForm } from "../SignupForm";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 import userEvent from "@testing-library/user-event";
 
 describe("SignupForm", () => {
@@ -13,14 +13,14 @@ describe("SignupForm", () => {
 
   test("Should render", () => {
     render(<SignupForm />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     expect(screen.getByRole("form")).toBeTruthy();
   });
 
   test("Should able to submit", async () => {
     const { container } = render(<SignupForm />, {
-      wrapper: TestProvider,
+      wrapper: createWrapper(),
     });
     const emailField = container.querySelector(
       'input[name="email"]',
@@ -34,13 +34,13 @@ describe("SignupForm", () => {
     const submitBtn = container.querySelector(
       'button[type="submit"]',
     ) as HTMLButtonElement;
-    await userEvent.click(emailField);
-    await userEvent.keyboard("test@email.com");
-    await userEvent.click(passwordField);
-    await userEvent.keyboard("myFakePassword");
-    await userEvent.click(passwordValidationField);
-    await userEvent.keyboard("myFakePassword");
-    await userEvent.click(submitBtn);
+    await act(async () => userEvent.click(emailField));
+    await act(async () => userEvent.keyboard("test@email.com"));
+    await act(async () => userEvent.click(passwordField));
+    await act(async () => userEvent.keyboard("myFakePassword"));
+    await act(async () => userEvent.click(passwordValidationField));
+    await act(async () => userEvent.keyboard("myFakePassword"));
+    await act(async () => userEvent.click(submitBtn));
     expect(screen.getByRole("form")).toBeTruthy();
   });
 });

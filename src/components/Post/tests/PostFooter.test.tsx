@@ -1,9 +1,9 @@
+import { act, cleanup, render, screen } from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
-import { cleanup, render, screen } from "@testing-library/react";
 
 import { Card } from "@chakra-ui/react";
 import { PostFooter } from "../PostFooter";
-import { TestProvider } from "../../../utils/TestProvider";
+import { createWrapper } from "../../../utils/createWrapper";
 import userEvent from "@testing-library/user-event";
 
 describe("PostFooter", () => {
@@ -18,7 +18,7 @@ describe("PostFooter", () => {
         <PostFooter />
       </Card>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     expect(screen.getAllByRole("button")).toHaveLength(4);
@@ -30,12 +30,12 @@ describe("PostFooter", () => {
         <PostFooter />
       </Card>,
       {
-        wrapper: TestProvider,
+        wrapper: createWrapper(),
       },
     );
     const allBtns = screen.getAllByRole("button");
     const commentBtn = allBtns[allBtns.length - 1];
-    await userEvent.click(commentBtn);
+    await act(async () => userEvent.click(commentBtn));
     expect(screen.getByRole("textbox")).toBeTruthy();
   });
 });

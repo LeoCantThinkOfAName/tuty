@@ -1,7 +1,7 @@
 import { QueryFunctionContext, useInfiniteQuery } from "@tanstack/react-query";
 
 import { getNextPageParam } from "../utils/getNextPage";
-import { supabase } from "./clients";
+import { supabase } from "./supabaseClient";
 
 const queryFn = async ({
   pageParam,
@@ -16,7 +16,7 @@ const queryFn = async ({
       )
       .order("createdAt", { ascending: false });
 
-    if (!term) query = query.textSearch("posts_fulltext", term);
+    if (term) query = query.textSearch("posts_fulltext", term);
 
     const from = (pageParam ? pageParam * 10 : 0) + 1;
     const { data, error } = await query.range(from, from + 9);
@@ -24,12 +24,13 @@ const queryFn = async ({
     if (error) throw error;
   } catch (error) {
     console.error(error);
+    throw error;
   }
 };
 
-export const usePosts = (term: string) => {
+export const usePosts = (term?: string) => {
   return useInfiniteQuery({
-    queryKey: ["posts", { term }],
+    queryKey: ["posts", { term: term ?? "" }],
     queryFn,
     getNextPageParam,
   });

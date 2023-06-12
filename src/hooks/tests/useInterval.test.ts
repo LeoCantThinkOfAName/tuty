@@ -4,7 +4,7 @@ import { cleanup } from "@testing-library/react";
 import { renderHook } from "@testing-library/react-hooks";
 import { useInterval } from "../useInterval";
 
-describe("useCountDown", () => {
+describe("useInterval", () => {
   afterEach(() => {
     cleanup();
     vi.restoreAllMocks();

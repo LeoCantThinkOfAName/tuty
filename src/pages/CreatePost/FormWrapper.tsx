@@ -17,7 +17,7 @@ export const FormWrapper: FC<FormWrapperProps> = ({ children, ...props }) => {
 
   return (
     <form {...props}>
-      <InputField name="location" isInvalid={!!errors.location}>
+      <InputField name="location" isRequired isInvalid={!!errors.location}>
         <FormErrorMessage>
           {t(errors.location?.message as string)}
         </FormErrorMessage>

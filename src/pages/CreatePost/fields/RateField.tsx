@@ -9,6 +9,7 @@ import {
   Select,
 } from "@chakra-ui/react";
 
+import { rateTypes } from "../forms/schema";
 import styled from "@emotion/styled";
 import { useFormContext } from "react-hook-form";
 
@@ -27,16 +28,21 @@ export const RateField: FC<RateFieldProps> = ({ children, isInvalid }) => {
     <FormControl isRequired isInvalid={isInvalid}>
       <FormLabel>Rate</FormLabel>
       <InputGroup>
-        <Input type="number" {...register("rate")} />
+        <Input
+          type="number"
+          {...register("rate", {
+            valueAsNumber: true,
+          })}
+        />
         <InputRightAddon
           p="0"
           children={
             <SelectorAddOn defaultValue="hour" {...register("rate_type")}>
-              <option value="hour">Per hour</option>
-              <option value="day">Per day</option>
-              <option value="week">Per week</option>
-              <option value="month">Per month</option>
-              <option value="year">Per year</option>
+              {rateTypes.map((rate) => (
+                <option value={rate} key={rate}>
+                  {rate}
+                </option>
+              ))}
             </SelectorAddOn>
           }
         />

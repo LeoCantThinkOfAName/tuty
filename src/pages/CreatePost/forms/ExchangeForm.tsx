@@ -1,26 +1,44 @@
-import { FC, FormEvent, useContext } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 
-import { CreatePostContext } from "..";
+import { FC } from "react";
 import { FormWrapper } from "../FormWrapper";
 import { InputField } from "../fields/InputField";
+import { basicDefaultValues } from "./schema";
+import { useCreatePostContext } from "../context";
+import { useSubmit } from "../useSubmit";
 
-interface ExchangeFormProps {}
+export interface ExchangeFormProps {
+  defaultValues?: {
+    location: string;
+    label?: string;
+    description: string;
+    provides: string;
+    acquires: string;
+  };
+}
 
-export const ExchangeForm: FC<ExchangeFormProps> = () => {
-  const methods = useForm();
-  const formType = useContext(CreatePostContext);
-
-  const submitHandler = (event: FormEvent<HTMLFormElement>) =>
-    void methods.handleSubmit((data) => console.log(data))(event);
+export const ExchangeForm: FC<ExchangeFormProps> = ({ defaultValues }) => {
+  const methods = useForm({
+    defaultValues,
+  });
+  const formType = useCreatePostContext();
+  const submit = useSubmit(methods);
 
   if (formType !== "skill_exchange") return null;
   return (
     <FormProvider {...methods}>
-      <FormWrapper onSubmit={submitHandler}>
-        <InputField name="provides" />
-        <InputField name="acquires" />
+      <FormWrapper onSubmit={submit}>
+        <InputField name="provides" isRequired />
+        <InputField name="acquires" isRequired />
       </FormWrapper>
     </FormProvider>
   );
+};
+
+ExchangeForm.defaultProps = {
+  defaultValues: {
+    ...basicDefaultValues,
+    provides: "",
+    acquires: "",
+  },
 };

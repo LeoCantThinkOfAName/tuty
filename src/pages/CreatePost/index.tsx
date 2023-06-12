@@ -1,18 +1,11 @@
-import { ChangeEvent, FC, createContext, useState } from "react";
+import { ChangeEvent, FC, useState } from "react";
+import { CreatePostContext, FormType } from "./context";
 
 import { ExchangeForm } from "./forms/ExchangeForm";
 import { Flex } from "@chakra-ui/react";
 import { StudyGroupForm } from "./forms/StudyGroupForm";
 import { TutorForm } from "./forms/TutorForm";
 import { TypeSelector } from "./fields/TypeSelector";
-
-type FormType =
-  | "find_tutor"
-  | "find_student"
-  | "skill_exchange"
-  | "study_group";
-
-export const CreatePostContext = createContext<FormType>("find_student");
 
 export const CreatePostPage: FC = () => {
   const [formType, setFormType] = useState<FormType>("find_tutor");

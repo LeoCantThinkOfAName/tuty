@@ -13,11 +13,9 @@ export default defineConfig({
     globals: true,
     environment: "jsdom",
     coverage: {
-      provider: "c8",
+      provider: "v8",
       reporter: ["json", "html", "json-summary", "lcov"],
-      src: ["./src"],
       exclude: ["**/*.stories.tsx", "**/types/**", "**/tests/**"],
-      all: true,
       enabled: true,
     },
     setupFiles: ["./src/globalSetup/matchMedia.ts"],

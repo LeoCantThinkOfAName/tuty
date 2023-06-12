@@ -85,7 +85,7 @@
     "vitest": "^0.31.0"
   },
   "resolutions": {
-    "nwsapi": "2.2.2"
+    "nwsapi": "2.2.5"
   },
   "prisma": {
     "seed": "ts-node --esm prisma/seed.ts"

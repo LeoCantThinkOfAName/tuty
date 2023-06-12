@@ -1,9 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { FormProvider, useForm } from "react-hook-form";
+import { FunctionComponent, PropsWithChildren, ReactElement } from "react";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import { ChakraProvider } from "@chakra-ui/react";
-import { ReactElement } from "react";
 import en from "../locales/en/translation.json";
 import i18next from "i18next";
 import { theme } from "../styles/theme";
@@ -41,3 +42,13 @@ export const createWrapper = () => {
     </QueryClientProvider>
   );
 };
+
+const FormWrapper: FunctionComponent<PropsWithChildren> = ({ children }) => {
+  const methods = useForm();
+  return <FormProvider {...methods}>{children}</FormProvider>;
+};
+
+export const createWrapperWithFormContext =
+  () =>
+  ({ children }: { children: ReactElement }) =>
+    createWrapper()({ children: <FormWrapper children={children} /> });

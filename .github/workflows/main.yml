@@ -23,7 +23,7 @@ jobs:
         VITE_SUPABASE_KEY: ${{ vars.VITE_SUPABASE_KEY }}
       run: |
         yarn
-        yarn coverage
+        yarn test:cov
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       env:

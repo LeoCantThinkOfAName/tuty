@@ -1,7 +1,0 @@
-import{j as r}from"./jsx-runtime-94f6e698.js";import{P as s}from"./PostFooter-8434589c.js";import{C as a}from"./chunk-S432VF2S-601b3971.js";import"./index-8db94870.js";import"./_commonjsHelpers-042e6b4d.js";import"./index.esm-6129cd4f.js";import"./chunk-NAA7TEES-53ea6f87.js";import"./chunk-QEVFQ4EU-a3d7fb96.js";import"./emotion-use-insertion-effect-with-fallbacks.browser.esm-ae8e40e8.js";import"./chunk-NO6MRLPK-03ceb9a2.js";import"./emotion-react.browser.esm-f90a39f7.js";import"./index-bf97d06a.js";import"./index.esm-47fb28b5.js";import"./useTranslation-64d6d4ca.js";import"./nonIterableRest-2831e270.js";import"./createClass-f5845647.js";import"./context-d5007dc3.js";import"./chunk-OEQDSMWZ-9605a99b.js";import"./chunk-IJBC3YLI-2bc934c3.js";import"./chunk-MPFPK3CX-c6316e4a.js";import"./chunk-IXKZFKRY-cd3f353d.js";import"./chunk-DKFDJSXF-19248ba0.js";import"./chunk-3ZTTLJBV-3e356021.js";const T={title:"Post/Post Footer",component:s,tags:["autodocs"],argTypes:{},decorators:[p=>r.jsx(a,{children:r.jsx(p,{})})]},o={args:{tags:["Hello","World"]},name:"Default"};var t,m,e;o.parameters={...o.parameters,docs:{...(t=o.parameters)==null?void 0:t.docs,source:{originalSource:`{
-  args: {
-    tags: ["Hello", "World"]
-  },
-  name: "Default"
-}`,...(e=(m=o.parameters)==null?void 0:m.docs)==null?void 0:e.source}}};const b=["Default"];export{o as Default,b as __namedExportsOrder,T as default};
-//# sourceMappingURL=PostFooter.stories-9d006d3e.js.map

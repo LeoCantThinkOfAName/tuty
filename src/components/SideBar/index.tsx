@@ -10,10 +10,10 @@ import {
   Link,
   Text,
 } from "@chakra-ui/react";
+import { HeaderHeight, PATHS } from "../../constants";
 import { NavLink, Link as RouterLink, generatePath } from "react-router-dom";
 
 import { FC } from "react";
-import { PATHS } from "../../constants";
 import { useTranslation } from "react-i18next";
 
 interface SideBarProps extends Pick<AccordionProps, "defaultIndex"> {
@@ -22,6 +22,8 @@ interface SideBarProps extends Pick<AccordionProps, "defaultIndex"> {
     items: { path: string; title: string }[];
   }[];
 }
+
+const headerH = HeaderHeight[HeaderHeight.length - 1] * 4 + "px";
 
 export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
   const { t } = useTranslation();
@@ -32,8 +34,9 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
       p="5"
       position="sticky"
       w="20rem"
-      h="100%"
       boxShadow="md"
+      top={headerH}
+      h={`calc(100vh - ${headerH})`}
     >
       <Input
         type="text"

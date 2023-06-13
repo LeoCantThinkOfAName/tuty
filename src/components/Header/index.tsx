@@ -1,6 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
 
 import { FC } from "react";
+import { HeaderHeight } from "../../constants";
 import { HeaderLink } from "./HeaderLink";
 import { Link as RouterLink } from "react-router-dom";
 import { UserMenu } from "./UserMenu";
@@ -12,11 +13,11 @@ export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation();
 
   return (
-    <Flex position="sticky" boxShadow="md" zIndex="999">
+    <Flex position="sticky" top="0" boxShadow="md" zIndex="999" bg="Background">
       <Flex
         justifyContent="space-between"
         alignItems="center"
-        minH={["16", "20"]}
+        minH={HeaderHeight}
         px="5"
         maxW="container.lg"
         width="full"

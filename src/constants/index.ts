@@ -5,3 +5,5 @@ export const PATHS = {
   SEARCH: "/search/:term",
   CREATE_POST: "/create-post",
 };
+
+export const HeaderHeight = [16, 20];

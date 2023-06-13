@@ -6,13 +6,14 @@ const config = {
     useSystemColorMode: false,
     global: () => ({
       "html, body": {
+        height: "100%",
+      },
+      body: {
         display: "flex",
         flexDirection: "column",
-        height: "100%",
       },
       "#root": {
         display: "flex",
-        minHeight: "100%",
         alignItems: "stretch",
         flexDirection: "column",
       },

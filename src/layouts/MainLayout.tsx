@@ -14,7 +14,7 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
         <Hide below="md">
           <SideBar menu={mainMenu} />
         </Hide>
-        <Box p="5" overflow="auto" flex="1">
+        <Box p="5" flex="1">
           {children}
           <Outlet />
         </Box>

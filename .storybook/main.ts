@@ -5,7 +5,7 @@ const config: StorybookConfig = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    // "@chakra-ui/storybook-addon",
+    "@chakra-ui/storybook-addon",
     "storybook-react-i18next",
     "@storybook/addon-mdx-gfm",
     "storybook-addon-react-router-v6",
@@ -25,6 +25,10 @@ const config: StorybookConfig = {
       propFilter: (prop) =>
         prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
     },
+  },
+  features: {
+    // @ts-ignore
+    emotionAlias: false,
   },
 };
 export default config;

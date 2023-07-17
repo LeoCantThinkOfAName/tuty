@@ -1,10 +1,9 @@
-import { ChakraProviderDecorator } from "@chakra-ui/storybook-addon/dist/feature/decorator/ChakraProviderDecorator";
 import type { Preview } from "@storybook/react";
 import i18n from "./i18n";
 import { theme } from "../src/styles/theme";
 import { withRouter } from "storybook-addon-react-router-v6";
 
-const decorators = [ChakraProviderDecorator, withRouter];
+const decorators = [withRouter];
 const preview: Preview = {
   globals: {
     locale: "zh",

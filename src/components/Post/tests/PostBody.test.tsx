@@ -6,6 +6,16 @@ import { PostBody } from "../PostBody";
 import { createWrapper } from "../../../utils/createWrapper";
 import userEvent from "@testing-library/user-event";
 
+const renderComponent = (content?: string, forceHide: boolean = false) =>
+  render(
+    <Card>
+      <PostBody content={content ?? ""} forceHide={forceHide} />
+    </Card>,
+    {
+      wrapper: createWrapper(),
+    },
+  );
+
 describe("PostBody", () => {
   afterEach(() => {
     cleanup();
@@ -13,26 +23,18 @@ describe("PostBody", () => {
   });
 
   test("Should render", () => {
-    render(
-      <Card>
-        <PostBody content="" />
-      </Card>,
-      {
-        wrapper: createWrapper(),
-      },
-    );
-    expect(screen.getByRole("button")).toBeTruthy();
+    renderComponent("Hello world");
+    expect(screen.getByText("Hello world")).toBeTruthy();
+  });
+
+  test("Should hide fold button when little or no content", async () => {
+    renderComponent();
+    expect(screen.queryByRole("button")).toBeFalsy();
   });
 
   test("Should able to toggle content fold/unfold", async () => {
-    render(
-      <Card>
-        <PostBody content="" />
-      </Card>,
-      {
-        wrapper: createWrapper(),
-      },
-    );
+    renderComponent("Hello world", true);
+
     const btn = screen.getByRole("button");
     const origText = btn.textContent;
     await act(async () => userEvent.click(btn));

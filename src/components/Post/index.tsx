@@ -3,10 +3,10 @@ import { FC } from "react";
 import { PostBody } from "./PostBody";
 import { PostFooter } from "./PostFooter";
 import { PostHeader } from "./PostHeader";
-import { usePosts } from "../../services/usePosts";
+import { Post as PostType } from "../../services/usePosts";
 
 interface PostProps {
-  data: NonNullable<ReturnType<typeof usePosts>["data"]>[number];
+  data: PostType;
 }
 
 export const Post: FC<PostProps> = ({ data }) => {

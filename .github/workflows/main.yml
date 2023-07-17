@@ -13,7 +13,7 @@ jobs:
         # Disabling shallow clone is recommended for improving relevancy of reporting
         fetch-depth: 0
     - name: Setup Node.js environment
-      uses: actions/setup-node@v3.6.0
+      uses: actions/setup-node@v3.7.0
       with:
         node-version: 18.12.1
     - name: Execute unit test
@@ -37,7 +37,7 @@ jobs:
         with:
           persist-credentials: false
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.6.0
+        uses: actions/setup-node@v3.7.0
         with:
           node-version: 18.12.1
       - name: copy locale files

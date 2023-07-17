@@ -8,8 +8,10 @@ import {
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 
 import { FC } from "react";
+import { useTranslation } from "react-i18next";
 
 export const ThemeToggle: FC = () => {
+  const { t } = useTranslation();
   const { colorMode, toggleColorMode } = useColorMode();
 
   const assignProps = (mode: ColorMode): ChakraProps => {
@@ -35,6 +37,7 @@ export const ThemeToggle: FC = () => {
       position="relative"
       onClick={toggleColorMode}
       data-group
+      title={t("headerMenu.toggleTheme")}
     >
       <>
         <Box as={BsFillSunFill} {...assignProps("light")} />

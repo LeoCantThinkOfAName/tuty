@@ -63,7 +63,8 @@
     "headerMenu": {
         "createPost": "發表文章",
         "message": "訊息",
-        "signupOrLogin": "註冊/登入"
+        "signupOrLogin": "註冊/登入",
+        "toggleTheme": "切換主題顏色"
     },
     "userMenu": {
         "logout": "登出",

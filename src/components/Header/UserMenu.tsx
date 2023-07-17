@@ -20,7 +20,7 @@ export const UserMenu: FC<UserMenuProps> = () => {
 
   return (
     <Menu>
-      <MenuButton>
+      <MenuButton type="button">
         <Avatar size="sm" />
       </MenuButton>
       <MenuList>

@@ -1,7 +1,7 @@
-import { FC, FormEvent } from "react";
-import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { basicDefaultValues, rateTypes, tutorSchema } from "./schema";
 
+import { FC } from "react";
 import { FormErrorMessage } from "@chakra-ui/react";
 import { FormWrapper } from "../FormWrapper";
 import { InputField } from "../fields/InputField";

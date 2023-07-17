@@ -6,4 +6,8 @@ export const PATHS = {
   CREATE_POST: "/create-post",
 };
 
+export const BaseUnit = 4;
+
 export const HeaderHeight = [16, 20];
+
+export const MaximumArticleHeight = 48;

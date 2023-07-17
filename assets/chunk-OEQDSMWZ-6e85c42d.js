@@ -1,2 +1,0 @@
-import{u as m}from"./chunk-IJBC3YLI-af4fa993.js";import{f as c,u as x,o as f,c as l,d as u}from"./chunk-QEVFQ4EU-04d6573c.js";import{j as h}from"./jsx-runtime-94f6e698.js";function p(e,s=[]){const t=Object.assign({},e);for(const a of s)a in t&&delete t[a];return t}var d=["h","minH","height","minHeight"],g=c((e,s)=>{const t=x("Textarea",e),{className:a,rows:r,...o}=f(e),n=m(o),i=r?p(t,d):t;return h.jsx(l.textarea,{ref:s,rows:r,...n,className:u("chakra-textarea",a),__css:i})});g.displayName="Textarea";export{g as T};
-//# sourceMappingURL=chunk-OEQDSMWZ-6e85c42d.js.map

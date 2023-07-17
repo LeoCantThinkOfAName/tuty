@@ -1,0 +1,2 @@
+import{_ as t}from"./typeof-7fd5df1e.js";function m(r,e){if(t(r)!=="object"||r===null)return r;var i=r[Symbol.toPrimitive];if(i!==void 0){var o=i.call(r,e||"default");if(t(o)!=="object")return o;throw new TypeError("@@toPrimitive must return a primitive value.")}return(e==="string"?String:Number)(r)}function a(r){var e=m(r,"string");return t(e)==="symbol"?e:String(e)}export{a as _};
+//# sourceMappingURL=toPropertyKey-377bf628.js.map

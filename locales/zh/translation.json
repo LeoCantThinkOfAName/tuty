@@ -58,12 +58,19 @@
             "cancel": "取消",
             "submit": "送出",
             "placeholder": "在此留言..."
+        },
+        "infoBlock": {
+            "objective": "想學的科目",
+            "subject": "擅長的科目",
+            "location": "地點",
+            "rate": "收費方式"
         }
     },
     "headerMenu": {
         "createPost": "發表文章",
         "message": "訊息",
-        "signupOrLogin": "註冊/登入"
+        "signupOrLogin": "註冊/登入",
+        "toggleTheme": "切換主題顏色"
     },
     "userMenu": {
         "logout": "登出",

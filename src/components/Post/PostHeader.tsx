@@ -9,8 +9,7 @@ import {
 
 import { FC } from "react";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
-import { useTranslation } from "react-i18next";
-import { zhTW } from "date-fns/locale";
+import { useLocale } from "../../hooks/useLocale";
 
 interface PostHeaderProps {
   userName: string;
@@ -25,10 +24,7 @@ export const PostHeader: FC<PostHeaderProps> = ({
   date,
   category,
 }) => {
-  const {
-    i18n: { language },
-  } = useTranslation();
-  const locale = language === "zh" ? zhTW : undefined;
+  const { localePkg } = useLocale();
 
   return (
     <CardHeader display="flex" alignItems="center">
@@ -46,7 +42,7 @@ export const PostHeader: FC<PostHeaderProps> = ({
         </Flex>
         <Flex justifyContent="end" flexWrap="wrap-reverse" alignItems="center">
           <Text fontSize="sm" color="gray.500">
-            {formatDistanceToNow(date, { locale })}
+            {formatDistanceToNow(date, { locale: localePkg })}
           </Text>
           <Tag borderRadius="full" variant="solid" colorScheme="green" ml="2">
             <TagLabel>{category}</TagLabel>

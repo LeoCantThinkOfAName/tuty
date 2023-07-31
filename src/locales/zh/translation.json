@@ -58,6 +58,12 @@
             "cancel": "取消",
             "submit": "送出",
             "placeholder": "在此留言..."
+        },
+        "infoBlock": {
+            "objective": "想學的科目",
+            "subject": "擅長的科目",
+            "location": "地點",
+            "rate": "收費方式"
         }
     },
     "headerMenu": {

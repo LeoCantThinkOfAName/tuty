@@ -1,7 +1,7 @@
 import { Flex, Text } from "@chakra-ui/react";
+import { HeaderHeight, PATHS } from "../../constants";
 
 import { FC } from "react";
-import { HeaderHeight } from "../../constants";
 import { HeaderLink } from "./HeaderLink";
 import { Link as RouterLink } from "react-router-dom";
 import { ThemeToggle } from "../ThemeToggle";
@@ -34,8 +34,10 @@ export const Header: FC<HeaderProps> = () => {
           <RouterLink to="/">TUTY</RouterLink>
         </Text>
         <Flex alignItems="center">
-          <HeaderLink to="/">{t("headerMenu.createPost")}</HeaderLink>
-          <HeaderLink to="/">{t("headerMenu.message")}</HeaderLink>
+          <HeaderLink to={PATHS.CREATE_POST}>
+            {t("headerMenu.createPost")}
+          </HeaderLink>
+          <HeaderLink to={PATHS.MESSAGES}>{t("headerMenu.message")}</HeaderLink>
           <ThemeToggle />
           <UserMenu />
         </Flex>

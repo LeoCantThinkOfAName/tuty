@@ -4,6 +4,7 @@ export const PATHS = {
   ROOT: "/",
   SEARCH: "/search/:term",
   CREATE_POST: "/create-post",
+  MESSAGES: "/messages",
 };
 
 export const BaseUnit = 4;

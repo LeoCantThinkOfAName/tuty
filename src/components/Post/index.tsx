@@ -18,7 +18,7 @@ export const Post: FC<PostProps> = ({ data }) => {
         category={data.category!.name}
         date={new Date(data.createdAt)}
       />
-      <PostBody content={data.content} />
+      <PostBody post={data} />
       <PostFooter tags={data.tags ?? []} />
     </Card>
   );

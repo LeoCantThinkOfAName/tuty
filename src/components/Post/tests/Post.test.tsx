@@ -2,32 +2,32 @@ import { afterEach, describe, expect, test, vi } from "vitest";
 import { cleanup, render, screen } from "@testing-library/react";
 
 import { Post } from "../index";
+import { Post as PostType } from "../../../services/usePosts";
 import { createWrapper } from "../../../utils/createWrapper";
 
-const mockData = {
-  id: "823fc79e-accb-4f8b-84a1-acbc2e880c84",
-  content:
-    "Corrupti iusto officiis veritatis error nulla ab. Rem doloremque placeat. Assumenda omnis eum quia iure.\nCommodi eos laboriosam maxime. Aut earum distinctio deserunt sit praesentium doloribus. Quibusdam totam in illum mollitia atque deleniti esse.\nAnimi facere architecto aspernatur illo illo. Occaecati rerum aliquam officia temporibus voluptatem perspiciatis facilis. Cumque veritatis saepe odit fuga aspernatur aliquid fuga at.\nReiciendis assumenda aliquam nobis distinctio hic minima pariatur. Architecto veniam facilis ipsam soluta eligendi quos. Laborum odio aliquam accusantium.\nExcepturi molestiae excepturi veritatis ducimus similique occaecati commodi autem. Perferendis laborum sint qui enim quaerat alias. Perferendis deserunt aperiam dolor minus consequuntur voluptatem dignissimos voluptatem.\nCupiditate illo occaecati facere dolor excepturi itaque. Et esse inventore laudantium voluptatum. Reiciendis repudiandae architecto fuga deleniti eum quasi.\nAssumenda minus quibusdam tempore vitae recusandae sit sed. Cum possimus dignissimos sed vitae maxime. In omnis nihil fugiat molestias corrupti tenetur quam neque cumque.\nCommodi repellat temporibus alias inventore eveniet. Dolor itaque ea error. Voluptate animi labore.",
-  authorId: "fa444ce5-797d-4312-994f-6ca766105635",
-  categoryId: 2,
-  location: "Cielocester",
-  subject: "incidunt",
-  objective: "烏克麗麗",
-  rateType: null,
-  rate: 1620,
-  createdAt: "2023-06-03T00:39:40.519+00:00",
+const post: PostType = {
+  id: "471bd698-7c4e-4527-a0fc-a8331383faf6",
+  content: "Hello world",
+  authorId: "40e826ce-cd9b-4184-b172-3ff2cdbcc3c7",
+  categoryId: 3,
+  location: "East Tommiefurt",
+  subject: "quidem quaerat",
+  objective: "投資理財",
+  rateType: "day",
+  rate: 1110,
+  createdAt: "2023-07-16T08:33:48.896+00:00",
   updatedAt: null,
   deletedAt: null,
-  tags: ["電腦繪圖"],
+  tags: ["PPT", "雅思"],
   author: {
-    id: "fa444ce5-797d-4312-994f-6ca766105635",
-    name: "Miss Francis Pollich",
+    id: "40e826ce-cd9b-4184-b172-3ff2cdbcc3c7",
+    name: "Jana Bednar",
     img: null,
-    title: "Direct Intranet Orchestrator",
+    title: "Corporate Intranet Administrator",
   },
   category: {
-    id: 2,
-    name: "FIND_STUDENT",
+    id: 3,
+    name: "STUDY_GROUP",
   },
 };
 
@@ -38,7 +38,7 @@ describe("Post", () => {
   });
 
   test("Should render", () => {
-    render(<Post data={mockData} />, {
+    render(<Post data={post} />, {
       wrapper: createWrapper(),
     });
     expect(screen.getByRole("article")).toBeTruthy();

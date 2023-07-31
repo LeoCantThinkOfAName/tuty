@@ -2,19 +2,22 @@ import { BaseUnit, MaximumArticleHeight } from "../../constants";
 import { Box, Button, CardBody } from "@chakra-ui/react";
 import { FC, useLayoutEffect, useRef, useState } from "react";
 
+import { InfoBlock } from "./InfoBlock";
+import { Post as PostType } from "../../services/usePosts";
 import { useTranslation } from "react-i18next";
 
 interface PostBodyProps {
-  content: string;
+  post: PostType;
   forceHide?: boolean;
 }
 
-export const PostBody: FC<PostBodyProps> = ({ content, forceHide }) => {
+export const PostBody: FC<PostBodyProps> = ({ post, forceHide }) => {
   const { t } = useTranslation();
   const articleRef = useRef<HTMLDivElement | null>(null);
   const [fold, setFold] = useState(false);
   const [foldable, setFoldable] = useState(false);
   const foldPost = () => setFold(!fold);
+  const { content, objective, subject, location, rate, rateType } = post;
 
   useLayoutEffect(() => {
     const article = articleRef.current;
@@ -27,6 +30,13 @@ export const PostBody: FC<PostBodyProps> = ({ content, forceHide }) => {
 
   return (
     <CardBody>
+      <InfoBlock
+        subject={subject}
+        objective={objective}
+        location={location}
+        rate={rate}
+        rateType={rateType}
+      />
       <Box
         ref={articleRef}
         maxH={fold ? MaximumArticleHeight : "100%"}

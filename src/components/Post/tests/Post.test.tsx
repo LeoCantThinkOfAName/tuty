@@ -5,7 +5,7 @@ import { Post } from "../index";
 import { Post as PostType } from "../../../services/usePosts";
 import { createWrapper } from "../../../utils/createWrapper";
 
-const post: PostType = {
+export const post: PostType = {
   id: "471bd698-7c4e-4527-a0fc-a8331383faf6",
   content: "Hello world",
   authorId: "40e826ce-cd9b-4184-b172-3ff2cdbcc3c7",

@@ -1,0 +1,2 @@
+import{c as f,f as a}from"./chunk-ZJJGQIVY-8a7b51cc.js";import{j as i}from"./jsx-runtime-ffb262ed.js";var n=f("div");n.displayName="Box";var o=a(function(e,r){const{size:s,centerContent:t=!0,...l}=e,x=t?{display:"flex",alignItems:"center",justifyContent:"center"}:{};return i.jsx(n,{ref:r,boxSize:s,__css:{...x,flexShrink:0,flexGrow:0},...l})});o.displayName="Square";var u=a(function(e,r){const{size:s,...t}=e;return i.jsx(o,{size:s,ref:r,borderRadius:"9999px",...t})});u.displayName="Circle";export{n as B};
+//# sourceMappingURL=chunk-PULVB27S-244cf609.js.map

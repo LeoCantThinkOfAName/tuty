@@ -37,11 +37,13 @@ export const SideBar: FC<SideBarProps> = ({ menu, defaultIndex }) => {
       boxShadow="md"
       top={headerH}
       h={`calc(100vh - ${headerH})`}
+      overflowY="auto"
     >
       <Input
         type="text"
         placeholder={t("sideBar.searchInput.placeholder")}
         mb="5"
+        minH="10"
       />
 
       <Flex flex="1" flexDir="column">

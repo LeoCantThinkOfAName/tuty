@@ -2,7 +2,6 @@ import { Box, Text } from "@chakra-ui/react";
 
 import { FC } from "react";
 import { Post as PostType } from "../../services/usePosts";
-import { useLocale } from "../../hooks/useLocale";
 import { useTranslation } from "react-i18next";
 
 interface InfoProps {
@@ -27,8 +26,6 @@ export const InfoBlock: FC<InfoBlockProps> = ({
   subject,
 }) => {
   const { t } = useTranslation();
-  const { locale } = useLocale();
-  const intl = new Intl.DisplayNames(locale, { type: "dateTimeField" });
 
   return (
     <Box mb="2">
@@ -41,11 +38,12 @@ export const InfoBlock: FC<InfoBlockProps> = ({
       {location && (
         <Info title={t("post.infoBlock.location")} content={location} />
       )}
-      {rate && (
+      {rate && rateType && (
         <Box display="flex items-center">
-          <Info title={t("post.infoBlock.rate")} content={rate.toString()} />
-          <Text children="/" mx="1" />
-          <Text children={intl.of(rateType as string)} />
+          <Info
+            title={t("post.infoBlock.rate")}
+            content={t(`post.infoBlock.${rateType}`, { rate })}
+          />
         </Box>
       )}
     </Box>

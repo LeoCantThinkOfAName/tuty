@@ -63,7 +63,12 @@
             "objective": "想學的科目",
             "subject": "擅長的科目",
             "location": "地點",
-            "rate": "收費方式"
+            "rate": "收費方式",
+            "hour": "{{ rate }} / 每小時",
+            "day": "{{ rate }} / 每日",
+            "week": "{{ rate }} / 每週",
+            "month": "{{ rate }} / 每月",
+            "year": "{{ rate }} / 每年"
         }
     },
     "headerMenu": {

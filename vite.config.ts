@@ -18,6 +18,9 @@ export default defineConfig({
       exclude: ["**/*.stories.tsx", "**/types/**", "**/tests/**"],
       enabled: true,
     },
-    setupFiles: ["./src/globalSetup/matchMedia.ts"],
+    setupFiles: [
+      "./src/globalSetup/matchMedia.ts",
+      "./src/globalSetup/intersectionObserver.ts",
+    ],
   },
 });

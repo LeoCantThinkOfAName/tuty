@@ -10,11 +10,7 @@ interface InfoProps {
   content: string;
 }
 
-interface InfoBlockProps
-  extends Pick<
-    PostType,
-    "objective" | "subject" | "location" | "rate" | "rateType"
-  > {}
+interface InfoBlockProps extends Partial<PostType> {}
 
 const Info: FC<InfoProps> = ({ title, content }) => (
   <Box display="flex items-center">

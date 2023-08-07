@@ -42,6 +42,7 @@
     "post": {
         "fold": "收起貼文",
         "unfold": "展開貼文",
+        "before": "前",
         "placeholders": {
             "userName": "使用者",
             "userTitle": "使用者職稱"
@@ -64,11 +65,17 @@
             "subject": "擅長的科目",
             "location": "地點",
             "rate": "收費方式",
-            "hour": "{{ rate }} / 每小時",
-            "day": "{{ rate }} / 每日",
-            "week": "{{ rate }} / 每週",
-            "month": "{{ rate }} / 每月",
-            "year": "{{ rate }} / 每年"
+            "hour": "{{ currency }} {{ rate }} / 每小時",
+            "day": "{{ currency }} {{ rate }} / 每日",
+            "week": "{{ currency }} {{ rate }} / 每週",
+            "month": "{{ currency }} {{ rate }} / 每月",
+            "year": "{{ currency }} {{ rate }} / 每年"
+        },
+        "categories": {
+          "FIND_STUDENT": "找學生",
+          "FIND_TUTOR": "找家教",
+          "STUDY_GROUP": "讀書會",
+          "SKILL_EXCHANGE": "技能交換"
         }
     },
     "headerMenu": {
@@ -161,5 +168,9 @@
         "health" : "健康管理",
         "cooking" : "烹飪",
         "fortuneTelling" : "占卜"
+    },
+    "currencies": {
+      "usd": "美金",
+      "twd": "台幣"
     }
 }

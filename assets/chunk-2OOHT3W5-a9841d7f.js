@@ -1,0 +1,2 @@
+import{f as c,u as r,c as i}from"./chunk-ZJJGQIVY-8a7b51cc.js";import{o as n,c as m}from"./index-e1c9bcfd.js";import{c as x}from"./index-dfc77934.js";import{j as f}from"./jsx-runtime-ffb262ed.js";var l=c(function(a,t){const s=r("Text",a),{className:T,align:d,decoration:u,casing:N,...e}=n(a),o=x({textAlign:a.align,textDecoration:a.decoration,textTransform:a.casing});return f.jsx(i.p,{ref:t,className:m("chakra-text",a.className),...o,...e,__css:s})});l.displayName="Text";export{l as T};
+//# sourceMappingURL=chunk-2OOHT3W5-a9841d7f.js.map

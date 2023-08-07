@@ -3,9 +3,10 @@ import { QueryFunctionContext, useInfiniteQuery } from "@tanstack/react-query";
 import { getNextPageParam } from "../utils/getNextPage";
 import { supabase } from "./supabaseClient";
 
-export type Post = NonNullable<
-  Awaited<ReturnType<typeof queryFn>>
->["data"][number];
+export type Post = Omit<
+  NonNullable<Awaited<ReturnType<typeof queryFn>>>["data"][number],
+  "textSearch"
+>;
 
 const queryFn = async ({
   pageParam,

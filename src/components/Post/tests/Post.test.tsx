@@ -13,7 +13,12 @@ export const post: PostType = {
   location: "East Tommiefurt",
   subject: "quidem quaerat",
   objective: "投資理財",
-  rateType: "day",
+  rateType: "DAY",
+  currencyId: 1,
+  currency: {
+    id: 1,
+    name: "USD",
+  },
   rate: 1110,
   createdAt: "2023-07-16T08:33:48.896+00:00",
   updatedAt: null,

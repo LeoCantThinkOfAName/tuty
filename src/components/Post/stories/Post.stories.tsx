@@ -14,7 +14,12 @@ export const data: PostType = {
   location: "Taipei",
   objective: "Learn somthing new",
   rate: 1000,
-  rateType: "day",
+  rateType: "DAY",
+  currencyId: 1,
+  currency: {
+    id: 1,
+    name: "USD",
+  },
   tags: ["Tag 1", "Tag 2"],
   subject: "123",
   author: {

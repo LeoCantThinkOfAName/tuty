@@ -42,6 +42,7 @@
     "post": {
         "fold": "收起貼文",
         "unfold": "展開貼文",
+        "before": "前",
         "placeholders": {
             "userName": "使用者",
             "userTitle": "使用者職稱"

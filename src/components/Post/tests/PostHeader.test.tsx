@@ -20,7 +20,7 @@ describe("PostHeader", () => {
       </Card>,
       {
         wrapper: createWrapper(),
-      },
+      }
     );
     expect(screen.getByRole("img")).toBeTruthy();
   });
@@ -38,13 +38,13 @@ describe("PostHeader", () => {
       </I18nextProvider>,
       {
         wrapper: createWrapper(),
-      },
+      }
     );
     // 少於 1 分鐘
-    expect(screen.getByText("少於 1 分鐘")).toBeTruthy();
+    expect(screen.getByText("少於 1 分鐘 前")).toBeTruthy();
   });
 
-  test("Should able to show datee in en", async () => {
+  test("Should able to show date in en", async () => {
     await i18next.use(initReactI18next).init({
       lng: "en",
     });
@@ -57,9 +57,9 @@ describe("PostHeader", () => {
       </I18nextProvider>,
       {
         wrapper: createWrapper(),
-      },
+      }
     );
     // less than a minute
-    expect(screen.getByText("less than a minute")).toBeTruthy();
+    expect(screen.getByText("less than a minute before")).toBeTruthy();
   });
 });

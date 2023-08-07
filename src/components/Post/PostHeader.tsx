@@ -46,7 +46,9 @@ export const PostHeader: FC<PostHeaderProps> = ({
         </Flex>
         <Flex justifyContent="end" flexWrap="wrap-reverse" alignItems="center">
           <Text fontSize="sm" color="gray.500">
-            {formatDistanceToNow(date, { locale: localePkg })}
+            {`${[formatDistanceToNow(date, { locale: localePkg })]} ${t(
+              "post.before"
+            )}`}
           </Text>
           <Tag
             borderRadius="full"

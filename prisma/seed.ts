@@ -1,10 +1,10 @@
-import { Prisma, PrismaClient } from "@prisma/client";
+import { Prisma, PrismaClient, currency as currencyType } from "@prisma/client";
 
 import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
 
-const currencies = [{ name: "TWD" }, { name: "USD" }];
+const currencies: { name: currencyType }[] = [{ name: "TWD" }, { name: "USD" }];
 
 const categories = [
   { name: "FIND_TUTOR" },
@@ -143,11 +143,11 @@ const posts: Prisma.postsUncheckedCreateInput[] = new Array(100)
     if (categoryId < 2) {
       charges = {
         rateType: faker.helpers.arrayElement([
-          "day",
-          "hour",
-          "week",
-          "month",
-          "year",
+          "DAY",
+          "HOUR",
+          "WEEK",
+          "MONTH",
+          "YEAR",
         ]),
         rate: faker.number.int({ min: 200, max: 2000 }),
         currencyId: faker.helpers.arrayElement([1, 2]),

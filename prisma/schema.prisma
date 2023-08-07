@@ -295,11 +295,18 @@ enum factor_type {
 }
 
 enum rate_type {
-  hour
-  day
-  week
-  month
-  year
+  HOUR
+  DAY
+  WEEK
+  MONTH
+  YEAR
+
+  @@schema("public")
+}
+
+enum currency {
+  USD
+  TWD
 
   @@schema("public")
 }
@@ -371,8 +378,8 @@ model categories {
 }
 
 model currencies {
-  id   Int    @id @default(autoincrement())
-  name String @unique @db.VarChar()
+  id   Int      @id @default(autoincrement())
+  name currency
 
   @@schema("public")
 }

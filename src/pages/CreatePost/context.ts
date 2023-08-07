@@ -1,11 +1,7 @@
 import { createContext, useContext } from "react";
 
-export type FormType =
-  | "find_tutor"
-  | "find_student"
-  | "skill_exchange"
-  | "study_group";
+import { CATEGORY_TYPE } from "../../constants";
 
-export const CreatePostContext = createContext<FormType>("find_student");
+export const CreatePostContext = createContext<CATEGORY_TYPE>("FIND_STUDENT");
 
 export const useCreatePostContext = () => useContext(CreatePostContext);

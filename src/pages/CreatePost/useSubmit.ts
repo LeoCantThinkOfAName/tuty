@@ -9,6 +9,6 @@ export const useSubmit = <T extends FieldValues>(methods: UseFormReturn<T>) => {
         console.log(data);
       })(event);
     },
-    [methods.handleSubmit],
+    [methods.handleSubmit]
   );
 };

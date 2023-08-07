@@ -29,7 +29,7 @@ export const TutorForm: FC<TutorFormProps> = ({ defaultValues }) => {
   const formType = useCreatePostContext();
   const submit = useSubmit(methods);
 
-  if (formType !== "find_student" && formType !== "find_tutor") return null;
+  if (formType !== "FIND_STUDENT" && formType !== "FIND_TUTOR") return null;
   return (
     <FormProvider {...methods}>
       <FormWrapper onSubmit={submit}>

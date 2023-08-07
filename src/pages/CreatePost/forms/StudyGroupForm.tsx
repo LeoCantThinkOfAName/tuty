@@ -23,7 +23,7 @@ export const StudyGroupForm: FC<StudyGroupFormProps> = ({ defaultValues }) => {
   const formType = useCreatePostContext();
   const submit = useSubmit(methods);
 
-  if (formType !== "study_group") return null;
+  if (formType !== "STUDY_GROUP") return null;
   return (
     <FormProvider {...methods}>
       <FormWrapper onSubmit={submit}>

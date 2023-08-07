@@ -5,6 +5,7 @@ import { TutorForm, TutorFormProps } from "../forms/TutorForm";
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
 
+import { CATEGORY_TYPE } from "../../../constants";
 import { createWrapperWithFormContext } from "../../../utils/createWrapper";
 import { faker } from "@faker-js/faker";
 import userEvent from "@testing-library/user-event";
@@ -14,7 +15,7 @@ const renderComponent = (props?: TutorFormProps) =>
     wrapper: createWrapperWithFormContext(),
   });
 
-const mockContext = (type: Context.FormType) => {
+const mockContext = (type: CATEGORY_TYPE) => {
   vi.spyOn(Context, "useCreatePostContext").mockImplementation(() => type);
 };
 
@@ -29,21 +30,21 @@ describe("TutorForm", () => {
     expect(container).toBeDefined();
   });
 
-  test("Should display form when type equals to `find_student`", async () => {
-    mockContext("find_student");
+  test("Should display form when type equals to `FIND_STUDENT`", async () => {
+    mockContext("FIND_STUDENT");
     renderComponent();
     expect(screen.getAllByRole("group")).toHaveLength(5);
   });
 
-  test("Should display form when type equals to `find_tutor`", async () => {
-    mockContext("find_tutor");
+  test("Should display form when type equals to `FIND_TUTOR`", async () => {
+    mockContext("FIND_TUTOR");
     renderComponent();
     expect(screen.getAllByRole("group")).toHaveLength(5);
   });
 
   test("Should able to submit", async () => {
     const mockSubmitFn = vi.fn();
-    mockContext("find_tutor");
+    mockContext("FIND_TUTOR");
     vi.spyOn(Submit, "useSubmit").mockReturnValue(mockSubmitFn);
     renderComponent({
       defaultValues: {

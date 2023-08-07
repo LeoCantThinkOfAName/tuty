@@ -1,5 +1,6 @@
 import { FormControl, FormLabel, Select, SelectProps } from "@chakra-ui/react";
 
+import { CATEGORIES } from "../../../constants/index";
 import { FC } from "react";
 
 interface TypeSelectorProps extends SelectProps {
@@ -11,16 +12,16 @@ export const TypeSelector: FC<TypeSelectorProps> = ({ visible, ...props }) => {
     <FormControl isRequired hidden={visible}>
       <FormLabel>Type</FormLabel>
       <Select {...props} role="menu">
-        <option role="menuitem" value="find_tutor">
+        <option role="menuitem" value={CATEGORIES.FIND_TUTOR}>
           Find Tutor
         </option>
-        <option role="menuitem" value="find_student">
+        <option role="menuitem" value={CATEGORIES.FIND_STUDENT}>
           Find Student
         </option>
-        <option role="menuitem" value="study_group">
+        <option role="menuitem" value={CATEGORIES.STUDY_GROUP}>
           Study Group
         </option>
-        <option role="menuitem" value="skill_exchange">
+        <option role="menuitem" value={CATEGORIES.SKILL_EXCHANGE}>
           Skill Exchange
         </option>
       </Select>

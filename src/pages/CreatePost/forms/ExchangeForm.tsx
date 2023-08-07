@@ -24,7 +24,7 @@ export const ExchangeForm: FC<ExchangeFormProps> = ({ defaultValues }) => {
   const formType = useCreatePostContext();
   const submit = useSubmit(methods);
 
-  if (formType !== "skill_exchange") return null;
+  if (formType !== "SKILL_EXCHANGE") return null;
   return (
     <FormProvider {...methods}>
       <FormWrapper onSubmit={submit}>

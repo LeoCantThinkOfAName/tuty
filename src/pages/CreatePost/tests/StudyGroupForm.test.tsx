@@ -5,6 +5,7 @@ import { StudyGroupForm, StudyGroupFormProps } from "../forms/StudyGroupForm";
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, describe, expect, test, vi } from "vitest";
 
+import { CATEGORY_TYPE } from "../../../constants";
 import { createWrapperWithFormContext } from "../../../utils/createWrapper";
 import { faker } from "@faker-js/faker";
 import userEvent from "@testing-library/user-event";
@@ -14,7 +15,7 @@ const renderComponent = (props?: StudyGroupFormProps) =>
     wrapper: createWrapperWithFormContext(),
   });
 
-const mockContext = (type: Context.FormType) => {
+const mockContext = (type: CATEGORY_TYPE) => {
   vi.spyOn(Context, "useCreatePostContext").mockImplementation(() => type);
 };
 
@@ -29,15 +30,15 @@ describe("StudyGroupForm", () => {
     expect(container).toBeDefined();
   });
 
-  test("Should display form when type equals to `study_group`", async () => {
-    mockContext("study_group");
+  test("Should display form when type equals to `STUDY_GROUP`", async () => {
+    mockContext("STUDY_GROUP");
     renderComponent();
     expect(screen.getAllByRole("group")).toHaveLength(4);
   });
 
   test("Should able to submit", async () => {
     const mockSubmitFn = vi.fn();
-    mockContext("study_group");
+    mockContext("STUDY_GROUP");
     vi.spyOn(Submit, "useSubmit").mockReturnValue(mockSubmitFn);
     renderComponent({
       defaultValues: {

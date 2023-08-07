@@ -24,7 +24,7 @@ describe("CreatePostPage", () => {
     });
     expect(screen.getAllByRole("group")).toHaveLength(6);
     const select = screen.getByRole("menu");
-    await act(async () => userEvent.selectOptions(select, ["study_group"]));
+    await act(async () => userEvent.selectOptions(select, ["STUDY_GROUP"]));
     expect(screen.getAllByRole("group")).toHaveLength(5);
   });
 });

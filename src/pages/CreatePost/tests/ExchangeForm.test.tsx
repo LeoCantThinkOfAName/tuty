@@ -25,9 +25,9 @@ describe("ExchangeForm", () => {
     expect(container).toBeDefined();
   });
 
-  test("Should display form when type equals to `skill_exchange`", async () => {
+  test("Should display form when type equals to `SKILL_EXCHANGE`", async () => {
     vi.spyOn(Context, "useCreatePostContext").mockImplementation(
-      () => "skill_exchange",
+      () => "SKILL_EXCHANGE"
     );
     renderComponent();
     expect(screen.getAllByRole("group")).toHaveLength(5);
@@ -36,7 +36,7 @@ describe("ExchangeForm", () => {
   test("Should able to submit", async () => {
     const mockSubmitFn = vi.fn();
     vi.spyOn(Context, "useCreatePostContext").mockImplementation(
-      () => "skill_exchange",
+      () => "SKILL_EXCHANGE"
     );
     vi.spyOn(Submit, "useSubmit").mockReturnValue(mockSubmitFn);
     renderComponent({

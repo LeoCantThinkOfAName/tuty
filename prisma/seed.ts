@@ -1,10 +1,13 @@
-import { Prisma, PrismaClient, currency as currencyType } from "@prisma/client";
+import { Prisma, PrismaClient, currency_type } from "@prisma/client";
 
 import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
 
-const currencies: { name: currencyType }[] = [{ name: "TWD" }, { name: "USD" }];
+const currencies: { name: currency_type }[] = [
+  { name: "TWD" },
+  { name: "USD" },
+];
 
 const categories = [
   { name: "FIND_TUTOR" },

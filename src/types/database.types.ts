@@ -65,6 +65,7 @@ export interface Database {
           rolled_back_at?: string | null;
           started_at?: string;
         };
+        Relationships: [];
       };
       categories: {
         Row: {
@@ -79,6 +80,7 @@ export interface Database {
           id?: number;
           name?: string;
         };
+        Relationships: [];
       };
       comments: {
         Row: {
@@ -102,6 +104,35 @@ export interface Database {
           id?: number;
           postId?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "comments_authorId_fkey";
+            columns: ["authorId"];
+            referencedRelation: "profiles";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "comments_postId_fkey";
+            columns: ["postId"];
+            referencedRelation: "posts";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      currencies: {
+        Row: {
+          id: number;
+          name: Database["public"]["Enums"]["currency_type"];
+        };
+        Insert: {
+          id?: number;
+          name: Database["public"]["Enums"]["currency_type"];
+        };
+        Update: {
+          id?: number;
+          name?: Database["public"]["Enums"]["currency_type"];
+        };
+        Relationships: [];
       };
       posts: {
         Row: {
@@ -109,6 +140,8 @@ export interface Database {
           categoryId: number;
           content: string;
           createdAt: string;
+          currenciesId: number | null;
+          currencyId: number | null;
           deletedAt: string | null;
           id: string;
           location: string;
@@ -117,6 +150,7 @@ export interface Database {
           rateType: Database["public"]["Enums"]["rate_type"] | null;
           subject: string;
           tags: string[] | null;
+          textSearch: unknown | null;
           updatedAt: string | null;
         };
         Insert: {
@@ -124,6 +158,8 @@ export interface Database {
           categoryId: number;
           content: string;
           createdAt?: string;
+          currenciesId?: number | null;
+          currencyId?: number | null;
           deletedAt?: string | null;
           id: string;
           location: string;
@@ -132,6 +168,7 @@ export interface Database {
           rateType?: Database["public"]["Enums"]["rate_type"] | null;
           subject: string;
           tags?: string[] | null;
+          textSearch?: unknown | null;
           updatedAt?: string | null;
         };
         Update: {
@@ -139,6 +176,8 @@ export interface Database {
           categoryId?: number;
           content?: string;
           createdAt?: string;
+          currenciesId?: number | null;
+          currencyId?: number | null;
           deletedAt?: string | null;
           id?: string;
           location?: string;
@@ -147,21 +186,28 @@ export interface Database {
           rateType?: Database["public"]["Enums"]["rate_type"] | null;
           subject?: string;
           tags?: string[] | null;
+          textSearch?: unknown | null;
           updatedAt?: string | null;
         };
         Relationships: [
           {
-            foreignKeyName: "profiles_id_fkey";
+            foreignKeyName: "posts_authorId_fkey";
             columns: ["authorId"];
             referencedRelation: "profiles";
             referencedColumns: ["id"];
           },
           {
-            foreignKeyName: "categories_id_fkey";
+            foreignKeyName: "posts_categoryId_fkey";
             columns: ["categoryId"];
             referencedRelation: "categories";
             referencedColumns: ["id"];
           },
+          {
+            foreignKeyName: "posts_currenciesId_fkey";
+            columns: ["currenciesId"];
+            referencedRelation: "currencies";
+            referencedColumns: ["id"];
+          }
         ];
       };
       profiles: {
@@ -201,6 +247,14 @@ export interface Database {
           updatedAt?: string | null;
           userId?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "profiles_userId_fkey";
+            columns: ["userId"];
+            referencedRelation: "users";
+            referencedColumns: ["id"];
+          }
+        ];
       };
     };
     Views: {
@@ -210,7 +264,8 @@ export interface Database {
       [_ in never]: never;
     };
     Enums: {
-      rate_type: "hour" | "day" | "week" | "month" | "year";
+      currency_type: "USD" | "TWD";
+      rate_type: "HOUR" | "DAY" | "WEEK" | "MONTH" | "YEAR";
     };
     CompositeTypes: {
       [_ in never]: never;
@@ -249,7 +304,7 @@ export interface Database {
         Args: {
           name: string;
         };
-        Returns: string[];
+        Returns: unknown;
       };
       get_size_by_bucket: {
         Args: Record<PropertyKey, never>;

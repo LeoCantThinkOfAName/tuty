@@ -304,7 +304,7 @@ enum rate_type {
   @@schema("public")
 }
 
-enum currency {
+enum currency_type {
   USD
   TWD
 
@@ -342,7 +342,8 @@ model posts {
   objective  String?    @db.VarChar()
   rateType   rate_type?
   rate       Int?
-  currencyId Int?       @db.Integer
+  currencyId Int        @default(1) @db.Integer
+  currency   currencies @relation(fields: [currencyId], references: [id])
   tags       String[]   @db.VarChar()
 
   createdAt DateTime   @default(now()) @db.Timestamptz(6)
@@ -378,8 +379,9 @@ model categories {
 }
 
 model currencies {
-  id   Int      @id @default(autoincrement())
-  name currency
+  id    Int           @id @default(autoincrement())
+  name  currency_type @unique
+  posts posts[]
 
   @@schema("public")
 }

@@ -69,6 +69,12 @@
             "week": "{{ rate }} / 每週",
             "month": "{{ rate }} / 每月",
             "year": "{{ rate }} / 每年"
+        },
+        "categories": {
+          "FIND_STUDENT": "找學生",
+          "FIND_TUTOR": "找家教",
+          "STUDY_GROUP": "讀書會",
+          "SKILL_EXCHANGE": "技能交換"
         }
     },
     "headerMenu": {

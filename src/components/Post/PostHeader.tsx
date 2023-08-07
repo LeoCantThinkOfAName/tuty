@@ -7,9 +7,12 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { CATEGORY_TYPE } from "../../constants";
 import { FC } from "react";
+import { categoryColorMap } from "../../utils/categoryColorMap";
 import formatDistanceToNow from "date-fns/formatDistanceToNow";
 import { useLocale } from "../../hooks/useLocale";
+import { useTranslation } from "react-i18next";
 
 interface PostHeaderProps {
   userName: string;
@@ -25,6 +28,7 @@ export const PostHeader: FC<PostHeaderProps> = ({
   category,
 }) => {
   const { localePkg } = useLocale();
+  const { t } = useTranslation();
 
   return (
     <CardHeader display="flex" alignItems="center">
@@ -44,8 +48,13 @@ export const PostHeader: FC<PostHeaderProps> = ({
           <Text fontSize="sm" color="gray.500">
             {formatDistanceToNow(date, { locale: localePkg })}
           </Text>
-          <Tag borderRadius="full" variant="solid" colorScheme="green" ml="2">
-            <TagLabel>{category}</TagLabel>
+          <Tag
+            borderRadius="full"
+            variant="solid"
+            colorScheme={categoryColorMap(category as CATEGORY_TYPE)}
+            ml="2"
+          >
+            <TagLabel>{t(`post.categories.${category}`)}</TagLabel>
           </Tag>
         </Flex>
       </Flex>

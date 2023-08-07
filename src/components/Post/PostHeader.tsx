@@ -30,7 +30,7 @@ export const PostHeader: FC<PostHeaderProps> = ({
     <CardHeader display="flex" alignItems="center">
       <Flex alignItems="center" w="100%" justifyContent="space-between">
         <Flex alignItems="center" pr="5">
-          <Avatar mr="3" title="username" />
+          <Avatar mr="3" title={userName} />
           <Flex flexDir="column">
             <Text as="h3" fontWeight="bold" fontSize="lg">
               {userName}

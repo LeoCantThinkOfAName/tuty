@@ -20,7 +20,7 @@ const queryFn = async ({
       )
       .order("createdAt", { ascending: false });
 
-    if (term) query = query.textSearch("textSearch", term);
+    if (term) query = query.textSearch("textSearch", `'${term}'`);
 
     const from = (pageParam ? pageParam * 10 : 0) + 1;
     const { data, error } = await query.range(from, from + 9);

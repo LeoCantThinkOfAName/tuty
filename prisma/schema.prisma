@@ -1,6 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
-  previewFeatures = ["multiSchema"]
+  previewFeatures = ["multiSchema", "fullTextSearch"]
 }
 
 datasource db {
@@ -342,6 +342,9 @@ model posts {
   deletedAt DateTime?  @db.Timestamptz(6)
   comments  comments[]
 
+  textSearch Unsupported("TSVECTOR")?
+
+  @@index([textSearch])
   @@schema("public")
 }
 

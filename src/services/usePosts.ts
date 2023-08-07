@@ -16,11 +16,11 @@ const queryFn = async ({
     let query = supabase
       .from("posts")
       .select(
-        "*, author:profiles (id, name, img, title), category:categories (*)",
+        "*, author:profiles (id, name, img, title), category:categories (*)"
       )
       .order("createdAt", { ascending: false });
 
-    if (term) query = query.textSearch("posts_fulltext", term);
+    if (term) query = query.textSearch("textSearch", term);
 
     const from = (pageParam ? pageParam * 10 : 0) + 1;
     const { data, error } = await query.range(from, from + 9);

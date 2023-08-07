@@ -1,5 +1,5 @@
 import { FormProvider, useForm } from "react-hook-form";
-import { basicDefaultValues, rateTypes, tutorSchema } from "./schema";
+import { basicDefaultValues, currency, rateTypes, tutorSchema } from "./schema";
 
 import { FC } from "react";
 import { FormErrorMessage } from "@chakra-ui/react";
@@ -18,6 +18,7 @@ export interface TutorFormProps {
     subject: string;
     rate: number;
     rateType: (typeof rateTypes)[number];
+    currency: (typeof currency)[number];
   };
 }
 
@@ -47,6 +48,7 @@ TutorForm.defaultProps = {
     ...basicDefaultValues,
     subject: "",
     rate: 0,
-    rateType: "hour",
+    rateType: "HOUR",
+    currency: "USD",
   },
 };

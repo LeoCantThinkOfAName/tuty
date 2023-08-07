@@ -1,3 +1,4 @@
+import { rate_type } from "@prisma/client";
 import { z } from "zod";
 
 export const basicDefaultValues = {
@@ -6,7 +7,8 @@ export const basicDefaultValues = {
   description: "",
 };
 
-export const rateTypes = ["hour", "day", "week", "month", "year"] as const;
+export const rateTypes = ["HOUR", "DAY", "WEEK", "MONTH", "YEAR"] as const;
+export const currency = ["USD", "TWD"] as const;
 
 export const locationSchema = z.string().min(1).max(100);
 export const subjectSchema = z.string().min(1).max(100);
@@ -34,4 +36,5 @@ export const tutorSchema = z.object({
   subject: subjectSchema,
   rate: rateSchema,
   rateType: rateTypeSchema,
+  currency: z.enum(currency),
 });

@@ -16,7 +16,7 @@ const queryFn = async ({
     let query = supabase
       .from("posts")
       .select(
-        "*, author:profiles (id, name, img, title), category:categories (*)"
+        "*, author:profiles (id, name, img, title), category:categories (*), currency:currencies (*)"
       )
       .order("createdAt", { ascending: false });
 

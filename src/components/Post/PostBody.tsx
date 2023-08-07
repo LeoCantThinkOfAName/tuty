@@ -17,7 +17,8 @@ export const PostBody: FC<PostBodyProps> = ({ post, forceHide }) => {
   const [fold, setFold] = useState(false);
   const [foldable, setFoldable] = useState(false);
   const foldPost = () => setFold(!fold);
-  const { content, objective, subject, location, rate, rateType } = post;
+  const { content, objective, subject, location, rate, rateType, currency } =
+    post;
 
   useLayoutEffect(() => {
     const article = articleRef.current;
@@ -36,6 +37,7 @@ export const PostBody: FC<PostBodyProps> = ({ post, forceHide }) => {
         location={location}
         rate={rate}
         rateType={rateType}
+        currency={currency}
       />
       <Box
         ref={articleRef}

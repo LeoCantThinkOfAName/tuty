@@ -24,6 +24,7 @@ export const InfoBlock: FC<InfoBlockProps> = ({
   rate,
   rateType,
   subject,
+  currency,
 }) => {
   const { t } = useTranslation();
 
@@ -42,7 +43,10 @@ export const InfoBlock: FC<InfoBlockProps> = ({
         <Box display="flex items-center">
           <Info
             title={t("post.infoBlock.rate")}
-            content={t(`post.infoBlock.${rateType}`, { rate })}
+            content={t(`post.infoBlock.${rateType.toLowerCase()}`, {
+              rate,
+              currency: t(`currencies.${currency?.name.toLowerCase()}`),
+            })}
           />
         </Box>
       )}

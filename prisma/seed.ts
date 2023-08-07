@@ -4,6 +4,8 @@ import { faker } from "@faker-js/faker";
 
 const prisma = new PrismaClient();
 
+const currencies = [{ name: "TWD" }, { name: "USD" }];
+
 const categories = [
   { name: "FIND_TUTOR" },
   { name: "FIND_STUDENT" },
@@ -133,36 +135,49 @@ const profiles: Prisma.profilesUncheckedCreateInput[] = new Array(10)
 
 const posts: Prisma.postsUncheckedCreateInput[] = new Array(100)
   .fill(0)
-  .map(() => ({
-    id: faker.string.uuid(),
-    authorId: faker.helpers.arrayElement(
-      profiles.map((profile) => profile.id),
-    ) as string,
-    categoryId: faker.helpers.arrayElement([1, 2, 3, 4]),
-    content: faker.lorem.paragraphs(
-      {
-        min: 2,
-        max: 10,
-      },
-      "<br/>\n",
-    ),
-    location: faker.location.city(),
-    subject: faker.lorem.words({ min: 1, max: 3 }),
-    createdAt: faker.date.between({
-      from: new Date("2023/01/01"),
-      to: new Date(),
-    }),
-    tags: faker.helpers.arrayElements(subjects, { min: 0, max: 5 }),
-    objective: faker.helpers.arrayElement(subjects),
-    rateType: faker.helpers.arrayElement([
-      "day",
-      "hour",
-      "week",
-      "month",
-      "year",
-    ]),
-    rate: faker.number.int({ min: 200, max: 2000 }),
-  }));
+  .map(() => {
+    const categoryId = faker.helpers.arrayElement([1, 2, 3, 4]);
+    let charges: Partial<Prisma.postsUncheckedCreateInput> = {};
+
+    // 1, 2 are tutor and student
+    if (categoryId < 2) {
+      charges = {
+        rateType: faker.helpers.arrayElement([
+          "day",
+          "hour",
+          "week",
+          "month",
+          "year",
+        ]),
+        rate: faker.number.int({ min: 200, max: 2000 }),
+        currencyId: faker.helpers.arrayElement([1, 2]),
+      };
+    }
+
+    return {
+      id: faker.string.uuid(),
+      authorId: faker.helpers.arrayElement(
+        profiles.map((profile) => profile.id)
+      ) as string,
+      categoryId,
+      content: faker.lorem.paragraphs(
+        {
+          min: 2,
+          max: 10,
+        },
+        "<br/>\n"
+      ),
+      location: faker.location.city(),
+      subject: faker.lorem.words({ min: 1, max: 3 }),
+      createdAt: faker.date.between({
+        from: new Date("2023/01/01"),
+        to: new Date(),
+      }),
+      tags: faker.helpers.arrayElements(subjects, { min: 0, max: 5 }),
+      objective: faker.helpers.arrayElement(subjects),
+      ...charges,
+    };
+  });
 
 async function main() {
   // seeding categories
@@ -174,6 +189,17 @@ async function main() {
     });
 
     console.log(cate);
+  }
+
+  // seeding currencies
+  for (let i = 0; i < currencies.length; i++) {
+    const curr = await prisma.currencies.upsert({
+      where: { id: i + 1 },
+      update: {},
+      create: currencies[i],
+    });
+
+    console.log(curr);
   }
 
   // clear tables

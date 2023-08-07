@@ -335,6 +335,7 @@ model posts {
   objective  String?    @db.VarChar()
   rateType   rate_type?
   rate       Int?
+  currencyId Int?       @db.Integer
   tags       String[]   @db.VarChar()
 
   createdAt DateTime   @default(now()) @db.Timestamptz(6)
@@ -365,6 +366,13 @@ model categories {
   id    Int     @id @default(autoincrement())
   name  String  @unique @db.VarChar()
   posts posts[]
+
+  @@schema("public")
+}
+
+model currencies {
+  id   Int    @id @default(autoincrement())
+  name String @unique @db.VarChar()
 
   @@schema("public")
 }

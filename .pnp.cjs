@@ -63,7 +63,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gh-pages", "npm:5.0.0"],\
             ["happy-dom", "npm:10.8.0"],\
             ["husky", "npm:8.0.3"],\
-            ["i18next", "npm:23.4.3"],\
+            ["i18next", "npm:23.4.4"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
@@ -13104,10 +13104,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["i18next", [\
-        ["npm:23.4.3", {\
-          "packageLocation": "../../../../cache/others/berry/cache/i18next-npm-23.4.3-2a72e2b77e-8.zip/node_modules/i18next/",\
+        ["npm:23.4.4", {\
+          "packageLocation": "../../../../cache/others/berry/cache/i18next-npm-23.4.4-ec2cdf8dab-8.zip/node_modules/i18next/",\
           "packageDependencies": [\
-            ["i18next", "npm:23.4.3"],\
+            ["i18next", "npm:23.4.4"],\
             ["@babel/runtime", "npm:7.22.6"]\
           ],\
           "linkType": "HARD"\
@@ -16851,7 +16851,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react-dom", "npm:18.2.7"],\
             ["@types/react-native", null],\
             ["html-parse-stringify", "npm:3.0.1"],\
-            ["i18next", "npm:23.4.3"],\
+            ["i18next", "npm:23.4.4"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"],\
             ["react-native", null]\
@@ -18269,7 +18269,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/storybook__manager-api", null],\
             ["@types/storybook__preview-api", null],\
             ["@types/storybook__types", null],\
-            ["i18next", "npm:23.4.3"],\
+            ["i18next", "npm:23.4.4"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["react", "npm:18.2.0"],\
@@ -18967,7 +18967,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gh-pages", "npm:5.0.0"],\
             ["happy-dom", "npm:10.8.0"],\
             ["husky", "npm:8.0.3"],\
-            ["i18next", "npm:23.4.3"],\
+            ["i18next", "npm:23.4.4"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\

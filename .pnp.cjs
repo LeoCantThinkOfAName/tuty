@@ -67,7 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
-            ["lint-staged", "npm:13.2.3"],\
+            ["lint-staged", "npm:14.0.0"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
             ["prisma", "npm:5.1.1"],\
             ["prop-types", "npm:15.8.1"],\
@@ -9677,6 +9677,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["type-fest", "npm:0.21.3"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:5.0.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/ansi-escapes-npm-5.0.0-8a26b6a77d-8.zip/node_modules/ansi-escapes/",\
+          "packageDependencies": [\
+            ["ansi-escapes", "npm:5.0.0"],\
+            ["type-fest", "npm:1.4.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["ansi-regex", [\
@@ -9921,15 +9929,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["ast-types", "npm:0.16.1"],\
             ["tslib", "npm:2.6.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["astral-regex", [\
-        ["npm:2.0.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/astral-regex-npm-2.0.0-f30d866aab-8.zip/node_modules/astral-regex/",\
-          "packageDependencies": [\
-            ["astral-regex", "npm:2.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10470,10 +10469,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:5.2.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/chalk-npm-5.2.0-bedd808592-8.zip/node_modules/chalk/",\
+        ["npm:5.3.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/chalk-npm-5.3.0-d181999efb-8.zip/node_modules/chalk/",\
           "packageDependencies": [\
-            ["chalk", "npm:5.2.0"]\
+            ["chalk", "npm:5.3.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -10564,6 +10563,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["restore-cursor", "npm:3.1.0"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/cli-cursor-npm-4.0.0-08e7cbaf41-8.zip/node_modules/cli-cursor/",\
+          "packageDependencies": [\
+            ["cli-cursor", "npm:4.0.0"],\
+            ["restore-cursor", "npm:4.0.0"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["cli-spinners", [\
@@ -10587,15 +10594,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["cli-truncate", [\
-        ["npm:2.1.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/cli-truncate-npm-2.1.0-72184d3467-8.zip/node_modules/cli-truncate/",\
-          "packageDependencies": [\
-            ["cli-truncate", "npm:2.1.0"],\
-            ["slice-ansi", "npm:3.0.0"],\
-            ["string-width", "npm:4.2.3"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:3.1.0", {\
           "packageLocation": "../../../../cache/others/berry/cache/cli-truncate-npm-3.1.0-654d2989ef-8.zip/node_modules/cli-truncate/",\
           "packageDependencies": [\
@@ -10730,13 +10728,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["commander", [\
-        ["npm:10.0.1", {\
-          "packageLocation": "../../../../cache/others/berry/cache/commander-npm-10.0.1-f17613b72b-8.zip/node_modules/commander/",\
-          "packageDependencies": [\
-            ["commander", "npm:10.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:11.0.0", {\
           "packageLocation": "../../../../cache/others/berry/cache/commander-npm-11.0.0-7def992f0c-8.zip/node_modules/commander/",\
           "packageDependencies": [\
@@ -11926,6 +11917,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../../../cache/others/berry/cache/etag-npm-1.8.1-54a3b989d9-8.zip/node_modules/etag/",\
           "packageDependencies": [\
             ["etag", "npm:1.8.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["eventemitter3", [\
+        ["npm:5.0.1", {\
+          "packageLocation": "../../../../cache/others/berry/cache/eventemitter3-npm-5.0.1-5e423b7df3-8.zip/node_modules/eventemitter3/",\
+          "packageDependencies": [\
+            ["eventemitter3", "npm:5.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -14185,20 +14185,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lint-staged", [\
-        ["npm:13.2.3", {\
-          "packageLocation": "../../../../cache/others/berry/cache/lint-staged-npm-13.2.3-2bebc4d0dd-8.zip/node_modules/lint-staged/",\
+        ["npm:14.0.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/lint-staged-npm-14.0.0-3b7e5bcf90-8.zip/node_modules/lint-staged/",\
           "packageDependencies": [\
-            ["lint-staged", "npm:13.2.3"],\
-            ["chalk", "npm:5.2.0"],\
-            ["cli-truncate", "npm:3.1.0"],\
-            ["commander", "npm:10.0.1"],\
+            ["lint-staged", "npm:14.0.0"],\
+            ["chalk", "npm:5.3.0"],\
+            ["commander", "npm:11.0.0"],\
             ["debug", "virtual:5351b5395d40179de49f2607e86968cc50dc0fd5b608df2cdaceced9b58b43b75928e3172fb6810eba4ba73cfcfc6fd496a6296d177d69346e8900d5aa250d16#npm:4.3.4"],\
             ["execa", "npm:7.2.0"],\
             ["lilconfig", "npm:2.1.0"],\
-            ["listr2", "virtual:2bebc4d0dd25597caf6d06a30145c5dad922fb4af08f9e281c12d1e1daac29ddb95d0c9b38941b101f5b739a328a97bc3aa760681773e1047b69999709f8b0f1#npm:5.0.8"],\
+            ["listr2", "virtual:3b7e5bcf9059a90b0a1ce2ecc05d41e6be15d6a4a513c19998cd527ec6f584cc96db75e235ffa36667d23388f22bbae86ea5754275d01d7cc26b69c54e9aee01#npm:6.6.1"],\
             ["micromatch", "npm:4.0.5"],\
-            ["normalize-path", "npm:3.0.0"],\
-            ["object-inspect", "npm:1.12.3"],\
             ["pidtree", "npm:0.6.0"],\
             ["string-argv", "npm:0.3.2"],\
             ["yaml", "npm:2.3.1"]\
@@ -14207,27 +14204,25 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["listr2", [\
-        ["npm:5.0.8", {\
-          "packageLocation": "../../../../cache/others/berry/cache/listr2-npm-5.0.8-0d5e5a061b-8.zip/node_modules/listr2/",\
+        ["npm:6.6.1", {\
+          "packageLocation": "../../../../cache/others/berry/cache/listr2-npm-6.6.1-74fafa58ff-8.zip/node_modules/listr2/",\
           "packageDependencies": [\
-            ["listr2", "npm:5.0.8"]\
+            ["listr2", "npm:6.6.1"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:2bebc4d0dd25597caf6d06a30145c5dad922fb4af08f9e281c12d1e1daac29ddb95d0c9b38941b101f5b739a328a97bc3aa760681773e1047b69999709f8b0f1#npm:5.0.8", {\
-          "packageLocation": "./.yarn/__virtual__/listr2-virtual-75ff9da33e/5/cache/others/berry/cache/listr2-npm-5.0.8-0d5e5a061b-8.zip/node_modules/listr2/",\
+        ["virtual:3b7e5bcf9059a90b0a1ce2ecc05d41e6be15d6a4a513c19998cd527ec6f584cc96db75e235ffa36667d23388f22bbae86ea5754275d01d7cc26b69c54e9aee01#npm:6.6.1", {\
+          "packageLocation": "./.yarn/__virtual__/listr2-virtual-5cee8d8a82/5/cache/others/berry/cache/listr2-npm-6.6.1-74fafa58ff-8.zip/node_modules/listr2/",\
           "packageDependencies": [\
-            ["listr2", "virtual:2bebc4d0dd25597caf6d06a30145c5dad922fb4af08f9e281c12d1e1daac29ddb95d0c9b38941b101f5b739a328a97bc3aa760681773e1047b69999709f8b0f1#npm:5.0.8"],\
+            ["listr2", "virtual:3b7e5bcf9059a90b0a1ce2ecc05d41e6be15d6a4a513c19998cd527ec6f584cc96db75e235ffa36667d23388f22bbae86ea5754275d01d7cc26b69c54e9aee01#npm:6.6.1"],\
             ["@types/enquirer", null],\
-            ["cli-truncate", "npm:2.1.0"],\
+            ["cli-truncate", "npm:3.1.0"],\
             ["colorette", "npm:2.0.20"],\
             ["enquirer", null],\
-            ["log-update", "npm:4.0.0"],\
-            ["p-map", "npm:4.0.0"],\
+            ["eventemitter3", "npm:5.0.1"],\
+            ["log-update", "npm:5.0.1"],\
             ["rfdc", "npm:1.3.0"],\
-            ["rxjs", "npm:7.8.1"],\
-            ["through", "npm:2.3.8"],\
-            ["wrap-ansi", "npm:7.0.0"]\
+            ["wrap-ansi", "npm:8.1.0"]\
           ],\
           "packagePeers": [\
             "@types/enquirer",\
@@ -14392,14 +14387,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["log-update", [\
-        ["npm:4.0.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/log-update-npm-4.0.0-9d0554261c-8.zip/node_modules/log-update/",\
+        ["npm:5.0.1", {\
+          "packageLocation": "../../../../cache/others/berry/cache/log-update-npm-5.0.1-1e016d7086-8.zip/node_modules/log-update/",\
           "packageDependencies": [\
-            ["log-update", "npm:4.0.0"],\
-            ["ansi-escapes", "npm:4.3.2"],\
-            ["cli-cursor", "npm:3.1.0"],\
-            ["slice-ansi", "npm:4.0.0"],\
-            ["wrap-ansi", "npm:6.2.0"]\
+            ["log-update", "npm:5.0.1"],\
+            ["ansi-escapes", "npm:5.0.0"],\
+            ["cli-cursor", "npm:4.0.0"],\
+            ["slice-ansi", "npm:5.0.0"],\
+            ["strip-ansi", "npm:7.1.0"],\
+            ["wrap-ansi", "npm:8.1.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -17506,6 +17502,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["signal-exit", "npm:3.0.7"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/restore-cursor-npm-4.0.0-d42254f39d-8.zip/node_modules/restore-cursor/",\
+          "packageDependencies": [\
+            ["restore-cursor", "npm:4.0.0"],\
+            ["onetime", "npm:5.1.2"],\
+            ["signal-exit", "npm:3.0.7"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["retry", [\
@@ -17878,26 +17883,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["slice-ansi", [\
-        ["npm:3.0.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/slice-ansi-npm-3.0.0-d9999864af-8.zip/node_modules/slice-ansi/",\
-          "packageDependencies": [\
-            ["slice-ansi", "npm:3.0.0"],\
-            ["ansi-styles", "npm:4.3.0"],\
-            ["astral-regex", "npm:2.0.0"],\
-            ["is-fullwidth-code-point", "npm:3.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
-        ["npm:4.0.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/slice-ansi-npm-4.0.0-6eeca1d10e-8.zip/node_modules/slice-ansi/",\
-          "packageDependencies": [\
-            ["slice-ansi", "npm:4.0.0"],\
-            ["ansi-styles", "npm:4.3.0"],\
-            ["astral-regex", "npm:2.0.0"],\
-            ["is-fullwidth-code-point", "npm:3.0.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:5.0.0", {\
           "packageLocation": "../../../../cache/others/berry/cache/slice-ansi-npm-5.0.0-8cd4f226df-8.zip/node_modules/slice-ansi/",\
           "packageDependencies": [\
@@ -18944,7 +18929,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
-            ["lint-staged", "npm:13.2.3"],\
+            ["lint-staged", "npm:14.0.0"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
             ["prisma", "npm:5.1.1"],\
             ["prop-types", "npm:15.8.1"],\
@@ -19028,6 +19013,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "../../../../cache/others/berry/cache/type-fest-npm-0.8.1-351ad028fe-8.zip/node_modules/type-fest/",\
           "packageDependencies": [\
             ["type-fest", "npm:0.8.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:1.4.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/type-fest-npm-1.4.0-7dd848962a-8.zip/node_modules/type-fest/",\
+          "packageDependencies": [\
+            ["type-fest", "npm:1.4.0"]\
           ],\
           "linkType": "HARD"\
         }],\

@@ -59,7 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@xstate/inspect", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:0.8.0"],\
             ["@xstate/react", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:3.2.2"],\
             ["date-fns", "npm:2.30.0"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["gh-pages", "npm:6.0.0"],\
             ["happy-dom", "npm:10.8.0"],\
             ["husky", "npm:8.0.3"],\
@@ -2773,7 +2773,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/chakra-ui__system", null],\
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -3507,7 +3507,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/chakra-ui__system", null],\
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -3547,7 +3547,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/react", "npm:18.2.20"],\
             ["@types/react-dom", "npm:18.2.7"],\
             ["aria-hidden", "npm:1.2.3"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"],\
             ["react-remove-scroll", "virtual:395d84eebdc07fa3375b27c48ed5a3712e04a14cec862e061f5005c610a62bc1cdc538492abb297185870ca92a9f6842a3af39ea960b5ce63bc892d5d556d6f1#npm:2.5.6"]\
@@ -3680,7 +3680,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/chakra-ui__system", null],\
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -3917,7 +3917,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
             ["@types/react-dom", "npm:18.2.7"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"]\
           ],\
@@ -4728,7 +4728,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/chakra-ui__system", null],\
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -4987,7 +4987,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
             ["@types/react-dom", "npm:18.2.7"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"]\
           ],\
@@ -5029,7 +5029,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
             ["@types/react-dom", "npm:18.2.7"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"]\
           ],\
@@ -5061,7 +5061,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@chakra-ui/shared-utils", "npm:2.0.5"],\
             ["@types/framer-motion", null],\
             ["@types/react", "npm:18.2.20"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["react", "npm:18.2.0"]\
           ],\
           "packagePeers": [\
@@ -12382,17 +12382,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["framer-motion", [\
-        ["npm:10.15.1", {\
-          "packageLocation": "../../../../cache/others/berry/cache/framer-motion-npm-10.15.1-3ec30a2a4f-8.zip/node_modules/framer-motion/",\
+        ["npm:10.15.2", {\
+          "packageLocation": "../../../../cache/others/berry/cache/framer-motion-npm-10.15.2-3eff176406-8.zip/node_modules/framer-motion/",\
           "packageDependencies": [\
-            ["framer-motion", "npm:10.15.1"]\
+            ["framer-motion", "npm:10.15.2"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1", {\
-          "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-b15fd11024/5/cache/others/berry/cache/framer-motion-npm-10.15.1-3ec30a2a4f-8.zip/node_modules/framer-motion/",\
+        ["virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2", {\
+          "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-3a43645378/5/cache/others/berry/cache/framer-motion-npm-10.15.2-3eff176406-8.zip/node_modules/framer-motion/",\
           "packageDependencies": [\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["@emotion/is-prop-valid", "npm:0.8.8"],\
             ["@types/react", "npm:18.2.20"],\
             ["@types/react-dom", "npm:18.2.7"],\
@@ -18921,7 +18921,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@xstate/inspect", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:0.8.0"],\
             ["@xstate/react", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:3.2.2"],\
             ["date-fns", "npm:2.30.0"],\
-            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.1"],\
+            ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.15.2"],\
             ["gh-pages", "npm:6.0.0"],\
             ["happy-dom", "npm:10.8.0"],\
             ["husky", "npm:8.0.3"],\

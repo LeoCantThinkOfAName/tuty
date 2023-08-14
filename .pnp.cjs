@@ -88,7 +88,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vite", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:4.4.9"],\
             ["vitest", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:0.34.1"],\
             ["xstate", "npm:4.38.2"],\
-            ["zod", "npm:3.21.4"]\
+            ["zod", "npm:3.22.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -18950,7 +18950,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vite", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:4.4.9"],\
             ["vitest", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:0.34.1"],\
             ["xstate", "npm:4.38.2"],\
-            ["zod", "npm:3.21.4"]\
+            ["zod", "npm:3.22.0"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -20269,10 +20269,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["zod", [\
-        ["npm:3.21.4", {\
-          "packageLocation": "../../../../cache/others/berry/cache/zod-npm-3.21.4-9f570b215c-8.zip/node_modules/zod/",\
+        ["npm:3.22.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/zod-npm-3.22.0-2b23558752-8.zip/node_modules/zod/",\
           "packageDependencies": [\
-            ["zod", "npm:3.21.4"]\
+            ["zod", "npm:3.22.0"]\
           ],\
           "linkType": "HARD"\
         }]\

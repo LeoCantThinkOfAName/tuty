@@ -19,6 +19,12 @@ CREATE TYPE "auth"."factor_status" AS ENUM ('unverified', 'verified');
 -- CreateEnum
 CREATE TYPE "auth"."factor_type" AS ENUM ('totp', 'webauthn');
 
+-- CreateEnum
+CREATE TYPE "public"."rate_type" AS ENUM ('HOUR', 'DAY', 'WEEK', 'MONTH', 'YEAR');
+
+-- CreateEnum
+CREATE TYPE "public"."currency_type" AS ENUM ('USD', 'TWD');
+
 -- CreateTable
 CREATE TABLE "auth"."audit_log_entries" (
     "instance_id" UUID,
@@ -56,7 +62,7 @@ CREATE TABLE "auth"."identities" (
     "last_sign_in_at" TIMESTAMPTZ(6),
     "created_at" TIMESTAMPTZ(6),
     "updated_at" TIMESTAMPTZ(6),
-    "email" TEXT GENERATED ALWAYS AS (lower((identity_data->>'email'::text))) STORED,
+    "email" TEXT DEFAULT lower((identity_data ->> 'email'::text)),
 
     CONSTRAINT "identities_pkey" PRIMARY KEY ("provider","id")
 );
@@ -220,7 +226,7 @@ CREATE TABLE "auth"."users" (
     "phone_change" TEXT DEFAULT '',
     "phone_change_token" VARCHAR(255) DEFAULT '',
     "phone_change_sent_at" TIMESTAMPTZ(6),
-    "confirmed_at" TIMESTAMPTZ(6) GENERATED ALWAYS AS (LEAST(email_confirmed_at, phone_confirmed_at)) STORED,
+    "confirmed_at" TIMESTAMPTZ(6) DEFAULT LEAST(email_confirmed_at, phone_confirmed_at),
     "email_change_token_current" VARCHAR(255) DEFAULT '',
     "email_change_confirm_status" SMALLINT DEFAULT 0,
     "banned_until" TIMESTAMPTZ(6),
@@ -230,6 +236,111 @@ CREATE TABLE "auth"."users" (
     "deleted_at" TIMESTAMPTZ(6),
 
     CONSTRAINT "users_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "storage"."buckets" (
+    "id" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
+    "owner" UUID,
+    "created_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "public" BOOLEAN DEFAULT false,
+    "avif_autodetection" BOOLEAN DEFAULT false,
+    "file_size_limit" BIGINT,
+    "allowed_mime_types" TEXT[],
+
+    CONSTRAINT "buckets_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "storage"."migrations" (
+    "id" INTEGER NOT NULL,
+    "name" VARCHAR(100) NOT NULL,
+    "hash" VARCHAR(40) NOT NULL,
+    "executed_at" TIMESTAMP(6) DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "migrations_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "storage"."objects" (
+    "id" UUID NOT NULL DEFAULT uuid_generate_v4(),
+    "bucket_id" TEXT,
+    "name" TEXT,
+    "owner" UUID,
+    "created_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "last_accessed_at" TIMESTAMPTZ(6) DEFAULT CURRENT_TIMESTAMP,
+    "metadata" JSONB,
+    "path_tokens" TEXT[] DEFAULT string_to_array(name, '/'::text),
+    "version" TEXT,
+
+    CONSTRAINT "objects_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."profiles" (
+    "id" UUID NOT NULL,
+    "name" TEXT NOT NULL,
+    "img" VARCHAR,
+    "description" VARCHAR,
+    "title" VARCHAR,
+    "userId" UUID NOT NULL,
+    "suspended" BOOLEAN NOT NULL DEFAULT false,
+    "createdAt" TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMPTZ(6),
+    "suspendedAt" TIMESTAMPTZ(6),
+
+    CONSTRAINT "profiles_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."posts" (
+    "id" UUID NOT NULL,
+    "content" VARCHAR NOT NULL,
+    "authorId" UUID NOT NULL,
+    "categoryId" INTEGER NOT NULL,
+    "location" VARCHAR NOT NULL,
+    "subject" VARCHAR NOT NULL,
+    "objective" VARCHAR,
+    "rateType" "public"."rate_type",
+    "rate" INTEGER,
+    "currencyId" INTEGER NOT NULL DEFAULT 1,
+    "tags" VARCHAR[],
+    "createdAt" TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updatedAt" TIMESTAMPTZ(6),
+    "deletedAt" TIMESTAMPTZ(6),
+    "textSearch" TSVECTOR,
+
+    CONSTRAINT "posts_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."comments" (
+    "id" SERIAL NOT NULL,
+    "content" VARCHAR NOT NULL,
+    "authorId" UUID NOT NULL,
+    "postId" UUID NOT NULL,
+    "createdAt" TIMESTAMPTZ(6) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT "comments_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."categories" (
+    "id" SERIAL NOT NULL,
+    "name" VARCHAR NOT NULL,
+
+    CONSTRAINT "categories_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "public"."currencies" (
+    "id" SERIAL NOT NULL,
+    "name" "public"."currency_type" NOT NULL,
+
+    CONSTRAINT "currencies_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateIndex
@@ -242,6 +353,9 @@ CREATE INDEX "idx_auth_code" ON "auth"."flow_state"("auth_code");
 CREATE INDEX "idx_user_id_auth_method" ON "auth"."flow_state"("user_id", "authentication_method");
 
 -- CreateIndex
+CREATE INDEX "flow_state_created_at_idx" ON "auth"."flow_state"("created_at" DESC);
+
+-- CreateIndex
 CREATE INDEX "identities_email_idx" ON "auth"."identities"("email");
 
 -- CreateIndex
@@ -249,6 +363,9 @@ CREATE INDEX "identities_user_id_idx" ON "auth"."identities"("user_id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "mfa_amr_claims_session_id_authentication_method_pkey" ON "auth"."mfa_amr_claims"("session_id", "authentication_method");
+
+-- CreateIndex
+CREATE INDEX "mfa_challenge_created_at_idx" ON "auth"."mfa_challenges"("created_at" DESC);
 
 -- CreateIndex
 CREATE INDEX "factor_id_created_at_idx" ON "auth"."mfa_factors"("user_id", "created_at");
@@ -269,6 +386,9 @@ CREATE INDEX "refresh_tokens_parent_idx" ON "auth"."refresh_tokens"("parent");
 CREATE INDEX "refresh_tokens_session_id_revoked_idx" ON "auth"."refresh_tokens"("session_id", "revoked");
 
 -- CreateIndex
+CREATE INDEX "refresh_tokens_updated_at_idx" ON "auth"."refresh_tokens"("updated_at" DESC);
+
+-- CreateIndex
 CREATE UNIQUE INDEX "saml_providers_entity_id_key" ON "auth"."saml_providers"("entity_id");
 
 -- CreateIndex
@@ -281,10 +401,16 @@ CREATE INDEX "saml_relay_states_for_email_idx" ON "auth"."saml_relay_states"("fo
 CREATE INDEX "saml_relay_states_sso_provider_id_idx" ON "auth"."saml_relay_states"("sso_provider_id");
 
 -- CreateIndex
+CREATE INDEX "saml_relay_states_created_at_idx" ON "auth"."saml_relay_states"("created_at" DESC);
+
+-- CreateIndex
 CREATE INDEX "sessions_user_id_idx" ON "auth"."sessions"("user_id");
 
 -- CreateIndex
 CREATE INDEX "user_id_created_at_idx" ON "auth"."sessions"("user_id", "created_at");
+
+-- CreateIndex
+CREATE INDEX "sessions_not_after_idx" ON "auth"."sessions"("not_after" DESC);
 
 -- CreateIndex
 CREATE INDEX "sso_domains_sso_provider_id_idx" ON "auth"."sso_domains"("sso_provider_id");
@@ -294,6 +420,27 @@ CREATE UNIQUE INDEX "users_phone_key" ON "auth"."users"("phone");
 
 -- CreateIndex
 CREATE INDEX "users_instance_id_idx" ON "auth"."users"("instance_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "bname" ON "storage"."buckets"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "migrations_name_key" ON "storage"."migrations"("name");
+
+-- CreateIndex
+CREATE INDEX "name_prefix_search" ON "storage"."objects"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "bucketid_objname" ON "storage"."objects"("bucket_id", "name");
+
+-- CreateIndex
+CREATE INDEX "posts_textSearch_idx" ON "public"."posts"("textSearch");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "categories_name_key" ON "public"."categories"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "currencies_name_key" ON "public"."currencies"("name");
 
 -- AddForeignKey
 ALTER TABLE "auth"."identities" ADD CONSTRAINT "identities_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "auth"."users"("id") ON DELETE CASCADE ON UPDATE NO ACTION;
@@ -321,4 +468,28 @@ ALTER TABLE "auth"."sessions" ADD CONSTRAINT "sessions_user_id_fkey" FOREIGN KEY
 
 -- AddForeignKey
 ALTER TABLE "auth"."sso_domains" ADD CONSTRAINT "sso_domains_sso_provider_id_fkey" FOREIGN KEY ("sso_provider_id") REFERENCES "auth"."sso_providers"("id") ON DELETE CASCADE ON UPDATE NO ACTION;
+
+-- AddForeignKey
+ALTER TABLE "storage"."buckets" ADD CONSTRAINT "buckets_owner_fkey" FOREIGN KEY ("owner") REFERENCES "auth"."users"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- AddForeignKey
+ALTER TABLE "storage"."objects" ADD CONSTRAINT "objects_bucketId_fkey" FOREIGN KEY ("bucket_id") REFERENCES "storage"."buckets"("id") ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+-- AddForeignKey
+ALTER TABLE "public"."profiles" ADD CONSTRAINT "profiles_userId_fkey" FOREIGN KEY ("userId") REFERENCES "auth"."users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "public"."posts" ADD CONSTRAINT "posts_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "public"."profiles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "public"."posts" ADD CONSTRAINT "posts_categoryId_fkey" FOREIGN KEY ("categoryId") REFERENCES "public"."categories"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "public"."posts" ADD CONSTRAINT "posts_currencyId_fkey" FOREIGN KEY ("currencyId") REFERENCES "public"."currencies"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "public"."comments" ADD CONSTRAINT "comments_authorId_fkey" FOREIGN KEY ("authorId") REFERENCES "public"."profiles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "public"."comments" ADD CONSTRAINT "comments_postId_fkey" FOREIGN KEY ("postId") REFERENCES "public"."posts"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 

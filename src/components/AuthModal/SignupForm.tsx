@@ -25,7 +25,7 @@ export const SignupForm: FC<SignupFormProps> = () => {
   const { signup } = useAuth();
   const methods = useForm<SignupFormType>({
     defaultValues,
-    mode: "onBlur",
+    mode: "onChange",
     resolver: zodResolver(signupSchema),
   });
 

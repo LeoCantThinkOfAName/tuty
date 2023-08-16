@@ -191,7 +191,7 @@
       "needLowercase": "需包含小寫英文字元",
       "needNumber": "需包含數字",
       "needSpecialCharacter": "需包含 !@#$%^&* 等特殊符號",
-      "passwordsNotMatch": "密碼比對不符",
-      "invalidEmail": "請輸入相同的密碼"
+      "passwordsNotMatch": "請輸入相同的密碼",
+      "invalidEmail": "不正確的電子信箱格式"
     }
 }

@@ -15,7 +15,7 @@ export const signupSchema = z
     passwordValidation: z.string().min(1, "required"),
   })
   .refine((data) => data.password === data.passwordValidation, {
-    message: "passwordsDontMatch",
+    message: "passwordsNotMatch",
     path: ["passwordValidation"],
   });
 

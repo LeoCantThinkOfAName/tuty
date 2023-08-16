@@ -8,6 +8,14 @@
         "signup": "註冊",
         "login": "登入"
     },
+    "error": {
+      "title": "發生錯誤 ({{status}})",
+      "generalDescription": "發生不明錯誤，請稍後重新嘗試",
+      "register": {
+        "400": "該帳號已存在，請使用其他帳號註冊",
+        "422": "輸入資料有誤，請檢查你輸入的內容是否正確"
+      }
+    },
     "auth": {
         "google": "使用 Google 帳號",
         "facebook": "使用 Facebook 帳號",
@@ -26,7 +34,9 @@
             "validatePassword": {
                 "label": "確認您的密碼",
                 "placeholder": "請重新輸入您設定的密碼"
-            }
+            },
+            "signupGreet": "嗨！{{user}}",
+            "signupDescription": "請至您的信箱收取啟用碼"
         },
         "login": {
             "email": {
@@ -172,5 +182,16 @@
     "currencies": {
       "usd": "美金",
       "twd": "台幣"
+    },
+    "formErrors": {
+      "required": "必填欄位",
+      "passwordTooShort": "密碼太短",
+      "passwordTooLong": "密碼超過允許長度",
+      "needUppercase": "需包含大寫英文字元",
+      "needLowercase": "需包含小寫英文字元",
+      "needNumber": "需包含數字",
+      "needSpecialCharacter": "需包含 !@#$%^&* 等特殊符號",
+      "passwordsNotMatch": "密碼比對不符",
+      "invalidEmail": "請輸入相同的密碼"
     }
 }

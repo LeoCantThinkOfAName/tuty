@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 
 import { HTMLInputTypeAttribute } from "react";
+import { useTranslation } from "react-i18next";
 
 interface FormInputProps<T extends FieldValues> {
   label: string;
@@ -21,6 +22,7 @@ export function FormInput<T extends FieldValues>({
   placeholder,
   type,
 }: FormInputProps<T>) {
+  const { t } = useTranslation();
   const {
     register,
     formState: { errors },
@@ -35,7 +37,9 @@ export function FormInput<T extends FieldValues>({
         required
         placeholder={placeholder}
       />
-      <FormErrorMessage>{errors?.[name]?.message?.toString()}</FormErrorMessage>
+      <FormErrorMessage>
+        {t(errors?.[name]?.message as string)}
+      </FormErrorMessage>
     </FormControl>
   );
 }

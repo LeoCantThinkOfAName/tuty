@@ -1,3 +1,5 @@
+import { UseToastOptions } from "@chakra-ui/react";
+
 export const OTP_COUNT_DOWN_TIME = 60;
 
 export const PATHS = {
@@ -21,3 +23,9 @@ export const CATEGORIES = {
 };
 
 export type CATEGORY_TYPE = keyof typeof CATEGORIES;
+
+export const DEFAULT_TOAST_OPTION: UseToastOptions = {
+  position: "bottom",
+  duration: 5000,
+  isClosable: true,
+};

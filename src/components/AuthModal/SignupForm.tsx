@@ -5,10 +5,10 @@ import {
   signupSchema,
 } from "../../schemas/signup";
 
+import { AuthService } from "../../services/auth";
 import { Button } from "@chakra-ui/react";
 import { FormInput } from "./FormInput";
 import { OAuthOptions } from "./OAuthOptions";
-import { useAuth } from "../../services/useAuth";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -22,7 +22,6 @@ const defaultValues = {
 
 export const SignupForm: FC<SignupFormProps> = () => {
   const { t } = useTranslation();
-  const { signup } = useAuth();
   const methods = useForm<SignupFormType>({
     defaultValues,
     mode: "onChange",
@@ -31,9 +30,12 @@ export const SignupForm: FC<SignupFormProps> = () => {
 
   const submitHandler = (event: FormEvent<HTMLFormElement>) =>
     void methods.handleSubmit((data) => {
-      signup(data)
+      AuthService.signup(data)
         .then((res) => console.log("res: ", res))
-        .catch(() => methods.reset());
+        .catch((err) => {
+          console.log(err);
+          methods.reset();
+        });
     })(event);
 
   return (

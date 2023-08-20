@@ -8,7 +8,7 @@ import { queryClient } from "./services";
 import { routes } from "./routes";
 import { theme } from "./styles/theme";
 
-const { ToastContainer, toast } = createStandaloneToast({
+const { toast } = createStandaloneToast({
   defaultOptions: DEFAULT_TOAST_OPTION,
 });
 
@@ -23,7 +23,6 @@ const App = () => {
         <AuthProvider>
           <RouterProvider router={routes}></RouterProvider>
         </AuthProvider>
-        <ToastContainer />
       </ChakraProvider>
     </QueryClientProvider>
   );

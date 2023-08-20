@@ -1,15 +1,43 @@
-import { FC, PropsWithChildren, createContext, useContext } from "react";
+import {
+  FC,
+  PropsWithChildren,
+  createContext,
+  useCallback,
+  useContext,
+  useState,
+} from "react";
 
+import { AuthModal } from "../components/AuthModal";
+import { OTPProvider } from "./OTPContext";
 import { Session } from "@supabase/supabase-js";
 import { useSession } from "../services/useSession";
 
-const AuthContext = createContext<Session | null>(null);
+const AuthContext = createContext<{
+  session: Session | null;
+  toggle: () => void;
+}>({
+  session: null,
+  toggle: () => {},
+});
 
 export const AuthProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState(false);
   const session = useSession();
 
+  const toggle = useCallback(() => setIsOpen((prev) => !prev), []);
+
   return (
-    <AuthContext.Provider value={session}>{children}</AuthContext.Provider>
+    <OTPProvider>
+      <AuthContext.Provider
+        value={{
+          session: session,
+          toggle,
+        }}
+      >
+        {children}
+        <AuthModal isOpen={isOpen} onClose={toggle} />
+      </AuthContext.Provider>
+    </OTPProvider>
   );
 };
 

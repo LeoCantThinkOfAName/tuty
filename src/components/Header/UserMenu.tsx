@@ -10,6 +10,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 
+import { AuthService } from "../../services/auth";
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { useAuthContext } from "../../contexts/AuthContext";
@@ -49,7 +50,9 @@ export const UserMenu: FC<UserMenuProps> = () => {
             {t("userMenu.bookmarked")}
           </MenuItem>
 
-          <MenuItem>{t("userMenu.logout")}</MenuItem>
+          <MenuItem onClick={() => AuthService.signout()}>
+            {t("userMenu.logout")}
+          </MenuItem>
         </MenuList>
       </Menu>
     );

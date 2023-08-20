@@ -103,6 +103,16 @@ class Auth {
       })
       .catch((err) => catchError(err));
   }
+
+  public async signout() {
+    return await supabase.auth.signOut().then((res) => {
+      toast({
+        title: i18next.t("auth.signout.success.title"),
+        status: "success",
+        description: i18next.t("auth.signout.success.description"),
+      });
+    });
+  }
 }
 
 const AuthService = new Auth();

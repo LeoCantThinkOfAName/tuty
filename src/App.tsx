@@ -1,6 +1,6 @@
 import { ChakraProvider, createStandaloneToast } from "@chakra-ui/react";
 
-import { AuthProvider } from "./constexts/AuthContext";
+import { AuthProvider } from "./contexts/AuthContext";
 import { DEFAULT_TOAST_OPTION } from "./constants";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { RouterProvider } from "react-router-dom";

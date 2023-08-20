@@ -1,7 +1,8 @@
+import { FC, useState } from "react";
 import { Flex, Text } from "@chakra-ui/react";
 import { HeaderHeight, PATHS } from "../../constants";
 
-import { FC } from "react";
+import { AuthModal } from "../AuthModal";
 import { HeaderLink } from "./HeaderLink";
 import { Link as RouterLink } from "react-router-dom";
 import { ThemeToggle } from "../ThemeToggle";
@@ -12,6 +13,7 @@ interface HeaderProps {}
 
 export const Header: FC<HeaderProps> = () => {
   const { t } = useTranslation();
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <Flex
@@ -40,6 +42,7 @@ export const Header: FC<HeaderProps> = () => {
           <HeaderLink to={PATHS.MESSAGES}>{t("headerMenu.message")}</HeaderLink>
           <ThemeToggle />
           <UserMenu />
+          <AuthModal isOpen={isOpen} onClose={() => setIsOpen(!isOpen)} />
         </Flex>
       </Flex>
     </Flex>

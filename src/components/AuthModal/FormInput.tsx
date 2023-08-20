@@ -14,6 +14,7 @@ interface FormInputProps<T extends FieldValues> {
   name: Path<T>;
   placeholder: string;
   type: HTMLInputTypeAttribute;
+  isDisabled: boolean;
 }
 
 export function FormInput<T extends FieldValues>({
@@ -21,6 +22,7 @@ export function FormInput<T extends FieldValues>({
   name,
   placeholder,
   type,
+  isDisabled,
 }: FormInputProps<T>) {
   const { t } = useTranslation();
   const {
@@ -36,6 +38,7 @@ export function FormInput<T extends FieldValues>({
         type={type}
         required
         placeholder={placeholder}
+        isDisabled={isDisabled}
       />
       <FormErrorMessage>
         {t(errors?.[name]?.message as string)}

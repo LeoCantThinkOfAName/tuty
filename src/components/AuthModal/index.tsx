@@ -52,7 +52,7 @@ export const AuthModal: FC<AuthModalProps> = ({ onClose, ...props }) => {
             <TabPanels>
               {tabData.map((tab) => (
                 <TabPanel key={tab.label}>
-                  <tab.component />
+                  <tab.component onClose={onClose} />
                 </TabPanel>
               ))}
             </TabPanels>

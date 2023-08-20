@@ -1,28 +1,37 @@
-import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import {
+  Button,
+  FormControl,
+  FormLabel,
+  Input,
+  ModalProps,
+} from "@chakra-ui/react";
 import { FC, FormEvent } from "react";
 
 import { OAuthOptions } from "./OAuthOptions";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
-interface LoginFormProps {}
+interface LoginFormProps {
+  onClose: () => void;
+}
 
 const defaultValues = {
   email: "",
   password: "",
 };
-export const LoginForm: FC<LoginFormProps> = () => {
+export const LoginForm: FC<LoginFormProps> = ({ onClose }) => {
   const { t } = useTranslation();
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, formState } = useForm({
     defaultValues,
   });
+  const isDisabled = formState.isSubmitting;
 
   const submitHandler = (event: FormEvent<HTMLFormElement>) =>
     void handleSubmit((data: typeof defaultValues) => console.log(data))(event);
 
   return (
     <>
-      <OAuthOptions mode="login" />
+      <OAuthOptions mode="login" isDisabled={isDisabled} />
       <form onSubmit={submitHandler} role="form">
         <FormControl>
           <FormLabel>{t("auth.signup.email.label")}</FormLabel>

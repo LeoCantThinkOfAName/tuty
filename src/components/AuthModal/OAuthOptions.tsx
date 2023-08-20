@@ -7,9 +7,10 @@ import { useTranslation } from "react-i18next";
 
 interface OAuthOptionsProps {
   mode: "signup" | "login";
+  isDisabled: boolean;
 }
 
-export const OAuthOptions: FC<OAuthOptionsProps> = ({ mode }) => {
+export const OAuthOptions: FC<OAuthOptionsProps> = ({ mode, isDisabled }) => {
   const { t } = useTranslation();
 
   const options: { icon: IconType; title: string }[] = [
@@ -35,6 +36,7 @@ export const OAuthOptions: FC<OAuthOptionsProps> = ({ mode }) => {
           maxWidth={`${Math.floor(10 / options.length) * 10}%`}
           title={option.title}
           key={option.title}
+          isDisabled={isDisabled}
         >
           <option.icon />
         </Button>

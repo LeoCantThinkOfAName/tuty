@@ -16,6 +16,10 @@
         "422": "輸入資料有誤，請檢查你輸入的內容是否正確"
       }
     },
+    "warning": {
+      "title": "警告",
+      "spam": "請勿大量發送請求"
+    },
     "auth": {
         "google": "使用 Google 帳號",
         "facebook": "使用 Facebook 帳號",
@@ -23,6 +27,10 @@
         "modalTitle": "請註冊/登入後繼續使用",
         "tncLink": "請參閱我們的服務條款",
         "signup": {
+            "success": {
+              "title": "{{email}} 註冊成功",
+              "description": "請至您的註冊信箱收取啟用碼"
+            },
             "email": {
                 "label": "電子信箱",
                 "placeholder": "請提供可用的電子信箱帳號"

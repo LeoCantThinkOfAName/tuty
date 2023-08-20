@@ -1,0 +1,2 @@
+import{j as o}from"./jsx-runtime-ffb262ed.js";import{F as t}from"./chunk-KRPLQIP4-32b7a1c6.js";const e=({children:r})=>o.jsx(t,{h:"100vh",w:"100vw",flexDir:"column",children:o.jsx(t,{minH:"100%",alignItems:"stretch",flexDir:"column",children:r})});try{e.displayName="StoryLayout",e.__docgenInfo={description:"",displayName:"StoryLayout",props:{}}}catch{}export{e as S};
+//# sourceMappingURL=StoryLayout-8a0449d3.js.map

@@ -1,0 +1,5 @@
+import{T as m}from"./index-f670c5c4.js";import"./jsx-runtime-ffb262ed.js";import"./index-76fb7be0.js";import"./_commonjsHelpers-de833af9.js";import"./index.esm-0ba758de.js";import"./useTranslation-ca5fece7.js";import"./context-90c9d743.js";import"./i18nInstance-1f8a4d28.js";import"./chunk-ZJJGQIVY-b66b1d78.js";import"./index-39ab5497.js";import"./extends-15b115a7.js";import"./chunk-UVUR7MCU-d5c4f206.js";import"./chunk-5PH6ULNP-79b6aba4.js";import"./emotion-react.browser.esm-88c8e6c3.js";import"./index-17e33fe9.js";import"./chunk-PULVB27S-b3d725d2.js";const y={title:"ThemeToggle/ThemeToggle",component:m,tags:["autodocs"],argTypes:{}},o={args:{},name:"Default"};var r,t,e;o.parameters={...o.parameters,docs:{...(r=o.parameters)==null?void 0:r.docs,source:{originalSource:`{
+  args: {},
+  name: "Default"
+}`,...(e=(t=o.parameters)==null?void 0:t.docs)==null?void 0:e.source}}};const E=["Default"];export{o as Default,E as __namedExportsOrder,y as default};
+//# sourceMappingURL=ThemeToggle.stories-3215bdd4.js.map

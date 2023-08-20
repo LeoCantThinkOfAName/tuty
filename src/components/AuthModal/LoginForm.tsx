@@ -1,9 +1,11 @@
-import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
+import { Button, Spinner } from "@chakra-ui/react";
 import { FC, FormEvent } from "react";
+import { FormProvider, useForm } from "react-hook-form";
 
 import { AuthService } from "../../services/auth";
+import { FormInput } from "./FormInput";
+import { LoginForm as LoginFormType } from "../../schemas/login";
 import { OAuthOptions } from "./OAuthOptions";
-import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
 
 interface LoginFormProps {
@@ -16,13 +18,13 @@ const defaultValues = {
 };
 export const LoginForm: FC<LoginFormProps> = ({ onClose }) => {
   const { t } = useTranslation();
-  const { register, handleSubmit, formState } = useForm({
+  const methods = useForm({
     defaultValues,
   });
-  const isDisabled = formState.isSubmitting;
+  const isDisabled = methods.formState.isSubmitting;
 
   const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
-    void handleSubmit(async (data) => {
+    void methods.handleSubmit(async (data) => {
       await AuthService.login(data)
         .then(() => onClose())
         .catch((err) => err);
@@ -31,30 +33,34 @@ export const LoginForm: FC<LoginFormProps> = ({ onClose }) => {
   return (
     <>
       <OAuthOptions mode="login" isDisabled={isDisabled} />
-      <form onSubmit={submitHandler} role="form">
-        <FormControl>
-          <FormLabel>{t("auth.signup.email.label")}</FormLabel>
-          <Input
-            {...register("email")}
-            type="email"
-            required
+      <FormProvider {...methods}>
+        <form onSubmit={submitHandler} role="form">
+          <FormInput<LoginFormType>
+            name="email"
+            label={t("auth.signup.email.label")}
             placeholder={t("auth.login.email.placeholder")}
+            type="email"
+            isDisabled={isDisabled}
           />
-        </FormControl>
-        <FormControl>
-          <FormLabel>{t("auth.signup.password.label")}</FormLabel>
-          <Input
-            {...register("password")}
-            type="password"
-            required
+          <FormInput<LoginFormType>
+            name="password"
+            label={t("auth.signup.password.label")}
             placeholder={t("auth.login.password.placeholder")}
+            type="password"
+            isDisabled={isDisabled}
           />
-        </FormControl>
-
-        <Button w="100%" variant="success" mt="8" type="submit">
-          {t("common.login")}
-        </Button>
-      </form>
+          <Button
+            w="100%"
+            variant="success"
+            mt="8"
+            type="submit"
+            isDisabled={isDisabled}
+          >
+            <Spinner size="sm" mr="3" hidden={!isDisabled} />
+            {t("common.login")}
+          </Button>
+        </form>
+      </FormProvider>
     </>
   );
 };

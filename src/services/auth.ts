@@ -92,9 +92,11 @@ class Auth {
           throw new AuthError(res.error.message, res.error.status);
         } else {
           toast({
-            title: "success",
+            title: i18next.t("auth.login.success.title"),
             status: "success",
-            description: "login success",
+            description: i18next.t("auth.login.success.description", {
+              user: res.data.user.email,
+            }),
           });
           return res;
         }

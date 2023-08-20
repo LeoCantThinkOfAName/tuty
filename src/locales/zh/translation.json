@@ -47,6 +47,10 @@
             "signupDescription": "請至您的信箱收取啟用碼"
         },
         "login": {
+          "success": {
+            "title": "歡迎回來",
+            "description": "以 {{user}} 身份登入成功"
+          },
             "email": {
                 "label": "電子信箱",
                 "placeholder": "請輸入您註冊的電子信箱"

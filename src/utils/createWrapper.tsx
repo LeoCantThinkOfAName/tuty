@@ -4,6 +4,7 @@ import { FunctionComponent, PropsWithChildren, ReactElement } from "react";
 import { I18nextProvider, initReactI18next } from "react-i18next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import { AuthProvider } from "../contexts/AuthContext";
 import { ChakraProvider } from "@chakra-ui/react";
 import en from "../locales/en/translation.json";
 import i18next from "i18next";
@@ -33,9 +34,11 @@ export const createWrapper = () => {
       <BrowserRouter>
         <ChakraProvider theme={theme}>
           <I18nextProvider i18n={i18next}>
-            <Routes>
-              <Route path="/" element={<>{children}</>} />
-            </Routes>
+            <AuthProvider>
+              <Routes>
+                <Route path="/" element={<>{children}</>} />
+              </Routes>
+            </AuthProvider>
           </I18nextProvider>
         </ChakraProvider>
       </BrowserRouter>

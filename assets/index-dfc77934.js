@@ -1,2 +1,0 @@
-function c(t){const e=Object.assign({},t);for(let s in e)e[s]===void 0&&delete e[s];return e}const T={ROOT:"/",SEARCH:"/search/:term",CREATE_POST:"/create-post",MESSAGES:"/messages"},a=4,n=[16,20],o=48,E={FIND_TUTOR:"FIND_TUTOR",FIND_STUDENT:"FIND_STUDENT",SKILL_EXCHANGE:"SKILL_EXCHANGE",STUDY_GROUP:"STUDY_GROUP"};export{a as B,E as C,n as H,o as M,T as P,c};
-//# sourceMappingURL=index-dfc77934.js.map

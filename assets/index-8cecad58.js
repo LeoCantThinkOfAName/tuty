@@ -1,0 +1,2 @@
+function o(e){const t=Object.assign({},e);for(let s in t)t[s]===void 0&&delete t[s];return t}const T={ROOT:"/",SEARCH:"/search/:term",CREATE_POST:"/create-post",MESSAGES:"/messages"},a=4,c=[16,20],n=48,i={FIND_TUTOR:"FIND_TUTOR",FIND_STUDENT:"FIND_STUDENT",SKILL_EXCHANGE:"SKILL_EXCHANGE",STUDY_GROUP:"STUDY_GROUP"},E={position:"bottom",duration:5e3,isClosable:!0};export{a as B,i as C,E as D,c as H,n as M,T as P,o as c};
+//# sourceMappingURL=index-8cecad58.js.map

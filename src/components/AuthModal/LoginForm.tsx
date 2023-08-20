@@ -7,6 +7,7 @@ import {
 } from "@chakra-ui/react";
 import { FC, FormEvent } from "react";
 
+import { AuthService } from "../../services/auth";
 import { OAuthOptions } from "./OAuthOptions";
 import { useForm } from "react-hook-form";
 import { useTranslation } from "react-i18next";
@@ -26,8 +27,14 @@ export const LoginForm: FC<LoginFormProps> = ({ onClose }) => {
   });
   const isDisabled = formState.isSubmitting;
 
-  const submitHandler = (event: FormEvent<HTMLFormElement>) =>
-    void handleSubmit((data: typeof defaultValues) => console.log(data))(event);
+  const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
+    void handleSubmit(async (data) => {
+      await AuthService.login(data)
+        .then(() => {
+          return onClose();
+        })
+        .catch((err) => err);
+    })(event);
 
   return (
     <>

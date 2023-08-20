@@ -1,8 +1,33 @@
+import {
+  SignInWithPasswordCredentials,
+  SignUpWithPasswordCredentials,
+} from "@supabase/supabase-js";
+
 import { AuthError } from "../utils/Errors";
-import { SignUpWithPasswordCredentials } from "@supabase/supabase-js";
 import i18next from "i18next";
 import { supabase } from "./supabaseClient";
 import { toast } from "../App";
+
+const catchError = (err: Error | AuthError) => {
+  // @ts-ignore
+  const status = err?.status || err?.code || 500;
+
+  if (err instanceof AuthError) {
+    toast({
+      title: i18next.t("error.title", { status }),
+      description: err.message,
+      status: "error",
+    });
+    throw new AuthError(err.message, err.status);
+  } else {
+    toast({
+      title: i18next.t("error.title", { status }),
+      description: "general error",
+      status: "error",
+    });
+    throw new Error(err.message);
+  }
+};
 
 class Auth {
   private static instance: Auth;
@@ -54,23 +79,27 @@ class Auth {
           return res;
         }
       })
-      .catch((err) => {
-        if (err instanceof AuthError) {
-          toast({
-            title: "Error",
-            description: err.message,
-            status: "error",
-          });
-          throw new AuthError(err.message, err.status);
+      .catch((err) => catchError(err));
+  }
+
+  public async login(credential: SignInWithPasswordCredentials) {
+    if (this.shouldBlock()) throw new Error("Blocked");
+
+    return await supabase.auth
+      .signInWithPassword(credential)
+      .then((res) => {
+        if (res.error) {
+          throw new AuthError(res.error.message, res.error.status);
         } else {
           toast({
-            title: i18next.t("error.title", { status: err.status || err.code }),
-            description: "general error",
-            status: "error",
+            title: "success",
+            status: "success",
+            description: "login success",
           });
-          throw new Error(err.message);
+          return res;
         }
-      });
+      })
+      .catch((err) => catchError(err));
   }
 }
 

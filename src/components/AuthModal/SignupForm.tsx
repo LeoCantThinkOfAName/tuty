@@ -31,8 +31,6 @@ export const SignupForm: FC<SignupFormProps> = ({ onClose }) => {
   });
   const isDisabled = methods.formState.isSubmitting;
 
-  console.log(methods.formState.isSubmitting);
-
   const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
     void methods.handleSubmit(async (data) => {
       await AuthService.signup(data)

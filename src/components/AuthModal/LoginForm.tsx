@@ -1,10 +1,4 @@
-import {
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  ModalProps,
-} from "@chakra-ui/react";
+import { Button, FormControl, FormLabel, Input } from "@chakra-ui/react";
 import { FC, FormEvent } from "react";
 
 import { AuthService } from "../../services/auth";
@@ -30,9 +24,7 @@ export const LoginForm: FC<LoginFormProps> = ({ onClose }) => {
   const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
     void handleSubmit(async (data) => {
       await AuthService.login(data)
-        .then(() => {
-          return onClose();
-        })
+        .then(() => onClose())
         .catch((err) => err);
     })(event);
 

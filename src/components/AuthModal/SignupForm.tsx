@@ -1,4 +1,4 @@
-import { Button, ModalProps, Spinner } from "@chakra-ui/react";
+import { Button, Spinner } from "@chakra-ui/react";
 import { FC, FormEvent } from "react";
 import { FormProvider, useForm } from "react-hook-form";
 import {
@@ -34,9 +34,7 @@ export const SignupForm: FC<SignupFormProps> = ({ onClose }) => {
   const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
     void methods.handleSubmit(async (data) => {
       await AuthService.signup(data)
-        .then(() => {
-          return onClose();
-        })
+        .then(() => onClose())
         .catch((err) => err);
     })(event);
 

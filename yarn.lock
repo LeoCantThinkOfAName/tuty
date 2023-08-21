@@ -13585,8 +13585,8 @@ __metadata:
   linkType: hard
 
 "storybook-addon-react-router-v6@npm:^2.0.0":
-  version: 2.0.4
-  resolution: "storybook-addon-react-router-v6@npm:2.0.4"
+  version: 2.0.5
+  resolution: "storybook-addon-react-router-v6@npm:2.0.5"
   dependencies:
     compare-versions: ^6.0.0
     react-inspector: 6.0.2
@@ -13607,7 +13607,7 @@ __metadata:
       optional: true
     react-dom:
       optional: true
-  checksum: 2920eff2f15b84bc57c0260286d656373130dfdd25c4299319da94e427e2dcf45bf8a73221b47818d470e029d2588d60d498b0163b50b7d6db17253ffa36d11f
+  checksum: 19cca302dae97f50f6ec6b91358ca16f9c9b1e6a5ff91c51b762016c1be66390a10438fb7de7eed7130add5e873845f884605a8e3b8188f40153811dc665935d
   languageName: node
   linkType: hard
 

@@ -67,7 +67,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
-            ["lint-staged", "npm:14.0.0"],\
+            ["lint-staged", "npm:14.0.1"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
             ["prisma", "npm:5.1.1"],\
             ["prop-types", "npm:15.8.1"],\
@@ -14286,16 +14286,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["lint-staged", [\
-        ["npm:14.0.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/lint-staged-npm-14.0.0-3b7e5bcf90-8.zip/node_modules/lint-staged/",\
+        ["npm:14.0.1", {\
+          "packageLocation": "../../../../cache/others/berry/cache/lint-staged-npm-14.0.1-50e37043be-8.zip/node_modules/lint-staged/",\
           "packageDependencies": [\
-            ["lint-staged", "npm:14.0.0"],\
+            ["lint-staged", "npm:14.0.1"],\
             ["chalk", "npm:5.3.0"],\
             ["commander", "npm:11.0.0"],\
             ["debug", "virtual:5351b5395d40179de49f2607e86968cc50dc0fd5b608df2cdaceced9b58b43b75928e3172fb6810eba4ba73cfcfc6fd496a6296d177d69346e8900d5aa250d16#npm:4.3.4"],\
             ["execa", "npm:7.2.0"],\
             ["lilconfig", "npm:2.1.0"],\
-            ["listr2", "virtual:3b7e5bcf9059a90b0a1ce2ecc05d41e6be15d6a4a513c19998cd527ec6f584cc96db75e235ffa36667d23388f22bbae86ea5754275d01d7cc26b69c54e9aee01#npm:6.6.1"],\
+            ["listr2", "virtual:50e37043be1acfdf7937725b7d74aef4c69810b43ac5a25e26b5e903f030009562410c00098ae38ae5aee99bd1924c12abc3e4107f72b4d9b54731ba6e466239#npm:6.6.1"],\
             ["micromatch", "npm:4.0.5"],\
             ["pidtree", "npm:0.6.0"],\
             ["string-argv", "npm:0.3.2"],\
@@ -14312,10 +14312,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:3b7e5bcf9059a90b0a1ce2ecc05d41e6be15d6a4a513c19998cd527ec6f584cc96db75e235ffa36667d23388f22bbae86ea5754275d01d7cc26b69c54e9aee01#npm:6.6.1", {\
-          "packageLocation": "./.yarn/__virtual__/listr2-virtual-5cee8d8a82/5/cache/others/berry/cache/listr2-npm-6.6.1-74fafa58ff-8.zip/node_modules/listr2/",\
+        ["virtual:50e37043be1acfdf7937725b7d74aef4c69810b43ac5a25e26b5e903f030009562410c00098ae38ae5aee99bd1924c12abc3e4107f72b4d9b54731ba6e466239#npm:6.6.1", {\
+          "packageLocation": "./.yarn/__virtual__/listr2-virtual-19ba318405/5/cache/others/berry/cache/listr2-npm-6.6.1-74fafa58ff-8.zip/node_modules/listr2/",\
           "packageDependencies": [\
-            ["listr2", "virtual:3b7e5bcf9059a90b0a1ce2ecc05d41e6be15d6a4a513c19998cd527ec6f584cc96db75e235ffa36667d23388f22bbae86ea5754275d01d7cc26b69c54e9aee01#npm:6.6.1"],\
+            ["listr2", "virtual:50e37043be1acfdf7937725b7d74aef4c69810b43ac5a25e26b5e903f030009562410c00098ae38ae5aee99bd1924c12abc3e4107f72b4d9b54731ba6e466239#npm:6.6.1"],\
             ["@types/enquirer", null],\
             ["cli-truncate", "npm:3.1.0"],\
             ["colorette", "npm:2.0.20"],\
@@ -19030,7 +19030,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
-            ["lint-staged", "npm:14.0.0"],\
+            ["lint-staged", "npm:14.0.1"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
             ["prisma", "npm:5.1.1"],\
             ["prop-types", "npm:15.8.1"],\

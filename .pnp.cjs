@@ -46,7 +46,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/react", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/react-vite", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/testing-library", "npm:0.2.0"],\
-            ["@supabase/supabase-js", "npm:2.32.0"],\
+            ["@supabase/supabase-js", "npm:2.33.0"],\
             ["@tanstack/react-query", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:4.33.0"],\
             ["@testing-library/react", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:14.0.0"],\
             ["@testing-library/react-hooks", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:8.0.1"],\
@@ -8359,10 +8359,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@supabase/supabase-js", [\
-        ["npm:2.32.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/@supabase-supabase-js-npm-2.32.0-c475e0713f-8.zip/node_modules/@supabase/supabase-js/",\
+        ["npm:2.33.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/@supabase-supabase-js-npm-2.33.0-2901f408db-8.zip/node_modules/@supabase/supabase-js/",\
           "packageDependencies": [\
-            ["@supabase/supabase-js", "npm:2.32.0"],\
+            ["@supabase/supabase-js", "npm:2.33.0"],\
             ["@supabase/functions-js", "npm:2.1.2"],\
             ["@supabase/gotrue-js", "npm:2.47.0"],\
             ["@supabase/postgrest-js", "npm:1.8.0"],\
@@ -19009,7 +19009,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@storybook/react", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/react-vite", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/testing-library", "npm:0.2.0"],\
-            ["@supabase/supabase-js", "npm:2.32.0"],\
+            ["@supabase/supabase-js", "npm:2.33.0"],\
             ["@tanstack/react-query", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:4.33.0"],\
             ["@testing-library/react", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:14.0.0"],\
             ["@testing-library/react-hooks", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:8.0.1"],\

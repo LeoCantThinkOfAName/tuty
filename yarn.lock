@@ -5186,8 +5186,8 @@ __metadata:
   linkType: hard
 
 "@supabase/supabase-js@npm:^2.24.0":
-  version: 2.32.0
-  resolution: "@supabase/supabase-js@npm:2.32.0"
+  version: 2.33.0
+  resolution: "@supabase/supabase-js@npm:2.33.0"
   dependencies:
     "@supabase/functions-js": ^2.1.0
     "@supabase/gotrue-js": ^2.46.1
@@ -5195,7 +5195,7 @@ __metadata:
     "@supabase/realtime-js": ^2.7.3
     "@supabase/storage-js": ^2.5.1
     cross-fetch: ^3.1.5
-  checksum: 1b4cb5b07a66d05e718f778a33d88c0c56e133135be99fcc25e7f69087f9ed9fa6cebc45ecb69766d337c1d6a0f0b0299bbf5375e57ea41dfcb24aa5d3ed0e6f
+  checksum: 9cc158324189771c36e313d1f93a3b8fe83dd31b580c79cc15e4df530120420885b3724f635e21d83f726150fd0de419a7bb9b82fede15ac6f7e6ca012c7f7db
   languageName: node
   linkType: hard
 

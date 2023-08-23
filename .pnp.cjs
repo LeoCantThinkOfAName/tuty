@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/styled", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:11.11.0"],\
             ["@faker-js/faker", "npm:8.0.2"],\
             ["@hookform/resolvers", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:3.3.0"],\
-            ["@prisma/client", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.1.1"],\
+            ["@prisma/client", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.2.0"],\
             ["@storybook/addon-essentials", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/addon-interactions", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/addon-links", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
@@ -69,7 +69,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["lint-staged", "npm:14.0.1"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
-            ["prisma", "npm:5.1.1"],\
+            ["prisma", "npm:5.2.0"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"],\
@@ -6160,20 +6160,20 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@prisma/client", [\
-        ["npm:5.1.1", {\
-          "packageLocation": "./.yarn/unplugged/@prisma-client-virtual-b2fe1d2dba/node_modules/@prisma/client/",\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/unplugged/@prisma-client-virtual-37dddd93be/node_modules/@prisma/client/",\
           "packageDependencies": [\
-            ["@prisma/client", "npm:5.1.1"]\
+            ["@prisma/client", "npm:5.2.0"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.1.1", {\
-          "packageLocation": "./.yarn/unplugged/@prisma-client-virtual-b2fe1d2dba/node_modules/@prisma/client/",\
+        ["virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.2.0", {\
+          "packageLocation": "./.yarn/unplugged/@prisma-client-virtual-37dddd93be/node_modules/@prisma/client/",\
           "packageDependencies": [\
-            ["@prisma/client", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.1.1"],\
-            ["@prisma/engines-version", "npm:5.1.1-1.6a3747c37ff169c90047725a05a6ef02e32ac97e"],\
+            ["@prisma/client", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.2.0"],\
+            ["@prisma/engines-version", "npm:5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f"],\
             ["@types/prisma", null],\
-            ["prisma", "npm:5.1.1"]\
+            ["prisma", "npm:5.2.0"]\
           ],\
           "packagePeers": [\
             "@types/prisma",\
@@ -6183,19 +6183,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@prisma/engines", [\
-        ["npm:5.1.1", {\
-          "packageLocation": "./.yarn/unplugged/@prisma-engines-npm-5.1.1-fc7aed99ab/node_modules/@prisma/engines/",\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/unplugged/@prisma-engines-npm-5.2.0-50eb98fd21/node_modules/@prisma/engines/",\
           "packageDependencies": [\
-            ["@prisma/engines", "npm:5.1.1"]\
+            ["@prisma/engines", "npm:5.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
       ]],\
       ["@prisma/engines-version", [\
-        ["npm:5.1.1-1.6a3747c37ff169c90047725a05a6ef02e32ac97e", {\
-          "packageLocation": "../../../../cache/others/berry/cache/@prisma-engines-version-npm-5.1.1-1.6a3747c37ff169c90047725a05a6ef02e32ac97e-c6eeb14996-8.zip/node_modules/@prisma/engines-version/",\
+        ["npm:5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f", {\
+          "packageLocation": "../../../../cache/others/berry/cache/@prisma-engines-version-npm-5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f-fe2e4f4732-8.zip/node_modules/@prisma/engines-version/",\
           "packageDependencies": [\
-            ["@prisma/engines-version", "npm:5.1.1-1.6a3747c37ff169c90047725a05a6ef02e32ac97e"]\
+            ["@prisma/engines-version", "npm:5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -16441,11 +16441,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["prisma", [\
-        ["npm:5.1.1", {\
-          "packageLocation": "./.yarn/unplugged/prisma-npm-5.1.1-b7c73b99a0/node_modules/prisma/",\
+        ["npm:5.2.0", {\
+          "packageLocation": "./.yarn/unplugged/prisma-npm-5.2.0-7754225168/node_modules/prisma/",\
           "packageDependencies": [\
-            ["prisma", "npm:5.1.1"],\
-            ["@prisma/engines", "npm:5.1.1"]\
+            ["prisma", "npm:5.2.0"],\
+            ["@prisma/engines", "npm:5.2.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -19000,7 +19000,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@emotion/styled", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:11.11.0"],\
             ["@faker-js/faker", "npm:8.0.2"],\
             ["@hookform/resolvers", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:3.3.0"],\
-            ["@prisma/client", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.1.1"],\
+            ["@prisma/client", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:5.2.0"],\
             ["@storybook/addon-essentials", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/addon-interactions", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
             ["@storybook/addon-links", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:7.3.2"],\
@@ -19032,7 +19032,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["lint-staged", "npm:14.0.1"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
-            ["prisma", "npm:5.1.1"],\
+            ["prisma", "npm:5.2.0"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"],\

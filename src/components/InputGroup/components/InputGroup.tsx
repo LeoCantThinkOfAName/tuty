@@ -1,65 +1,94 @@
 import {
+  ChangeEvent,
   Children,
+  KeyboardEvent,
+  PropsWithChildren,
   ReactElement,
   cloneElement,
   forwardRef,
   isValidElement,
   useMemo,
-  useState,
+  useRef,
 } from "react";
-import { Flex, FlexProps } from "@chakra-ui/react";
-import InputGroupItem, { InputGroupItemProps } from "./InputGroupItem";
+import { Flex, FlexProps, Input } from "@chakra-ui/react";
 
-import { InputGroupContextImp } from "../contexts/InputGroupContext";
+import { InputGroupItem } from "./InputGroupItem";
 
-interface InputGroupProps extends FlexProps {
-  delimiter?: string;
-  name?: string;
-  hidden?: boolean;
+interface InputGroup extends PropsWithChildren, Omit<FlexProps, "onChange"> {
+  value: string;
+  onChange: (value: string) => unknown;
+  maxLength: number;
+  hideInput?: boolean;
 }
 
-const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(
-  ({ children, delimiter, name, hidden, ...props }, ref) => {
-    const [value, setValue] = useState<string[]>([]);
-    const validChildren = Children.map(children, (child, index) => {
-      const isValid = isValidElement(child);
-      if (!isValid) {
-        console.warn("Please provide valid child element");
-        return null;
-      }
-      if (child.type !== InputGroupItem) {
-        console.warn("InputGroup only accept InputGroupItem as children");
-        return null;
-      }
+export const InputGroup = forwardRef<HTMLInputElement, InputGroup>(
+  ({ value, onChange, maxLength, children, hideInput, ...props }, ref) => {
+    const inputsRef = useRef<(HTMLInputElement | null)[]>([]);
 
-      return cloneElement(
-        child as ReactElement<InputGroupItemProps>,
-        index !== 0 ? { ml: "3", index } : { index },
+    const inputOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+      const inputsValue = inputsRef.current.map((input) => input?.value);
+      const index = inputsRef.current.findIndex(
+        (input) => input?.dataset.sequence === e.target.dataset.sequence
       );
-    });
-    const contextValue = useMemo(() => ({ value, setValue }), [value]);
+
+      const newValue = inputsValue.join("");
+      onChange(newValue);
+
+      const nextInput = inputsRef.current[index + 1];
+      if (nextInput && e.target.value.length === maxLength) {
+        nextInput.focus();
+      }
+    };
+
+    const onKeyUp = (e: KeyboardEvent<HTMLInputElement>) => {
+      const index = inputsRef.current.findIndex(
+        (input) => input?.dataset.sequence === e.currentTarget.dataset.sequence
+      );
+
+      const prevInput = inputsRef.current[index - 1];
+      if (e.key === "Backspace" && !e.currentTarget.value && prevInput) {
+        prevInput.focus();
+        if (e.currentTarget.type !== "number")
+          prevInput.setSelectionRange(0, prevInput.value.length);
+      }
+    };
+
+    const newChildren = useMemo(() => {
+      inputsRef.current = [];
+      return Children.map(children, (child, index) => {
+        const isValid = isValidElement(child);
+        if (!isValid) {
+          console.warn("Please provide valid child element");
+          return null;
+        }
+        if (child.type !== InputGroupItem) {
+          console.warn("InputGroup only accept InputGroupItem as children");
+          return child;
+        }
+
+        return cloneElement(child as ReactElement, {
+          ref: (el: HTMLInputElement) => {
+            if (el) return inputsRef.current.push(el);
+          },
+          onChange: (e: ChangeEvent<HTMLInputElement>) => inputOnChange(e),
+          onKeyUp,
+          maxLength,
+          "data-sequence": index,
+        });
+      });
+    }, [children, maxLength]);
 
     return (
-      <InputGroupContextImp.Provider value={contextValue}>
-        <input
-          type="text"
-          value={value.join(delimiter)}
-          readOnly
-          ref={ref}
-          name={name}
-          hidden={hidden}
-        />
-        <Flex justifyContent="space-between" {...props}>
-          {validChildren}
-        </Flex>
-      </InputGroupContextImp.Provider>
+      <>
+        <Input ref={ref} hidden={hideInput} defaultValue={value} />
+        <Flex {...props}>{newChildren}</Flex>
+      </>
     );
-  },
+  }
 );
 
 InputGroup.displayName = "InputGroup";
 InputGroup.defaultProps = {
-  delimiter: "",
-  hidden: true,
+  maxLength: 1,
+  hideInput: true,
 };
-export default InputGroup;

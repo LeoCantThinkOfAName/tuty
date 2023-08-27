@@ -1,4 +1,2 @@
-import InputGroup from "./components/InputGroup";
-import InputGroupItem from "./components/InputGroupItem";
-
-export { InputGroupItem, InputGroup };
+export { InputGroupItem } from "./components/InputGroupItem";
+export { InputGroup } from "./components/InputGroup";

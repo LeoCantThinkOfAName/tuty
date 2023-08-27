@@ -65,6 +65,12 @@
             "title": "登出成功",
             "description": "您已成功登出"
           }
+        },
+        "verifyOtp": {
+          "success": {
+            "title": "帳號驗證成功",
+            "description": "以 {{user}} 身份登入成功"
+          }
         }
     },
     "post": {

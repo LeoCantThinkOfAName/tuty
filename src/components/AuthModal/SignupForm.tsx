@@ -9,6 +9,7 @@ import {
 import { AuthService } from "../../services/auth";
 import { FormInput } from "./FormInput";
 import { OAuthOptions } from "./OAuthOptions";
+import { useOTPContext } from "../../contexts/OTPContext";
 import { useTranslation } from "react-i18next";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -29,12 +30,16 @@ export const SignupForm: FC<SignupFormProps> = ({ onClose }) => {
     mode: "onChange",
     resolver: zodResolver(signupSchema),
   });
+  const { toggle } = useOTPContext();
   const isDisabled = methods.formState.isSubmitting;
 
   const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
     void methods.handleSubmit(async (data) => {
       await AuthService.signup(data)
-        .then(() => onClose())
+        .then(() => {
+          onClose();
+          toggle();
+        })
         .catch((err) => err);
     })(event);
 

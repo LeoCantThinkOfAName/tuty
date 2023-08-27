@@ -32,6 +32,7 @@ const catchError = (err: Error | AuthError) => {
 class Auth {
   private static instance: Auth;
   private timer: NodeJS.Timeout | undefined;
+  private email: string | undefined;
 
   public static getInstance(): Auth {
     if (!Auth.instance) {
@@ -76,6 +77,7 @@ class Auth {
             status: "success",
             description: i18next.t("auth.signup.success.description"),
           });
+          this.email = res.data.user?.email;
           return res;
         }
       })
@@ -98,6 +100,7 @@ class Auth {
               user: res.data.user.email,
             }),
           });
+          this.email = res.data.user?.email;
           return res;
         }
       })
@@ -111,7 +114,32 @@ class Auth {
         status: "success",
         description: i18next.t("auth.signout.success.description"),
       });
+      this.email = undefined;
     });
+  }
+
+  public async verifyOtp(token: string) {
+    return await supabase.auth
+      .verifyOtp({
+        email: this.email as string,
+        type: "email",
+        token,
+      })
+      .then((res) => {
+        if (res.error) {
+          throw new AuthError(res.error.message, res.error.status);
+        } else {
+          toast({
+            title: i18next.t("auth.verifyOtp.success.title"),
+            status: "success",
+            description: i18next.t("auth.verifyOtp.success.description", {
+              user: res.data.user?.email,
+            }),
+          });
+          return res;
+        }
+      })
+      .catch((err) => catchError(err));
   }
 }
 

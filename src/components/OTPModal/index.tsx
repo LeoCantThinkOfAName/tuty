@@ -13,19 +13,22 @@ import { Controller, useForm } from "react-hook-form";
 import { FC, FormEvent } from "react";
 import { InputGroup, InputGroupItem } from "../InputGroup";
 
+import { AuthService } from "../../services/auth";
 import { useTranslation } from "react-i18next";
 
 interface OTPModalProps extends Omit<ModalProps, "children"> {
   title?: string;
 }
 
-export const OTPModal: FC<OTPModalProps> = ({ title, ...props }) => {
+export const OTPModal: FC<OTPModalProps> = ({ title, onClose, ...props }) => {
   const { t } = useTranslation();
   const { control, handleSubmit } = useForm();
 
   const submitHandler = async (event: FormEvent<HTMLFormElement>) =>
     void handleSubmit(async (data) => {
-      console.log(data);
+      await AuthService.verifyOtp(data.token).then(() => {
+        onClose();
+      });
     })(event);
 
   const createInputs = Array.from("123456").map((key) => {

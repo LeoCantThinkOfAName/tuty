@@ -60,6 +60,6 @@ describe("OTPModal", () => {
     await act(async () => userEvent.keyboard("[Backspace]"));
     expect(inputs[5].value).toBe("");
     await act(async () => userEvent.keyboard("[Backspace]"));
-    expect(inputs[4] === document.activeElement).toBe(true);
+    expect(inputs[3] === document.activeElement).toBe(true);
   });
 });

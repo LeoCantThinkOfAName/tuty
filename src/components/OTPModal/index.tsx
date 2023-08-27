@@ -46,7 +46,7 @@ export const OTPModal: FC<OTPModalProps> = ({ title, onClose, ...props }) => {
   });
 
   return (
-    <Modal isCentered {...props}>
+    <Modal isCentered onClose={onClose} {...props}>
       <ModalOverlay />
       <form onSubmit={submitHandler}>
         <ModalContent>

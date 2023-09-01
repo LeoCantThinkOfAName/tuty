@@ -61,7 +61,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["date-fns", "npm:2.30.0"],\
             ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.16.2"],\
             ["gh-pages", "npm:6.0.0"],\
-            ["happy-dom", "npm:10.10.0"],\
+            ["happy-dom", "npm:10.11.2"],\
             ["husky", "npm:8.0.3"],\
             ["i18next", "npm:23.4.6"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
@@ -12918,10 +12918,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["happy-dom", [\
-        ["npm:10.10.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/happy-dom-npm-10.10.0-726b3f313f-8.zip/node_modules/happy-dom/",\
+        ["npm:10.11.2", {\
+          "packageLocation": "../../../../cache/others/berry/cache/happy-dom-npm-10.11.2-157b255495-8.zip/node_modules/happy-dom/",\
           "packageDependencies": [\
-            ["happy-dom", "npm:10.10.0"],\
+            ["happy-dom", "npm:10.11.2"],\
             ["css.escape", "npm:1.5.1"],\
             ["entities", "npm:4.5.0"],\
             ["iconv-lite", "npm:0.6.3"],\
@@ -19009,7 +19009,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["date-fns", "npm:2.30.0"],\
             ["framer-motion", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:10.16.2"],\
             ["gh-pages", "npm:6.0.0"],\
-            ["happy-dom", "npm:10.10.0"],\
+            ["happy-dom", "npm:10.11.2"],\
             ["husky", "npm:8.0.3"],\
             ["i18next", "npm:23.4.6"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
@@ -19805,7 +19805,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["cac", "npm:6.7.14"],\
             ["chai", "npm:4.3.7"],\
             ["debug", "virtual:5351b5395d40179de49f2607e86968cc50dc0fd5b608df2cdaceced9b58b43b75928e3172fb6810eba4ba73cfcfc6fd496a6296d177d69346e8900d5aa250d16#npm:4.3.4"],\
-            ["happy-dom", "npm:10.10.0"],\
+            ["happy-dom", "npm:10.11.2"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["local-pkg", "npm:0.4.3"],\
             ["magic-string", "npm:0.30.2"],\

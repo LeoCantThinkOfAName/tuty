@@ -9101,8 +9101,8 @@ __metadata:
   linkType: hard
 
 "happy-dom@npm:^10.0.0":
-  version: 10.10.0
-  resolution: "happy-dom@npm:10.10.0"
+  version: 10.11.2
+  resolution: "happy-dom@npm:10.11.2"
   dependencies:
     css.escape: ^1.5.1
     entities: ^4.5.0
@@ -9110,7 +9110,7 @@ __metadata:
     webidl-conversions: ^7.0.0
     whatwg-encoding: ^2.0.0
     whatwg-mimetype: ^3.0.0
-  checksum: 65570e6427860521223b4727013d4be068bb81fa73dcdbce02d506c5c1fb13b0cce9d34a217639f3ee8d7f1bd138333e7e73593506182ceaaf26a5d8ff911133
+  checksum: 5781985c594f216fc8c6ae1d673aec2ef8c2eaa57b79036775ce42a55537486321bed9e1e3fc994a6a7ee9cc8729097486877f39d796ab9e440a7ba6e82e2401
   languageName: node
   linkType: hard
 

@@ -68,7 +68,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["lint-staged", "npm:14.0.1"],\
-            ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
+            ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.3.3"],\
             ["prisma", "npm:5.2.0"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
@@ -6054,15 +6054,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@mswjs/interceptors", [\
-        ["npm:0.17.9", {\
-          "packageLocation": "../../../../cache/others/berry/cache/@mswjs-interceptors-npm-0.17.9-209f8a4795-8.zip/node_modules/@mswjs/interceptors/",\
+        ["npm:0.17.10", {\
+          "packageLocation": "../../../../cache/others/berry/cache/@mswjs-interceptors-npm-0.17.10-c1199a9424-8.zip/node_modules/@mswjs/interceptors/",\
           "packageDependencies": [\
-            ["@mswjs/interceptors", "npm:0.17.9"],\
+            ["@mswjs/interceptors", "npm:0.17.10"],\
             ["@open-draft/until", "npm:1.0.3"],\
             ["@types/debug", "npm:4.1.8"],\
             ["@xmldom/xmldom", "npm:0.8.10"],\
             ["debug", "virtual:5351b5395d40179de49f2607e86968cc50dc0fd5b608df2cdaceced9b58b43b75928e3172fb6810eba4ba73cfcfc6fd496a6296d177d69346e8900d5aa250d16#npm:4.3.4"],\
-            ["headers-polyfill", "npm:3.1.2"],\
+            ["headers-polyfill", "npm:3.2.5"],\
             ["outvariant", "npm:1.4.0"],\
             ["strict-event-emitter", "npm:0.2.8"],\
             ["web-encoding", "npm:1.1.5"]\
@@ -10537,15 +10537,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "HARD"\
         }],\
-        ["npm:4.1.1", {\
-          "packageLocation": "../../../../cache/others/berry/cache/chalk-npm-4.1.1-f1ce6bae57-8.zip/node_modules/chalk/",\
-          "packageDependencies": [\
-            ["chalk", "npm:4.1.1"],\
-            ["ansi-styles", "npm:4.3.0"],\
-            ["supports-color", "npm:7.2.0"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:4.1.2", {\
           "packageLocation": "../../../../cache/others/berry/cache/chalk-npm-4.1.2-ba8b67ab80-8.zip/node_modules/chalk/",\
           "packageDependencies": [\
@@ -12880,10 +12871,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["graphql", [\
-        ["npm:16.8.0", {\
-          "packageLocation": "../../../../cache/others/berry/cache/graphql-npm-16.8.0-3c6baad491-8.zip/node_modules/graphql/",\
+        ["npm:16.8.1", {\
+          "packageLocation": "../../../../cache/others/berry/cache/graphql-npm-16.8.1-c2cd08b4c0-8.zip/node_modules/graphql/",\
           "packageDependencies": [\
-            ["graphql", "npm:16.8.0"]\
+            ["graphql", "npm:16.8.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -13024,10 +13015,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["headers-polyfill", [\
-        ["npm:3.1.2", {\
-          "packageLocation": "../../../../cache/others/berry/cache/headers-polyfill-npm-3.1.2-da04988de4-8.zip/node_modules/headers-polyfill/",\
+        ["npm:3.2.5", {\
+          "packageLocation": "../../../../cache/others/berry/cache/headers-polyfill-npm-3.2.5-5873ac13a0-8.zip/node_modules/headers-polyfill/",\
           "packageDependencies": [\
-            ["headers-polyfill", "npm:3.1.2"]\
+            ["headers-polyfill", "npm:3.2.5"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -15604,28 +15595,28 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["msw", [\
-        ["npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/msw-virtual-a0126a2774/node_modules/msw/",\
+        ["npm:1.3.3", {\
+          "packageLocation": "./.yarn/unplugged/msw-virtual-9be6857268/node_modules/msw/",\
           "packageDependencies": [\
-            ["msw", "npm:1.2.3"]\
+            ["msw", "npm:1.3.3"]\
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3", {\
-          "packageLocation": "./.yarn/unplugged/msw-virtual-a0126a2774/node_modules/msw/",\
+        ["virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.3.3", {\
+          "packageLocation": "./.yarn/unplugged/msw-virtual-9be6857268/node_modules/msw/",\
           "packageDependencies": [\
-            ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
+            ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.3.3"],\
             ["@mswjs/cookies", "npm:0.2.2"],\
-            ["@mswjs/interceptors", "npm:0.17.9"],\
+            ["@mswjs/interceptors", "npm:0.17.10"],\
             ["@open-draft/until", "npm:1.0.3"],\
             ["@types/cookie", "npm:0.4.1"],\
             ["@types/js-levenshtein", "npm:1.1.1"],\
             ["@types/typescript", null],\
-            ["chalk", "npm:4.1.1"],\
+            ["chalk", "npm:4.1.2"],\
             ["chokidar", "npm:3.5.3"],\
             ["cookie", "npm:0.4.2"],\
-            ["graphql", "npm:16.8.0"],\
-            ["headers-polyfill", "npm:3.1.2"],\
+            ["graphql", "npm:16.8.1"],\
+            ["headers-polyfill", "npm:3.2.5"],\
             ["inquirer", "npm:8.2.6"],\
             ["is-node-process", "npm:1.2.0"],\
             ["js-levenshtein", "npm:1.1.6"],\
@@ -19016,7 +19007,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["i18next-http-backend", "npm:2.2.1"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["lint-staged", "npm:14.0.1"],\
-            ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
+            ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.3.3"],\
             ["prisma", "npm:5.2.0"],\
             ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\

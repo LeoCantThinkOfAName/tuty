@@ -13588,8 +13588,8 @@ __metadata:
   linkType: hard
 
 "storybook-addon-react-router-v6@npm:^2.0.0":
-  version: 2.0.5
-  resolution: "storybook-addon-react-router-v6@npm:2.0.5"
+  version: 2.0.15
+  resolution: "storybook-addon-react-router-v6@npm:2.0.15"
   dependencies:
     compare-versions: ^6.0.0
     react-inspector: 6.0.2
@@ -13603,14 +13603,13 @@ __metadata:
     "@storybook/theming": ^7.0.0
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-router: ^6.4.0
     react-router-dom: ^6.4.0
   peerDependenciesMeta:
     react:
       optional: true
     react-dom:
       optional: true
-  checksum: 19cca302dae97f50f6ec6b91358ca16f9c9b1e6a5ff91c51b762016c1be66390a10438fb7de7eed7130add5e873845f884605a8e3b8188f40153811dc665935d
+  checksum: 6ca332b151de454ae7c3c4377869db48dea6461d8fbb8e7841e3eda6760a70e0880341872b36a3d046c4d73837f7eb7ef05715d1af969e0d9513579cbd39626c
   languageName: node
   linkType: hard
 

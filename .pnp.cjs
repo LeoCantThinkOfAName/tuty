@@ -65,7 +65,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:8.0.3"],\
             ["i18next", "npm:23.4.6"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
-            ["i18next-http-backend", "npm:2.2.1"],\
+            ["i18next-http-backend", "npm:2.6.2"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["lint-staged", "npm:14.0.1"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\
@@ -11120,18 +11120,18 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["cross-fetch", [\
-        ["npm:3.1.6", {\
-          "packageLocation": "../../../../cache/others/berry/cache/cross-fetch-npm-3.1.6-cdb982d446-8.zip/node_modules/cross-fetch/",\
-          "packageDependencies": [\
-            ["cross-fetch", "npm:3.1.6"],\
-            ["node-fetch", "virtual:71c3c0570974c795b79987bb85d4a29514e196f75c7ca2bb56e80f88177e71cbbb73c9a0f02e781c6ccd33e5e8542eb2d0a05fb7aad876eea2872ec6993aa554#npm:2.6.12"]\
-          ],\
-          "linkType": "HARD"\
-        }],\
         ["npm:3.1.8", {\
           "packageLocation": "../../../../cache/others/berry/cache/cross-fetch-npm-3.1.8-71c3c05709-8.zip/node_modules/cross-fetch/",\
           "packageDependencies": [\
             ["cross-fetch", "npm:3.1.8"],\
+            ["node-fetch", "virtual:71c3c0570974c795b79987bb85d4a29514e196f75c7ca2bb56e80f88177e71cbbb73c9a0f02e781c6ccd33e5e8542eb2d0a05fb7aad876eea2872ec6993aa554#npm:2.6.12"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:4.0.0", {\
+          "packageLocation": "../../../../cache/others/berry/cache/cross-fetch-npm-4.0.0-9c67668db4-8.zip/node_modules/cross-fetch/",\
+          "packageDependencies": [\
+            ["cross-fetch", "npm:4.0.0"],\
             ["node-fetch", "virtual:71c3c0570974c795b79987bb85d4a29514e196f75c7ca2bb56e80f88177e71cbbb73c9a0f02e781c6ccd33e5e8542eb2d0a05fb7aad876eea2872ec6993aa554#npm:2.6.12"]\
           ],\
           "linkType": "HARD"\
@@ -13208,11 +13208,11 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["i18next-http-backend", [\
-        ["npm:2.2.1", {\
-          "packageLocation": "../../../../cache/others/berry/cache/i18next-http-backend-npm-2.2.1-f14f9b500b-8.zip/node_modules/i18next-http-backend/",\
+        ["npm:2.6.2", {\
+          "packageLocation": "../../../../cache/others/berry/cache/i18next-http-backend-npm-2.6.2-eb9027efec-8.zip/node_modules/i18next-http-backend/",\
           "packageDependencies": [\
-            ["i18next-http-backend", "npm:2.2.1"],\
-            ["cross-fetch", "npm:3.1.6"]\
+            ["i18next-http-backend", "npm:2.6.2"],\
+            ["cross-fetch", "npm:4.0.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -18315,7 +18315,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/storybook__types", null],\
             ["i18next", "npm:23.4.6"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
-            ["i18next-http-backend", "npm:2.2.1"],\
+            ["i18next-http-backend", "npm:2.6.2"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:18.2.0"],\
             ["react-i18next", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:13.2.1"],\
@@ -19013,7 +19013,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["husky", "npm:8.0.3"],\
             ["i18next", "npm:23.4.6"],\
             ["i18next-browser-languagedetector", "npm:7.1.0"],\
-            ["i18next-http-backend", "npm:2.2.1"],\
+            ["i18next-http-backend", "npm:2.6.2"],\
             ["jsdom", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:22.1.0"],\
             ["lint-staged", "npm:14.0.1"],\
             ["msw", "virtual:a40089b1a1e9a55b003e0c4d775a93f3e4e070c4fe5634f93b59a399f021d706c3b1b55d1aff1dd1cc4de3b5c35f443ed9bb19c7671051055f356c8dec05b59d#npm:1.2.3"],\

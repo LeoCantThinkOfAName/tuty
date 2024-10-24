@@ -1439,6 +1439,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@babel/runtime@npm:^7.23.2":
+  version: 7.25.9
+  resolution: "@babel/runtime@npm:7.25.9"
+  dependencies:
+    regenerator-runtime: ^0.14.0
+  checksum: ce1c87b166ff728eaee91658a67fb7835314ed157b7a36d49602ffdaaa37fb1fcf2784afd00b55fe1672bec53fb38cba622a056c913611af2a44503097216229
+  languageName: node
+  linkType: hard
+
 "@babel/template@npm:^7.22.5":
   version: 7.22.5
   resolution: "@babel/template@npm:7.22.5"
@@ -9356,11 +9365,11 @@ __metadata:
   linkType: hard
 
 "i18next@npm:^23.0.0":
-  version: 23.4.6
-  resolution: "i18next@npm:23.4.6"
+  version: 23.16.3
+  resolution: "i18next@npm:23.16.3"
   dependencies:
-    "@babel/runtime": ^7.22.5
-  checksum: ffc63889e28b2bfce2c6e635bd686087290fe2e2f58e0a235525011bb74d541ff681895abe994b12546be6c92b66a7cc3002a13c26e587b4da8c89b15ef648db
+    "@babel/runtime": ^7.23.2
+  checksum: 078c1fca8369a6f24370db8048f866ac78a1bff7e59372cbf877691f176707c6788fd9958afc3ba3e9e3969cfe6a137111b799e3ebf0b7a440b10bf311709c72
   languageName: node
   linkType: hard
 
